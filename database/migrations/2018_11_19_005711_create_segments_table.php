@@ -15,6 +15,8 @@ class CreateSegmentsTable extends Migration
     {
         Schema::create('segments', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('destinyCity');
+            $table->integer('waitingTime');
             $table->timestamps();
         });
     }

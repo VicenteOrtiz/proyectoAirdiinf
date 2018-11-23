@@ -15,6 +15,9 @@ class CreateReservesTable extends Migration
     {
         Schema::create('reserves', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('reserveDate');
+            $table->integer('reserveBalance');
+            $table->boolean('insurance');
             $table->timestamps();
         });
     }

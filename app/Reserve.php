@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reserve extends Model
 {
-    //
+    protected $fillable = [
+    	'reserveDate',
+    	'reserveBalance',
+    	'insurance',
+    ];
 }

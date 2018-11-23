@@ -19,6 +19,7 @@ class CreateCarsTable extends Migration
             $table->string('vehicleRegistration');
             $table->boolean('available');
             $table->integer('passengerCapacity');
+            $table->integer('pricePerHour');
             $table->timestamps();
         });
     }

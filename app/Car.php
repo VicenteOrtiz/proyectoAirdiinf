@@ -11,5 +11,6 @@ class Car extends Model
     	'vehicleRegistration',
     	'available',
     	'passengerCapacity',
+    	'pricePerHour',
     ];
 }

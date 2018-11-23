@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Purchase extends Model
 {
-    //
+    protected $fillable =[
+    	'totalPrice',
+    	'date',
+    ];
 }

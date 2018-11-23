@@ -15,6 +15,10 @@ class CreateAirplaneseatsTable extends Migration
     {
         Schema::create('airplaneseats', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('seatType');
+            $table->integer('row');
+            $table->string('seatLetter');
+            $table->boolean('available');
             $table->timestamps();
         });
     }

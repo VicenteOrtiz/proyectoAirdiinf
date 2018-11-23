@@ -13,5 +13,7 @@ class Flight extends Model
 		'departureLocation',
 		'arrivalLocation',
 		'confirmed',
+		'flightDate',
+		'departureTime',
     ];
 }
