@@ -20,8 +20,8 @@ class CreateFlightsTable extends Migration
             $table->integer('airplaneCapacity');
             $table->string('departureLocation');
             $table->string('arrivalLocation');
-            $table->date('flightDate');
-            $table->integer('departureTime');
+            $table->string('flightDate');
+            $table->string('departureTime');
             $table->boolean('confirmed');
             $table->timestamps();
         });

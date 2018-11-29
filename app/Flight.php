@@ -16,4 +16,8 @@ class Flight extends Model
 		'flightDate',
 		'departureTime',
     ];
+
+    public function airplaneseats(){
+    	return $this->hasMany('App\Airplaneseat');
+    }
 }

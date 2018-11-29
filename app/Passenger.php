@@ -12,4 +12,8 @@ class Passenger extends Model
     	'age',
     	'checkIn',
     ];
+
+    public function airplaneseats(){
+    	return $this->hasOne('App\airplaneseats');
+    }
 }

@@ -12,4 +12,13 @@ class Airplaneseat extends Model
     	'seatLetter',
     	'available',
     ];
+
+    public function flights(){
+    	return $this->hasOne('App\Flight');
+    }
+
+    public function passengers(){
+    	return $this->hasOne('App\Passenger');
+    }
+
 }
