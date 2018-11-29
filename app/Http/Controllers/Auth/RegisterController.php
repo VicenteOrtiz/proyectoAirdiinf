@@ -21,6 +21,8 @@ class RegisterController extends Controller
     |
     */
 
+    //comentario random
+
     use RegistersUsers;
 
     /**
