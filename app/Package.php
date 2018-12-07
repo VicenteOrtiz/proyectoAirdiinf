@@ -13,5 +13,9 @@ class Package extends Model
     	'fechaInicio',
     	'fechaTermino',
 
-    ];
+    ]; 
+
+    public function insurence(){
+        return $this->hasMany('App\Insurence');
+    }
 }

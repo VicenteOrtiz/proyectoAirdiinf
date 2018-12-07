@@ -10,4 +10,8 @@ class Insurence extends Model
     	'amount',
     	'description',
     ];
+
+    public function package(){
+        return $this->belongsTo('App\Package');
+    }
 }
