@@ -16,4 +16,8 @@ class Reserve extends Model
     public function insurence(){
         return $this->belongsTo('App\Insurence');
     }
+
+       public function car(){
+        return $this->hasMany('App\Car');
+    }
 }

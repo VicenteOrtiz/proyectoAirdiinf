@@ -13,4 +13,8 @@ class Car extends Model
     	'passengerCapacity',
     	'pricePerHour',
     ];
+
+    public function reserve(){
+        return $this->belongsTo('App\Reserve');
+    }
 }
