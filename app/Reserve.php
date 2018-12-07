@@ -11,4 +11,9 @@ class Reserve extends Model
     	'reserveBalance',
     	'insurance',
     ];
+
+
+    public function insurence(){
+        return $this->belongsTo('App\Insurence');
+    }
 }

@@ -19,6 +19,10 @@ class CreateReservesTable extends Migration
             $table->integer('reserveBalance');
             $table->boolean('insurance');
             $table->timestamps();
+
+            $table->integer('insurence_id');
+            $table->foreign('insurence_id')->references('id')->on('insurences');
+            
         });
     }
 

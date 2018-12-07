@@ -14,4 +14,9 @@ class Insurence extends Model
     public function package(){
         return $this->belongsTo('App\Package');
     }
+
+
+    public function reserve(){
+        return $this->hasMany('App\Reserve');
+    }
 }

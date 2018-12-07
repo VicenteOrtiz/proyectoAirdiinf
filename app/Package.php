@@ -18,4 +18,5 @@ class Package extends Model
     public function insurence(){
         return $this->hasMany('App\Insurence');
     }
+    
 }
