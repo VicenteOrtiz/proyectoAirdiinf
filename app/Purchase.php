@@ -10,4 +10,13 @@ class Purchase extends Model
     	'totalPrice',
     	'date',
     ];
+
+    public function payment(){
+        return $this->belongsTo('App\Payment');
+    }
+    
+     public function reserve(){
+        return $this->hasMany('App\Reserve');
+    }
+}
 }
