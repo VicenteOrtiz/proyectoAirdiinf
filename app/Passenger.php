@@ -13,7 +13,7 @@ class Passenger extends Model
     	'checkIn',
     ];
 
-    public function airplaneseats(){
-    	return $this->hasOne('App\airplaneseats');
-    }
+    //77public function airplaneseats(){
+    //	return $this->hasOne('App\airplaneseats');
+    //}
 }

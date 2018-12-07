@@ -18,6 +18,9 @@ class CreatePurchasesTable extends Migration
             $table->integer('totalPrice');
             $table->date('date');
             $table->timestamps();
+            $table->integer('payments_id');
+            $table->foreign('payments_id')->references('id')->on('payments');
+
         });
     }
 

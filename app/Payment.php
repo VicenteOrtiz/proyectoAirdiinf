@@ -11,4 +11,8 @@ class Payment extends Model
     	'bankName',
     ];
 
+    public function purchase(){
+        return $this->hasMany('App\Purchase');
+    }
+    
 }
