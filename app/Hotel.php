@@ -20,4 +20,8 @@ class Hotel extends Model
     	return $this->belongsTo('App\Package');
     }
 
+    public function hotelroom(){
+        return $this->hasMany('App\Hotelroom');
+    }
+
 }

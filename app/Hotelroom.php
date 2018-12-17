@@ -13,5 +13,10 @@ class Hotelroom extends Model
     	'roomPricePerDay',
     	'floorNumber',
     	'available',
+    	'hotel_id',
     ];
+
+    public function hotel(){
+    	return $this->belongsTo('App\Hotel');
+    }
 }

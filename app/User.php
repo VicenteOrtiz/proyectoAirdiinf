@@ -23,7 +23,7 @@ class User extends Authenticatable
         'age',
         'passportNumber',
         'phoneNumber',
-        'disability',
+        'disability', 
     ];
 
     /**

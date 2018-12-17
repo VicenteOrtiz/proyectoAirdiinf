@@ -26,3 +26,5 @@ Route::resource('hotel', 'HotelController');
 Route::resource('car', 'CarController');
 
 Route::resource('purchase', 'PurchaseController');
+
+
