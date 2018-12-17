@@ -16,4 +16,8 @@ class Hotel extends Model
 
     ];
 
+    public function package(){
+    	return $this->belongsTo('App\Package');
+    }
+
 }

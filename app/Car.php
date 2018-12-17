@@ -17,4 +17,9 @@ class Car extends Model
     public function reserve(){
         return $this->belongsTo('App\Reserve');
     }
+
+    public function package(){
+        return $this->belongsTo('App\Package');
+    }
+
 }

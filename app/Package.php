@@ -18,5 +18,16 @@ class Package extends Model
     public function insurence(){
         return $this->hasMany('App\Insurence');
     }
+
+    public function hotel(){
+    	return $this->hasMany('App\Hotel');
+    }
+
+    public function car(){
+    	return $this->hasMany('App\Car');
+    }
     
+    public function flight(){
+    	return $this->hasMany('App\Flight');
+    }
 }

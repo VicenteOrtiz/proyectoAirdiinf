@@ -20,4 +20,9 @@ class Flight extends Model
     public function airplaneseats(){
     	return $this->hasMany('App\Airplaneseat');
     }
+
+    public function package(){
+        return $this->belongsTo('App\Package');
+    }
+
 }
