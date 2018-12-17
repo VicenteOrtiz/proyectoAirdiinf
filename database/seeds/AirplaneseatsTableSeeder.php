@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class AccountsTableSeeder extends Seeder
+class AirplaneseatsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class AccountsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Account::class, 5) -> create();
+        factory(App\Airplaneseat::class, 5) -> create();
     }
 }
