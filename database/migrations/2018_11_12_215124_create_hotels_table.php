@@ -20,6 +20,10 @@ class CreateHotelsTable extends Migration
             $table->integer('hotelCapacity');
             $table->string('phoneNumber');
             $table->string('address');
+
+            $table->integer('location_id');
+            $table->foreign('location_id')->references('id')->on('cities');
+
             $table->timestamps();
         });
     }

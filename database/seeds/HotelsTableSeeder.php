@@ -19,6 +19,7 @@ class HotelsTableSeeder extends Seeder
         	'hotelCapacity'=>123,
         	'phoneNumber'=>'+56972512245',
         	'address'=>'Alameda 123',
+            'location_id' => 1,
         ]);
 
         DB::table('hotels')->insert([
@@ -27,6 +28,7 @@ class HotelsTableSeeder extends Seeder
         	'hotelCapacity'=>100,
         	'phoneNumber'=>'+56972512245',
         	'address'=>'Alameda 000',
+            'location_id' => 1,
         ]);
     }
 }

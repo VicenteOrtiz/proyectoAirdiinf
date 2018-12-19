@@ -3,22 +3,35 @@
 
 @section('content')
 
-	<h1>hotels</h1>
+	<h1>Hoteles</h1>
 
-	@foreach ($hotels as $hotel)
+	
 
-		<!-- $project[0]->title -->
+			
 
-
-		<h2>Hotel name: {{$hotel->hotelName}}</h2>
-
-			<li>stars: {{$hotel->stars}} </li>
-			<li>hotelCapacity: {{$hotel->hotelCapacity}} </li>
-			<li>phoneNumber: {{$hotel->phoneNumber}} </li>
-			<li>adress: {{$hotel->address}} </li>
+	<form action="test" method="get">
+		{{ csrf_field() }}
 		
+		<div class="form-group form-row align-items-end">
+			<div class="col">
+				<label for="id_destino">¡Elija un país de su preferencia!</label>
+				<div class="form-group">
+					<select id="paises_id" name="paises_id" class="form-control selectpicker" title="Destino" data-live-search="true">
 
-	@endforeach
+						@foreach ($countries as $country)
 
-	<h3> <a href="/hotel/create">Book a hotel NOW</a></h3>
+							<option>{{$country->countryName}}</option>
+
+
+						@endforeach
+
+
+					</select>
+				</div>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary btn-lg btn-block">Busca tu Hotel</button>
+	</form>
+
+	
 @endsection
