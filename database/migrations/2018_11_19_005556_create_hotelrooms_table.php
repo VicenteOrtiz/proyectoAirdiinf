@@ -21,6 +21,10 @@ class CreateHotelroomsTable extends Migration
             $table->integer('roomPricePerDay');
             $table->integer('floorNumber');
             $table->boolean('available');
+
+            $table->integer('hotel_id'); 
+            $table->foreign('hotel_id')->references('id')->on('hotels');
+
             $table->timestamps();
         });
     }
@@ -34,4 +38,4 @@ class CreateHotelroomsTable extends Migration
     {
         Schema::dropIfExists('hotelrooms');
     }
-}
+} 

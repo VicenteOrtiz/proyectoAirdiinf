@@ -13,11 +13,18 @@ class Hotel extends Model
     	'hotelCapacity',
     	'phoneNumber',
     	'address',
-
     ];
 
     public function package(){
     	return $this->belongsTo('App\Package');
+    }
+
+    public function hotelroom(){
+        return $this->hasMany('App\Hotelroom');
+    }
+
+    public function city(){
+        return $this->belongsTo('App\City');
     }
 
 }

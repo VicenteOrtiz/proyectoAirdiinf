@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Account;
+use App\Country;
 use Illuminate\Http\Request;
 
-class AccountController extends Controller
+class CountryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AccountController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Account  $account
+     * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function show(Account $account)
+    public function show(Country $country)
     {
         //
     }
@@ -52,10 +52,10 @@ class AccountController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Account  $account
+     * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function edit(Account $account)
+    public function edit(Country $country)
     {
         //
     }
@@ -64,10 +64,10 @@ class AccountController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Account  $account
+     * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Account $account)
+    public function update(Request $request, Country $country)
     {
         //
     }
@@ -75,10 +75,10 @@ class AccountController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Account  $account
+     * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Account $account)
+    public function destroy(Country $country)
     {
         //
     }

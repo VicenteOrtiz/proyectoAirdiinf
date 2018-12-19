@@ -20,7 +20,7 @@ class CreatePassengersTable extends Migration
             $table->integer('age');
             $table->boolean('checkIn');
 
-            $table->integer('flight_id');
+           // $table->integer('flight_id');
 
             $table->timestamps();
         });

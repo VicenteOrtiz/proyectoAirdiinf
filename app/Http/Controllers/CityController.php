@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Hotel;
-use App\Country;
-use Illuminate\Http\Request;  
+use App\City;
+use Illuminate\Http\Request;
 
-class HotelController extends Controller
+class CityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $countries = Country::All();
-
-        return view('hotels.index', compact('countries'));
+        //
     }
 
     /**
@@ -44,37 +41,21 @@ class HotelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hotel  $hotel
+     * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-
-    public function showCities(Hotel $hotel)
+    public function show(City $city)
     {
-        $cities = Country::where("countryName", request("paises_id"))
-             ->first()
-             ->city; 
-
-        return view('hotels.cities', compact('cities'));
-    }
-
-    public function show(Hotel $hotel)
-    {
-        
-        //return Country::with('city.hotels')->get();
-        // return Country::where("countryName", request("paises_id"))
-        //     ->first()
-        //     ->city->flatmap(function($ciudad) {
-        //         return $ciudad->hotels;
-        //     });
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Hotel  $hotel
+     * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hotel $hotel)
+    public function edit(City $city)
     {
         //
     }
@@ -83,10 +64,10 @@ class HotelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hotel  $hotel
+     * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hotel $hotel)
+    public function update(Request $request, City $city)
     {
         //
     }
@@ -94,10 +75,10 @@ class HotelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hotel  $hotel
+     * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hotel $hotel)
+    public function destroy(City $city)
     {
         //
     }

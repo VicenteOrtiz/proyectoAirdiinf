@@ -21,9 +21,15 @@ class CreateReservesTable extends Migration
             $table->timestamps();
 
             $table->integer('insurence_id');
-            $table->foreign('insurence_id')->references('id')->on('insurences');
+            $table->foreign('insurence_id')->references('id')->on('insurences')->onDelete('cascade');;
+
             $table->integer('car_id');
             $table->foreign('car_id')->references('id')->on('cars');
+
+            // $table->dropForeign('answers_user_id_foreign');
+            // $table->foreign('user_id')
+            // ->references('id')->on('users')
+            // ->onDelete('cascade');
 
         });
     }
