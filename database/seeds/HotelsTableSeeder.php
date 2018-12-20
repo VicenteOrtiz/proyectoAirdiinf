@@ -11,7 +11,7 @@ class HotelsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Hotel::class, 10) -> create();
+        //factory(App\Hotel::class, 10) -> create();
 
         DB::table('hotels')->insert([
         	'hotelName'=>'Best hotel',
@@ -19,7 +19,7 @@ class HotelsTableSeeder extends Seeder
         	'hotelCapacity'=>123,
         	'phoneNumber'=>'+56972512245',
         	'address'=>'Alameda 123',
-            'location_id' => 1,
+            //'location_id' => 1,
         ]);
 
         DB::table('hotels')->insert([
@@ -28,7 +28,7 @@ class HotelsTableSeeder extends Seeder
         	'hotelCapacity'=>100,
         	'phoneNumber'=>'+56972512245',
         	'address'=>'Alameda 000',
-            'location_id' => 1,
+            //'location_id' => 1,
         ]);
     }
 }
