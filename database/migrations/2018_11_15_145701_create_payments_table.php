@@ -15,7 +15,7 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('paymentMethod');
+            $table->string('paymentMethod');
             $table->string('bankName');
             $table->timestamps();
         });
