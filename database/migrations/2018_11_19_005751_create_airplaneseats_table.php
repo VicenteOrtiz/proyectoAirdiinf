@@ -18,9 +18,9 @@ class CreateAirplaneseatsTable extends Migration
 
             $table->integer('flight_id')->nullable();
             $table->foreign('flight_id')->references('id')->on('flights');
-            $table->integer('seatType');
+            $table->smallInteger('seat_type')->nullable();
             $table->integer('row');
-            $table->string('seatLetter')->nullable();
+            $table->string('seat_letter')->nullable();
             $table->boolean('available');
 
             //$table->integer('passenger_id');

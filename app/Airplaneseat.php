@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Airplaneseat extends Model
 {
     protected $fillable = [
-    	'seatType',
+    	'seat_type',
     	'row',
-    	'seatLetter',
+    	'seat_letter',
     	'available',
     ];
 

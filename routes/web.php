@@ -29,6 +29,8 @@ Route::resource('purchase', 'PurchaseController');
 
 Route::get("test", "HotelController@showCities");
 
+Route::resource('city', 'CityController');
+
 Route::get('/example', function () {
     return view('purchase.create');
 });

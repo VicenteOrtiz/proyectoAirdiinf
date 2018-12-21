@@ -21,14 +21,14 @@ class CreateSeatsTriggerTable extends Migration
                 DECLARE
                 i INTEGER := 25;
                 j INTEGER := 0;
+                letter CHAR:= \'a\';
                 valor INTEGER := NEW.id;
-               
                 BEGIN           
                 LOOP 
                     EXIT WHEN j = i;
                     j := j + 1;
-                    INSERT INTO airplaneseats( flight_id,seatType, row,available,updated_at) VALUES 
-                    (valor,1,j,true, null );
+                    INSERT INTO airplaneseats( flight_id,seat_type,row,seat_letter,available,updated_at) VALUES 
+                    (valor,1,j,letter,true, NEW.created_at);
                 END LOOP ;
                 RETURN NEW;
             END
