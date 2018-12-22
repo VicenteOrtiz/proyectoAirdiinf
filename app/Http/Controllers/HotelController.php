@@ -16,6 +16,7 @@ class HotelController extends Controller
     public function index()
     {
         $countries = Country::All();
+        return Hotel::all();
 
         return view('hotels.index', compact('countries'));
     }
@@ -25,9 +26,12 @@ class HotelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request) //Esto despues va en Store, pero se pone aca solo para efectos del crud
     {
         //
+        
+
+
     }
 
     /**
@@ -36,9 +40,19 @@ class HotelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //Todo lo que está acá, debe ir en create para efectos CRUD
     {
-        //
+        $hotel = new Hotel();
+
+        $hotel->hotelName = $request -> hotelName;
+        $hotel->stars = $request -> stars;
+        $hotel->hotelCapacity = $request -> hotelCapacity;
+        $hotel->phoneNumber = $request -> phoneNumber;
+        $hotel->address = $request -> address;
+
+        $hotel->save();
+
+        return "se ha creado correctamente";
     }
 
     /**
@@ -86,9 +100,20 @@ class HotelController extends Controller
      * @param  \App\Hotel  $hotel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hotel $hotel)
+    public function update(Request $request, $id) //original en vez de id, es "Hotel $hotel"
     {
-        //
+        $hotel = Hotel::findOrFail($id);
+
+        $hotel->hotelName = $request -> hotelName;
+        $hotel->stars = $request -> stars;
+        $hotel->hotelCapacity = $request -> hotelCapacity;
+        $hotel->phoneNumber = $request -> phoneNumber;
+        $hotel->address = $request -> address;
+
+        $hotel->save();
+
+        return "se ha editado correctamente";
+
     }
 
     /**
@@ -97,8 +122,11 @@ class HotelController extends Controller
      * @param  \App\Hotel  $hotel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hotel $hotel)
+    public function destroy($id) //este es el delete, $id -> "Hotel $hotel"
     {
-        //
+        $hotel = Hotel::findOrFail($id);
+        $hotel->delete();
+
+        return "eliminacion exitosa";
     }
 }

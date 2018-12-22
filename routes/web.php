@@ -33,3 +33,10 @@ Route::get('/example', function () {
     return view('purchase.create');
 });
 
+Route::resource('hotelroom', 'HotelroomController');
+
+Route::resource('airport', 'AirportController');
+
+//los links de abajo, se harán solo con fines del CRUD
+
+// Route::post('/hotels/create', 'HotelController@create');
