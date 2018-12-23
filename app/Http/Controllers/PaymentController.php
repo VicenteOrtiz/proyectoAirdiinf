@@ -14,7 +14,9 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        $payments = Payment::All();
+
+        return $payments;
     }
 
     /**
@@ -35,7 +37,14 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $payment = new Payment();
+
+        $payment->paymentMethod = $request->paymentMethod;
+        $payment->bankName = $request->bankName;
+
+        $payment->save();
+
+        return "Se ha creado satisfactoriamente el método de pago";
     }
 
     /**
@@ -44,9 +53,11 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function show(Payment $payment)
+    public function show($id)
     {
-        //
+        $payment = Payment::findOrFail($id);
+
+        return $payment;
     }
 
     /**
@@ -67,9 +78,17 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request, $id)
     {
-        //
+        $payment = Payment::findOrFail($id);
+
+        $payment->paymentMethod = $request->paymentMethod;
+        $payment->bankName = $request->bankName;
+
+        $payment->save();
+
+        return "Se ha actualizado satisfactoriamente el método de pago";
+
     }
 
     /**
@@ -78,8 +97,12 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Payment $payment)
+    public function destroy($id)
     {
-        //
+        $payment = Payment::findOrFail($id);
+
+        $payment->delete();
+
+        return "Se ha eliminado satisfactoriamente el método de pago";
     }
 }

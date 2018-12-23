@@ -14,7 +14,9 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        //
+        $purchases = Purchase::All();
+
+        return $purchases;
     }
 
     /**
@@ -25,7 +27,7 @@ class PurchaseController extends Controller
     public function create()
     {
         //
-        return view('purchase.create');
+
     }
 
     /**
@@ -36,7 +38,16 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $purchase = new Purchase();
+
+        $purchase->totalPrice = $request->totalPrice;
+        $purchase->date = $request->date;
+        $purchase->payment_id = $request->payment_id;
+        $purchase->reserve_id = $request->reserve_id;
+
+        $purchase->save();
+
+        return "Se ha creado satisfactoriamente una compra";
     }
 
     /**
@@ -45,9 +56,11 @@ class PurchaseController extends Controller
      * @param  \App\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function show(Purchase $purchase)
+    public function show($id)
     {
-        //
+        $purchase = Purchase::findOrFail($id);
+
+        return $purchase;
     }
 
     /**
@@ -68,9 +81,20 @@ class PurchaseController extends Controller
      * @param  \App\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Purchase $purchase)
+    public function update(Request $request, $id)
     {
-        //
+        $purchase = Purchase::findOrFail($id);
+
+        $purchase->totalPrice = $request->totalPrice;
+        $purchase->date = $request->date;
+        $purchase->payment_id = $request->payment_id;
+        $purchase->reserve_id = $request->reserve_id;
+
+        $purchase->save();
+
+        return "Se ha actualizado satisfactoriamente una compra";
+
+
     }
 
     /**
@@ -79,8 +103,12 @@ class PurchaseController extends Controller
      * @param  \App\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Purchase $purchase)
+    public function destroy($id)
     {
-        //
+        $purchase = Purchase::findOrFail($id);
+
+        $purchase->delete();
+
+        return "Se ha eliminado satisfactoriamente una compra";
     }
 }
