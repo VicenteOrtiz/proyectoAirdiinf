@@ -16,7 +16,7 @@ class CarController extends Controller
     {
         $cars = Car::All();
 
-        return view('cars.index', compact('cars'));
+        return view('cars.index', compact('cars')); 
     }
 
     /**
@@ -37,7 +37,18 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $car = new Car();
+
+        $car->carModel = $request->carModel;
+        $car->vehicleRegistration = $request->vehicleRegistration;
+        $car->available = $request->available;
+        $car->passengerCapacity = $request->passengerCapacity;
+        $car->pricePerHour = $request->pricePerHour;
+
+        $car->save();
+
+        return "Se ha añadido satisfactoriamente el auto";
+
     }
 
     /**
@@ -46,9 +57,11 @@ class CarController extends Controller
      * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function show(Car $car)
+    public function show($id)
     {
-        //
+        $car = Car::findOrFail($id);
+
+        return $car;
     }
 
     /**
@@ -69,9 +82,19 @@ class CarController extends Controller
      * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Car $car)
+    public function update(Request $request, $id)
     {
-        //
+        $car = Car::findOrFail($id);
+
+        $car->carModel = $request->carModel;
+        $car->vehicleRegistration = $request->vehicleRegistration;
+        $car->available = $request->available;
+        $car->passengerCapacity = $request->passengerCapacity;
+        $car->pricePerHour = $request->pricePerHour;
+
+        $car->save();
+
+        return "Se ha actualizado satisfactoriamente el auto";
     }
 
     /**
@@ -80,8 +103,12 @@ class CarController extends Controller
      * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Car $car)
+    public function destroy($id)
     {
-        //
+        $car = Car::findOrFail($id);
+
+        $car->delete();
+
+        return "Se ha eliminado satisfactoriamente el auto";
     }
 }

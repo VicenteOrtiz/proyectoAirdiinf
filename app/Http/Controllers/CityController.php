@@ -14,7 +14,9 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+        $cities = City::All();
+
+        return $cities;
     }
 
     /**
@@ -35,7 +37,14 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $city = new City();
+
+        $city->cityName = $request->cityName;
+        $city->country_id = $request->country_id;
+
+        $city->save();
+
+        return "Se ha creado una ciudad satisfactoriamente";
     }
 
     /**
@@ -44,9 +53,11 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function show(City $city)
+    public function show($id)
     {
-        //
+        $city = City::findOrFail($id);
+
+        return $city;
     }
 
     /**
@@ -67,9 +78,16 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, City $city)
+    public function update(Request $request, $id)
     {
-        //
+        $city = City::findOrFail($id);
+
+        $city->cityName = $request->cityName;
+        $city->country_id = $request->country_id;
+
+        $city->save();
+
+        return "Se ha actualizado satisfactoriamente la ciudad";
     }
 
     /**
@@ -78,8 +96,12 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function destroy(City $city)
+    public function destroy($id)
     {
-        //
+        $city = City::findOrFail($id);
+
+        $city->delete();
+
+        return "Se ha eliminado satisfactoriamente la ciudad";
     }
 }

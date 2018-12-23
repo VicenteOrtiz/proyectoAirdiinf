@@ -37,6 +37,10 @@ Route::resource('hotelroom', 'HotelroomController');
 
 Route::resource('airport', 'AirportController');
 
+Route::resource('city', 'CityController');
+
+Route::resource('country', 'CountryController');
+
 //los links de abajo, se harán solo con fines del CRUD
 
 // Route::post('/hotels/create', 'HotelController@create');
