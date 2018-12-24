@@ -12,7 +12,9 @@ class Package extends Model
     	'precioPaquete',
     	'fechaInicio',
     	'fechaTermino',
-
+        'hotel_id',
+        'car_id',
+        'flight_id',
     ]; 
 
     public function insurence(){

@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Country;
 use Illuminate\Http\Request;
 
 class CountryController extends Controller
 {
+    public function rules(){
+        'countryName'=>'required|string',
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,6 +40,10 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $country = new Country();
 
         $country->countryName = $request->countryName;
@@ -78,6 +86,10 @@ class CountryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $country = Country::findOrFail($id);
 
         $country->countryName = $request->countryName;
