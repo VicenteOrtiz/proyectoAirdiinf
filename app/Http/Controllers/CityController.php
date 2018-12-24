@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\City;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
+    public function rules(){
+        return
+        [ 
+            'cityName' => 'required|string',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +42,14 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $city = new \App\City;
+        $city->cityName = $request->get('cityName');
+        $city->save();
+        return $city;
     }
 
     /**
@@ -46,7 +60,7 @@ class CityController extends Controller
      */
     public function show(City $city)
     {
-        //
+        return $city;
     }
 
     /**
@@ -69,7 +83,13 @@ class CityController extends Controller
      */
     public function update(Request $request, City $city)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $city->cityName = $request->get('cityName');
+        $city->save();
+        return $city;
     }
 
     /**
@@ -80,6 +100,9 @@ class CityController extends Controller
      */
     public function destroy(City $city)
     {
-        //
+        $city->delete();
+        return response()->json([
+                'success'
+        ]);
     }
 }
