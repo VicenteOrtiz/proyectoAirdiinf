@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Reserve;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,6 @@ class ReserveController extends Controller
      */
     public function index()
     {
-        // 
     }
 
     /**
@@ -46,7 +46,6 @@ class ReserveController extends Controller
      */
     public function show(Reserve $reserve)
     {
-        //
     }
 
     /**

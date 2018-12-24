@@ -53,6 +53,8 @@ Route::resource('record', 'RecordController');
 
 Route::resource('airplaneseat','AirplaneseatController');
 
+Route::resource('role','RoleController');
+
 //los links de abajo, se harán solo con fines del CRUD
 
 // Route::post('/hotels/create', 'HotelController@create');
