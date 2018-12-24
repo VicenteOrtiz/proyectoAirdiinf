@@ -14,6 +14,7 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\User::class, function (Faker $faker) {
+    $record_id = DB::table('records')->select('id')->get();
     return [
         'name'=>$faker->name, 
         'email'=>$faker->safeEmail, 
