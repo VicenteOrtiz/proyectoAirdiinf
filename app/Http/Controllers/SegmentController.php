@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class SegmentController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'destinyCity' => 'required|string',
+            'waitingTime' => 'required|string',
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      *

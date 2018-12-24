@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class ReserveController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'reserveDate' => 'required|string',
+            'reserveBalance' => 'required|numeric',
+            'insurance' => 'required|numeric',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
