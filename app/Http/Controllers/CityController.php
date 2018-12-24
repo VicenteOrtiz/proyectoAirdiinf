@@ -21,13 +21,10 @@ class CityController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         return City::all();
-=======
         $cities = City::All();
 
         return $cities;
->>>>>>> 8a82be147eeebc1b99e354a54d4df96e4b34fa43
     }
 
     /**
@@ -48,16 +45,14 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        $validator = Validator::make($request->all(),$this->rules());
+        /*$validator = Validator::make($request->all(),$this->rules());
         if($validator->fails()){
             return $validator->messages();
         }
         $city = new \App\City;
         $city->cityName = $request->get('cityName');
         $city->save();
-        return $city;
-=======
+        return $city;*/
         $city = new City();
 
         $city->cityName = $request->cityName;
@@ -66,7 +61,6 @@ class CityController extends Controller
         $city->save();
 
         return "Se ha creado una ciudad satisfactoriamente";
->>>>>>> 8a82be147eeebc1b99e354a54d4df96e4b34fa43
     }
 
     /**
@@ -77,11 +71,7 @@ class CityController extends Controller
      */
     public function show($id)
     {
-<<<<<<< HEAD
-=======
         $city = City::findOrFail($id);
-
->>>>>>> 8a82be147eeebc1b99e354a54d4df96e4b34fa43
         return $city;
     }
 
@@ -105,15 +95,13 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-<<<<<<< HEAD
-        $validator = Validator::make($request->all(),$this->rules());
+        /*$validator = Validator::make($request->all(),$this->rules());
         if($validator->fails()){
             return $validator->messages();
         }
         $city->cityName = $request->get('cityName');
         $city->save();
-        return $city;
-=======
+        return $city;*/
         $city = City::findOrFail($id);
 
         $city->cityName = $request->cityName;
@@ -122,7 +110,6 @@ class CityController extends Controller
         $city->save();
 
         return "Se ha actualizado satisfactoriamente la ciudad";
->>>>>>> 8a82be147eeebc1b99e354a54d4df96e4b34fa43
     }
 
     /**
@@ -133,17 +120,14 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-<<<<<<< HEAD
-        $city->delete();
+       /* $city->delete();
         return response()->json([
                 'success'
-        ]);
-=======
+        ]);*/
         $city = City::findOrFail($id);
 
         $city->delete();
 
         return "Se ha eliminado satisfactoriamente la ciudad";
->>>>>>> 8a82be147eeebc1b99e354a54d4df96e4b34fa43
     }
 }
