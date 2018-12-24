@@ -14,7 +14,8 @@ class PassengerController extends Controller
      */
     public function index()
     {
-        //
+        $passengers = Passenger::All();
+        return $passengers;
     }
 
     /**
@@ -24,7 +25,9 @@ class PassengerController extends Controller
      */
     public function create()
     {
-        //
+        $passenger = new Passenger();
+
+        
     }
 
     /**

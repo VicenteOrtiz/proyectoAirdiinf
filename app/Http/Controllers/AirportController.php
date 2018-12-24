@@ -14,7 +14,9 @@ class AirportController extends Controller
      */
     public function index()
     {
-        //
+        $airports = Airport::All();
+
+        return $airports;
     }
 
     /**
@@ -35,7 +37,17 @@ class AirportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $airport = new Airport();
+
+        $airport->name = $request->name;
+        $airport->address = $request->address;
+        $airport->city = $request->city;
+        $airport->phoneNumber = $request->phoneNumber;
+
+        $airport->save();
+
+        return "Se ha creado satisfactoriamente un aeropuerto";
+
     }
 
     /**
@@ -67,9 +79,18 @@ class AirportController extends Controller
      * @param  \App\Airport  $airport
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Airport $airport)
+    public function update(Request $request, $id)
     {
-        //
+        $airport = Airport::findOrFail($id);
+
+        $airport->name = $request->name;
+        $airport->address = $request->address;
+        $airport->city = $request->city;
+        $airport->phoneNumber = $request->phoneNumber;
+
+        $airport->save();
+
+        return "Se ha modificado satisfactoriamente el aeropuerto";
     }
 
     /**
@@ -78,8 +99,12 @@ class AirportController extends Controller
      * @param  \App\Airport  $airport
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Airport $airport)
+    public function destroy($id)
     {
-        //
+        $airport = Airport::findOrFail($id);
+
+        $airport->delete();
+
+        return "Se ha eliminado satisfactoriamente el aeropuerto";
     }
 }

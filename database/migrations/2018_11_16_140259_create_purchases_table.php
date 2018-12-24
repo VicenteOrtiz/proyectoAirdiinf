@@ -18,10 +18,10 @@ class CreatePurchasesTable extends Migration
             $table->integer('totalPrice');
             $table->date('date');
             $table->timestamps();
-            $table->integer('payments_id');
-            $table->foreign('payments_id')->references('id')->on('payments');
-            $table->integer('reserves_id');
-            $table->foreign('reserves_id')->references('id')->on('reserves');
+            $table->integer('payment_id');
+            $table->foreign('payment_id')->references('id')->on('payments');
+            $table->integer('reserve_id');
+            $table->foreign('reserve_id')->references('id')->on('reserves');
 
         });
     }

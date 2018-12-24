@@ -14,7 +14,9 @@ class HotelroomController extends Controller
      */
     public function index()
     {
-        //
+        $hotels = Country::All();
+        return hotels;
+
     }
 
     /**
@@ -35,7 +37,21 @@ class HotelroomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $hotelroom = new Hotelroom();
+
+        $hotelroom->numberOfBeds = $request->numberOfBeds;
+        $hotelroom->roomType = $request->roomType;
+        $hotelroom->roomNumber = $request->roomNumber;
+        $hotelroom->roomPricePerDay = $request->roomPricePerDay;
+        $hotelroom->floorNumber = $request->floorNumber;
+        $hotelroom->available = $request->available;
+        $hotelroom->hotel_id = $request->hotel_id;
+
+        $hotelroom->save();
+
+        return "habitacion añadida correctamente";
+
+
     }
 
     /**
@@ -67,9 +83,21 @@ class HotelroomController extends Controller
      * @param  \App\Hotelroom  $hotelroom
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hotelroom $hotelroom)
+    public function update(Request $request, $id) //-> Hotelroom $hotelroom
     {
-        //
+        $hotelroom = Hotelroom::findOrFail($id);
+
+        $hotelroom->numberOfBeds = $request->numberOfBeds;
+        $hotelroom->roomType = $request->roomType;
+        $hotelroom->roomNumber = $request->roomNumber;
+        $hotelroom->roomPricePerDay = $request->roomPricePerDay;
+        $hotelroom->floorNumber = $request->floorNumber;
+        $hotelroom->available = $request->available;
+        $hotelroom->hotel_id = $request->hotel_id;
+
+        $hotelroom->save();
+
+        return "la habitacion se ha actualizado correctamente";
     }
 
     /**
@@ -78,8 +106,12 @@ class HotelroomController extends Controller
      * @param  \App\Hotelroom  $hotelroom
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hotelroom $hotelroom)
+    public function destroy($id) //Hotelroom $hotelroom
     {
-        //
+        $hotelroom = Hotelroom::findOrFail($id);
+
+        $hotelroom->delete();
+
+        return "se ha eliminado la habitacion satisfactoriamente";
     }
 }

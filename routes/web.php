@@ -35,3 +35,22 @@ Route::get('/example', function () {
     return view('purchase.create');
 });
 
+Route::resource('hotelroom', 'HotelroomController');
+
+Route::resource('airport', 'AirportController');
+
+Route::resource('city', 'CityController');
+
+Route::resource('country', 'CountryController');
+
+Route::resource('package', 'PackageController');
+
+Route::resource('payment', 'PaymentController');
+
+Route::resource('purchase', 'PurchaseController');
+
+Route::resource('record', 'RecordController');
+
+//los links de abajo, se harán solo con fines del CRUD
+
+// Route::post('/hotels/create', 'HotelController@create');

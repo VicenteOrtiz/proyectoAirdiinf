@@ -15,8 +15,8 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('purchaseDate');
-            $table->string('purchaseDescription');
+            $table->date('logDate');
+            $table->string('logDescription');
             $table->timestamps(); 
         });
     }
