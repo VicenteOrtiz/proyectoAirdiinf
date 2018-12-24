@@ -15,7 +15,7 @@ class HotelroomController extends Controller
     public function index()
     {
         $hotels = Country::All();
-        return hotels;
+        return $hotels;
 
     }
 
@@ -63,6 +63,7 @@ class HotelroomController extends Controller
     public function show(Hotelroom $hotelroom)
     {
         //
+        return $hotelroom;
     }
 
     /**
