@@ -17,14 +17,14 @@ class CreatePackagesTable extends Migration
             $table->increments('id');
 
 
-            $table->integer('insurence_id');
-            $table->foreign('insurence_id')->references('id')->on('insurences');
-            $table->integer('hotel_id');
+           // $table->integer('insurence_id');
+            //$table->foreign('insurence_id')->references('id')->on('insurences');
+           /* $table->integer('hotel_id');
             $table->foreign('hotel_id')->references('id')->on('hotels');
             $table->integer('car_id');
             $table->foreign('car_id')->references('id')->on('cars');
             $table->integer('flight_id');
-            $table->foreign('flight_id')->references('id')->on('flights');
+            $table->foreign('flight_id')->references('id')->on('flights');*/
 
 
             $table->integer('precioPaquete');

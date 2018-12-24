@@ -38,17 +38,13 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $car = new Car();
-
         $car->carModel = $request->carModel;
         $car->vehicleRegistration = $request->vehicleRegistration;
         $car->available = $request->available;
         $car->passengerCapacity = $request->passengerCapacity;
         $car->pricePerHour = $request->pricePerHour;
-
         $car->save();
-
         return "Se ha añadido satisfactoriamente el auto";
-
     }
 
     /**

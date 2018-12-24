@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Airport;
 use Illuminate\Http\Request;
 
 class AirportController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'name'=> 'required|string',
+            'address'=> 'required|string',
+            'city'=> 'required|string',
+            'phoneNumber'=> 'required|numeric',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,16 +46,17 @@ class AirportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $airport = new Airport();
-
         $airport->name = $request->name;
         $airport->address = $request->address;
         $airport->city = $request->city;
         $airport->phoneNumber = $request->phoneNumber;
-
         $airport->save();
-
         return "Se ha creado satisfactoriamente un aeropuerto";
 
     }
@@ -81,8 +92,11 @@ class AirportController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $airport = Airport::findOrFail($id);
-
         $airport->name = $request->name;
         $airport->address = $request->address;
         $airport->city = $request->city;

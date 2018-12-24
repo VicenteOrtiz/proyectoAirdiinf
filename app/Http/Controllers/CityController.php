@@ -12,6 +12,7 @@ class CityController extends Controller
         return
         [ 
             'cityName' => 'required|string',
+            'country_id' => 'exists:countries,id',
         ];
     }
     /**
@@ -23,7 +24,6 @@ class CityController extends Controller
     {
         return City::all();
         $cities = City::All();
-
         return $cities;
     }
 
@@ -45,21 +45,14 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        /*$validator = Validator::make($request->all(),$this->rules());
+        $validator = Validator::make($request->all(),$this->rules());
         if($validator->fails()){
             return $validator->messages();
         }
-        $city = new \App\City;
-        $city->cityName = $request->get('cityName');
-        $city->save();
-        return $city;*/
         $city = new City();
-
         $city->cityName = $request->cityName;
         $city->country_id = $request->country_id;
-
         $city->save();
-
         return "Se ha creado una ciudad satisfactoriamente";
     }
 
@@ -95,20 +88,14 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /*$validator = Validator::make($request->all(),$this->rules());
+        $validator = Validator::make($request->all(),$this->rules());
         if($validator->fails()){
             return $validator->messages();
         }
-        $city->cityName = $request->get('cityName');
-        $city->save();
-        return $city;*/
         $city = City::findOrFail($id);
-
         $city->cityName = $request->cityName;
         $city->country_id = $request->country_id;
-
         $city->save();
-
         return "Se ha actualizado satisfactoriamente la ciudad";
     }
 
@@ -120,14 +107,8 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-       /* $city->delete();
-        return response()->json([
-                'success'
-        ]);*/
         $city = City::findOrFail($id);
-
         $city->delete();
-
         return "Se ha eliminado satisfactoriamente la ciudad";
     }
 }
