@@ -28,5 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(InsurencesTableSeeder::class);
         $this->call(ReservesTableSeeder::class);
         $this->call(PurchasesTableSeeder::class);
+        $this->call(SegmentsTableSeeder::class);
+
     }
 }
