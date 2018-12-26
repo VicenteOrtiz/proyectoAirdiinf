@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'precioPaquete'=>'required|numeric',
+            'fechaInicio' => 'required|string',
+            'fechaTermino' => 'required|string',
+            'hotel_id' => 'exists:hotels,id',
+            'car_id' => 'exists:cars,id',
+            'flight_id' => 'exists:flights,id',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,6 +48,10 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $package = new Package();
 
         $package->insurence_id = $request->insurence_id;
@@ -86,6 +101,10 @@ class PackageController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $package = Package::findOrFail($id);
 
         $package->insurence_id = $request->insurence_id;
