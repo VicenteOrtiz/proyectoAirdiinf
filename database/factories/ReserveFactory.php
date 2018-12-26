@@ -9,5 +9,7 @@ $factory->define(App\Reserve::class, function (Faker $faker) {
         'reserveDate'=> $faker->dateTime('now',null),
     	'reserveBalance' => $faker->numberBetween(0,20000),
     	'insurance' => $faker->numberBetween(0,1),
+    	'insurence_id'=>$insurence_id->random()->id,
+    	'car_id'=>$car_id->random()->id,
     ];
 });

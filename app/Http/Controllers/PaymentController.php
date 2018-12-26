@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Payment;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'paymentMethod'=>'required|string',
+            'bankName' => 'required|string',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,6 +45,10 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $payment = new Payment();
 
         $payment->paymentMethod = $request->paymentMethod;
@@ -80,6 +92,10 @@ class PaymentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $payment = Payment::findOrFail($id);
 
         $payment->paymentMethod = $request->paymentMethod;
