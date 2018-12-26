@@ -69,7 +69,7 @@ class AirportController extends Controller
      */
     public function show(Airport $airport)
     {
-        //
+        return $airport;
     }
 
     /**
