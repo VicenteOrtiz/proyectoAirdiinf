@@ -2,11 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Hotelroom;
 use Illuminate\Http\Request;
 
 class HotelroomController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'numberOfBeds'=>'required|numeric',
+            'roomType'=>'required|numeric',
+            'roomNumber'=>'required|numeric',
+            'roomPricePerDay'=>'required|numeric',
+            'floorNumber'=>'required|numeric',
+            'available'=>'required|numeric',
+            'hotel_id'=>'exists:hotels,id',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +29,6 @@ class HotelroomController extends Controller
     {
         $hotels = Country::All();
         return $hotels;
-
     }
 
     /**
@@ -37,8 +49,11 @@ class HotelroomController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $hotelroom = new Hotelroom();
-
         $hotelroom->numberOfBeds = $request->numberOfBeds;
         $hotelroom->roomType = $request->roomType;
         $hotelroom->roomNumber = $request->roomNumber;
@@ -46,12 +61,8 @@ class HotelroomController extends Controller
         $hotelroom->floorNumber = $request->floorNumber;
         $hotelroom->available = $request->available;
         $hotelroom->hotel_id = $request->hotel_id;
-
         $hotelroom->save();
-
         return "habitacion añadida correctamente";
-
-
     }
 
     /**
@@ -86,8 +97,11 @@ class HotelroomController extends Controller
      */
     public function update(Request $request, $id) //-> Hotelroom $hotelroom
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $hotelroom = Hotelroom::findOrFail($id);
-
         $hotelroom->numberOfBeds = $request->numberOfBeds;
         $hotelroom->roomType = $request->roomType;
         $hotelroom->roomNumber = $request->roomNumber;

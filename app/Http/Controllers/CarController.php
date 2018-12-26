@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers; 
 
+use Validator;
 use App\Car;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'carModel'=>'required|string',
+            'vehicleRegistration'=>'required|string',
+            'available'=> 'required|numeric',
+            'passengerCapacity'=> 'required|numeric',
+            'pricePerHour'=>'required|numeric',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,10 +48,14 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $car = new Car();
         $car->carModel = $request->carModel;
         $car->vehicleRegistration = $request->vehicleRegistration;
-        $car->available = $request->available;
+        $car->available = $request->available==1;
         $car->passengerCapacity = $request->passengerCapacity;
         $car->pricePerHour = $request->pricePerHour;
         $car->save();
@@ -80,11 +95,15 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $car = Car::findOrFail($id);
 
         $car->carModel = $request->carModel;
         $car->vehicleRegistration = $request->vehicleRegistration;
-        $car->available = $request->available;
+        $car->available = $request->available==1;
         $car->passengerCapacity = $request->passengerCapacity;
         $car->pricePerHour = $request->pricePerHour;
 
