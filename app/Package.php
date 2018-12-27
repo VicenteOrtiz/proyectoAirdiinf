@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model
 {
-    //d
-
     protected $fillable = [
     	'precioPaquete',
     	'fechaInicio',

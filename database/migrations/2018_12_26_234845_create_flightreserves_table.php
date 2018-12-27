@@ -14,6 +14,9 @@ class CreateFlightreservesTable extends Migration
     public function up()
     {
         Schema::create('flightreserves', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+
             $table->integer('flight_id');
             $table->integer('reserve_id');
 

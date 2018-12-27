@@ -29,4 +29,7 @@ class Flight extends Model
         return $this->hasMany('App\Flightsegments');
     }
 
+    public function flightreserve(){
+        return $this->hasMany('App\Flightreserve');
+    }
 }
