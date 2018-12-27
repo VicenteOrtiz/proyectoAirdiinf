@@ -12,7 +12,9 @@ class Package extends Model
     	'precioPaquete',
     	'fechaInicio',
     	'fechaTermino',
-
+        'hotel_id',
+        'car_id',
+        'flight_id',
     ]; 
 
     public function insurence(){
@@ -29,5 +31,9 @@ class Package extends Model
     
     public function flight(){
     	return $this->hasMany('App\Flight');
+    }
+
+    public function packagereserve(){
+        return $this->hasMany('App\Packagereserve');
     }
 }

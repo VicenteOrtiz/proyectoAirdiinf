@@ -17,8 +17,8 @@ class CreatePackagesTable extends Migration
             $table->increments('id');
 
 
-            $table->integer('insurence_id');
-            $table->foreign('insurence_id')->references('id')->on('insurences');
+           // $table->integer('insurence_id');
+            //$table->foreign('insurence_id')->references('id')->on('insurences');
             $table->integer('hotel_id');
             $table->foreign('hotel_id')->references('id')->on('hotels');
             $table->integer('car_id');

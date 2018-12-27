@@ -14,6 +14,7 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\User::class, function (Faker $faker) {
+    $record_id = DB::table('records')->select('id')->get();
     return [
         'name'=>$faker->name, 
         'email'=>$faker->safeEmail, 
@@ -23,5 +24,6 @@ $factory->define(App\User::class, function (Faker $faker) {
         'passportNumber'=>$faker->numberBetween(1,100),
         'phoneNumber'=>$faker->numberBetween(1,100),
         'disability'=>$faker->numberBetween(0,1), 
+        'record_id'=>$record_id->random()->id,
     ];
 });

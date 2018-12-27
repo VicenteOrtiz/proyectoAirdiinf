@@ -20,4 +20,15 @@ class Reserve extends Model
        public function car(){
         return $this->hasMany('App\Car');
     }
+    public function flights(){
+        return $this->hasOne('App\Flight');
+    }
+
+    public function hotelreserve(){
+        return $this->hasMany('App\Hotelreserve');
+    }
+
+    public function packagereserve(){
+        return $this->hasMany('App\Packagereserve');
+    }
 }

@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
+    public function rules(){
+        return 
+        [
+            'type' => 'required|numeric',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        return Role::all();
     }
 
     /**
@@ -35,7 +42,14 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $role = new \App\Role;
+        $role->type = $request->type;
+        $role->save();
+        return $role;
     }
 
     /**
@@ -46,7 +60,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return $role;
     }
 
     /**
@@ -69,7 +83,13 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $role->type = $request->type;
+        $role->save();
+        return $role;
     }
 
     /**
@@ -80,6 +100,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        return "Se ha eliminado correctamente";
     }
 }

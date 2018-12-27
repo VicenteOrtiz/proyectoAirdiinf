@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Segment;
 use Illuminate\Http\Request;
 
 class SegmentController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'destinyCity' => 'required|string',
+            'waitingTime' => 'required|string',
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +24,8 @@ class SegmentController extends Controller
     public function index()
     {
         //
+        $segment = Segment::All();
+        return $segment;
     }
 
     /**
@@ -36,6 +47,15 @@ class SegmentController extends Controller
     public function store(Request $request)
     {
         //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $segment = new \App\Segment;
+        $segment->destinyCity = $request->get('destinyCity');
+        $segment->waitingTime = $request->get('waitingTime');
+        $segment->save();
+        return $segment;
     }
 
     /**
@@ -46,7 +66,7 @@ class SegmentController extends Controller
      */
     public function show(Segment $segment)
     {
-        //
+        return $segment;
     }
 
     /**
@@ -69,7 +89,14 @@ class SegmentController extends Controller
      */
     public function update(Request $request, Segment $segment)
     {
-        //
+        $validator = validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $segment->destinyCity = $request->get('destinyCity');
+        $segment->waitingTime = $request->get('waitingTime');
+        $segment->save();
+        return $segment;
     }
 
     /**
@@ -80,6 +107,7 @@ class SegmentController extends Controller
      */
     public function destroy(Segment $segment)
     {
-        //
+        $segment->delete();
+        return response()->json(['success']);
     }
 }

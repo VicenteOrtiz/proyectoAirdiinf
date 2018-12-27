@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Hotel;
 use App\Country;
 use Illuminate\Http\Request;  
 
 class HotelController extends Controller
 {
+    public function rules(){
+        return
+        [
+        'hotelName'=> 'required|string',
+        'hotelCapacity'=> 'required|numeric',
+        'stars'=> 'required|numeric|max: 5',
+        'phoneNumber'=> 'required|string',
+        'address'=> 'address|string',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,13 +53,17 @@ class HotelController extends Controller
      */
     public function store(Request $request) //Todo lo que está acá, debe ir en create para efectos CRUD
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $hotel = new Hotel();
 
-        $hotel->hotelName = $request -> hotelName;
-        $hotel->stars = $request -> stars;
-        $hotel->hotelCapacity = $request -> hotelCapacity;
-        $hotel->phoneNumber = $request -> phoneNumber;
-        $hotel->address = $request -> address;
+        $hotel->hotelName = $request ->hotelName;
+        $hotel->stars = $request ->stars;
+        $hotel->hotelCapacity = $request ->hotelCapacity;
+        $hotel->phoneNumber = $request->phoneNumber;
+        $hotel->address = $request ->address;
 
         $hotel->save();
 
@@ -101,14 +116,18 @@ class HotelController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) //original en vez de id, es "Hotel $hotel"
-    {
+    { 
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $hotel = Hotel::findOrFail($id);
 
-        $hotel->hotelName = $request -> hotelName;
-        $hotel->stars = $request -> stars;
-        $hotel->hotelCapacity = $request -> hotelCapacity;
-        $hotel->phoneNumber = $request -> phoneNumber;
-        $hotel->address = $request -> address;
+        $hotel->hotelName = $request ->hotelName;
+        $hotel->stars = $request ->stars;
+        $hotel->hotelCapacity = $request ->hotelCapacity;
+        $hotel->phoneNumber = $request ->phoneNumber;
+        $hotel->address = $request ->address;
 
         $hotel->save();
 

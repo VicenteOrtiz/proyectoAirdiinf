@@ -1,18 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
 use Validator;
-use App\Payment;
+use App\Car;
 use Illuminate\Http\Request;
 
-class PaymentController extends Controller
+class CarController extends Controller
 {
     public function rules(){
         return
         [
-            'paymentMethod'=>'required|string',
-            'bankName' => 'required|string',
+            'carModel'=>'required|string',
+            'vehicleRegistration'=>'required|string',
+            'available'=> 'required|numeric',
+            'passengerCapacity'=> 'required|numeric',
+            'pricePerHour'=>'required|numeric',
         ];
     }
     /**
@@ -22,9 +25,9 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        $payments = Payment::All();
+        $cars = Car::All();
 
-        return $payments;
+        return view('cars.index', compact('cars')); 
     }
 
     /**
@@ -49,36 +52,36 @@ class PaymentController extends Controller
         if($validator->fails()){
             return $validator->messages();
         }
-        $payment = new Payment();
-
-        $payment->paymentMethod = $request->paymentMethod;
-        $payment->bankName = $request->bankName;
-
-        $payment->save();
-
-        return "Se ha creado satisfactoriamente el método de pago";
+        $car = new Car();
+        $car->carModel = $request->carModel;
+        $car->vehicleRegistration = $request->vehicleRegistration;
+        $car->available = $request->available==1;
+        $car->passengerCapacity = $request->passengerCapacity;
+        $car->pricePerHour = $request->pricePerHour;
+        $car->save();
+        return "Se ha añadido satisfactoriamente el auto";
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Payment  $payment
+     * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $payment = Payment::findOrFail($id);
+        $car = Car::findOrFail($id);
 
-        return $payment;
+        return $car;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Payment  $payment
+     * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payment $payment)
+    public function edit(Car $car)
     {
         //
     }
@@ -87,7 +90,7 @@ class PaymentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Payment  $payment
+     * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -96,29 +99,31 @@ class PaymentController extends Controller
         if($validator->fails()){
             return $validator->messages();
         }
-        $payment = Payment::findOrFail($id);
+        $car = Car::findOrFail($id);
 
-        $payment->paymentMethod = $request->paymentMethod;
-        $payment->bankName = $request->bankName;
+        $car->carModel = $request->carModel;
+        $car->vehicleRegistration = $request->vehicleRegistration;
+        $car->available = $request->available==1;
+        $car->passengerCapacity = $request->passengerCapacity;
+        $car->pricePerHour = $request->pricePerHour;
 
-        $payment->save();
+        $car->save();
 
-        return "Se ha actualizado satisfactoriamente el método de pago";
-
+        return "Se ha actualizado satisfactoriamente el auto";
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Payment  $payment
+     * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $payment = Payment::findOrFail($id);
+        $car = Car::findOrFail($id);
 
-        $payment->delete();
+        $car->delete();
 
-        return "Se ha eliminado satisfactoriamente el método de pago";
+        return "Se ha eliminado satisfactoriamente el auto";
     }
 }

@@ -4,10 +4,6 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Hotelroom::class, function (Faker $faker) {
 
-
-
-	// $hotels = Hotel::find(rand(0,9));
-
 	$hotels = DB::table('hotels')->select('id')->get();
 
     return [

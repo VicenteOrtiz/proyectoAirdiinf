@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Purchase;
 use Illuminate\Http\Request;
 
 class PurchaseController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'totalPrice' => 'required|numeric',
+            'date'=>'required|date',
+            'payment_id'=>'exists:payments,id',
+            'reserve_id'=>'exists:reserves,id',
+
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,6 +49,10 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $purchase = new Purchase();
 
         $purchase->totalPrice = $request->totalPrice;
@@ -83,6 +98,10 @@ class PurchaseController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
         $purchase = Purchase::findOrFail($id);
 
         $purchase->totalPrice = $request->totalPrice;

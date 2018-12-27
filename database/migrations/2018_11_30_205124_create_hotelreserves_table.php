@@ -20,6 +20,7 @@ class CreateHotelreservesTable extends Migration
 
             $table->foreign('reserve_id')->references('id')->on('reserves');
             $table->foreign('hotel_id')->references('id')->on('hotels');
+            $table->timestamps();
         });
     }
 
