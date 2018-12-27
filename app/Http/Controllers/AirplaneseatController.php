@@ -49,6 +49,9 @@ class AirplaneseatController extends Controller
             return $validator->messages();
         }
         $airplaneseat = new \App\Airplaneseat;
+
+        
+
         $airplaneseat->seat_type = $request->seat_type; 
         $airplaneseat->row = $request->row;
         $airplaneseat->seat_letter = $request->seat_letter;

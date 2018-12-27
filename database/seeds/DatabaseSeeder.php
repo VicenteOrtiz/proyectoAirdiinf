@@ -30,14 +30,11 @@ class DatabaseSeeder extends Seeder
         $this->call(ReservesTableSeeder::class);
         $this->call(PurchasesTableSeeder::class);
         $this->call(SegmentsTableSeeder::class);
-<<<<<<< HEAD
         $this->call(HotelreservesTableSeeder::class);
         $this->call(PackagereservesTableSeeder::class);
         $this->call(FlightsegmentsTableSeeder::class);
         $this->call(FlightreservesTableSeeder::class);
-=======
         //$this->call(HotelreservesTableSeeder::class);
         //hola
->>>>>>> 1a550567dc9fde7b66482e2fcc805150659dbafc
     }
 }
