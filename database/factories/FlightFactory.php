@@ -14,7 +14,8 @@ $factory->define(App\Flight::class, function (Faker $faker) {
 		'departureLocation' => $faker->country,
 		'arrivalLocation' => $faker->country,
 		'confirmed' => $faker->numberBetween(0,1),
-		'flightDate' => $faker->numberBetween(1,28).'/'.$faker->numberBetween(1,12).'/'.$faker->numberBetween(2018,2020),
+		//'flightDate' => $faker->numberBetween(1,28).'/'.$faker->numberBetween(1,12).'/'.$faker->numberBetween(2018,2020),
+		'flightDate' => $faker->dateTimeBetween($startDate = 'now',$endDate = '+1 years'),
 		'departureTime' => $faker->time($format = 'H:i'),
     ];
 });
