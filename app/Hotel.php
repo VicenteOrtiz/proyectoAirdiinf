@@ -27,4 +27,8 @@ class Hotel extends Model
         return $this->belongsTo('App\City');
     }
 
+    public function hotelreserve(){
+        return $this->hasOne('App\Hotelreserve');
+    }
+
 }
