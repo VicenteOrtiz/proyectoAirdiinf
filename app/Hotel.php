@@ -28,7 +28,7 @@ class Hotel extends Model
     }
 
     public function hotelreserve(){
-        return $this->hasOne('App\Hotelreserve');
+        return $this->hasMany('App\Hotelreserve');
     }
 
 }

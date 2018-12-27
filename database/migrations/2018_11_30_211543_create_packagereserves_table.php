@@ -14,8 +14,8 @@ class CreatePackagereservesTable extends Migration
     public function up()
     {
         Schema::create('packagereserves', function (Blueprint $table) {
-            // $table->increments('id');
-            // $table->timestamps();
+            $table->increments('id');
+            $table->timestamps();
 
             $table->integer('reserve_id');
             $table->integer('package_id');

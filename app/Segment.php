@@ -10,4 +10,8 @@ class Segment extends Model
     	'destinyCity',
     	'waitingTime',
     ];
+
+    public function flightsegments(){
+        return $this->hasMany('App\Flightsegments');
+    }
 }

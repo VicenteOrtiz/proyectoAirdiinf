@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model
 {
-    //d
-
     protected $fillable = [
     	'precioPaquete',
     	'fechaInicio',
@@ -31,5 +29,9 @@ class Package extends Model
     
     public function flight(){
     	return $this->hasMany('App\Flight');
+    }
+
+    public function packagereserve(){
+        return $this->hasMany('App\Packagereserve');
     }
 }
