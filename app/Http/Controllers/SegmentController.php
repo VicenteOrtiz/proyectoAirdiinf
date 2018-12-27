@@ -55,7 +55,7 @@ class SegmentController extends Controller
         $segment->destinyCity = $request->get('destinyCity');
         $segment->waitingTime = $request->get('waitingTime');
         $segment->save();
-        return $segment;
+        return "Se ha añadido satisfactoriamente el tramo";
     }
 
     /**
@@ -64,8 +64,9 @@ class SegmentController extends Controller
      * @param  \App\Segment  $segment
      * @return \Illuminate\Http\Response
      */
-    public function show(Segment $segment)
+    public function show($id)
     {
+        $segment = Segment::findOrFail($id);
         return $segment;
     }
 
@@ -96,7 +97,7 @@ class SegmentController extends Controller
         $segment->destinyCity = $request->get('destinyCity');
         $segment->waitingTime = $request->get('waitingTime');
         $segment->save();
-        return $segment;
+        return "Se ha acutalizado satisfactoriamente el tramo";
     }
 
     /**
@@ -108,6 +109,6 @@ class SegmentController extends Controller
     public function destroy(Segment $segment)
     {
         $segment->delete();
-        return response()->json(['success']);
+        return "Se ha eliminado satisfactoriamente el tramo";
     }
 }

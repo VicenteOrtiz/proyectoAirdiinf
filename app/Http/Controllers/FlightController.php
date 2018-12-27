@@ -27,10 +27,7 @@ class FlightController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-        //$flights = Flight::All();
-        //return view('flights.index', compact('flights'));
+    {        
         return Flight::all();
 
     }
@@ -68,7 +65,7 @@ class FlightController extends Controller
         $flight->flightDate=$request->get('flightDate');
         $flight->departureTime=$request->get('departureTime');
         $flight->save();
-        return $flight;
+        return "Se ha agregado correctamente";
     }
 
     /**
@@ -79,7 +76,6 @@ class FlightController extends Controller
      */
     public function show($id)
     {
-        //
         $flight = Flight::findOrFail($id);
         return $flight;
     }
@@ -102,13 +98,14 @@ class FlightController extends Controller
      * @param  \App\Flight  $flight
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Flight $flight)
+    public function update(Request $request, $id)
     {
         //
         $validator = Validator::make($request->all(), $this->rules());
         if($validator->fails()){
             return $validator->messages();
         }
+        $flight = Flight::findOrFail($id);
         $flight->flightNumber=$request->get('flightNumber');
         $flight->airplaneModel=$request->get('airplaneModel');
         $flight->airplaneCapacity=$request->get('airplaneCapacity');
@@ -118,7 +115,7 @@ class FlightController extends Controller
         $flight->flightDate=$request->get('flightDate');
         $flight->departureTime=$request->get('departureTime');
         $flight->save();
-        return $flight;
+        return "Se ha editado correctamente";
     }
 
     /**
@@ -127,11 +124,11 @@ class FlightController extends Controller
      * @param  \App\Flight  $flight
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Flight $flight)
+    public function destroy($id)
     {
-        //
+        $flight = Flight::findOrFail($id);
         $flight->delete();
-        return response()->json(['success']);
+        return "Se ha borrado correctamente";
     }
 
     public function searchOD(Request $request)

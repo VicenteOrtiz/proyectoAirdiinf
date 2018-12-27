@@ -54,7 +54,7 @@ class ReserveController extends Controller
         $reserve->reserveBalance = $request->get('reserveBalance');
         $reserve->insurance = $request->get('insurance');
         $reserve->save();
-        return $reserve;
+        return "Se ha añadido satisfactoriamente la reserva";
     }
 
     /**
@@ -63,8 +63,9 @@ class ReserveController extends Controller
      * @param  \App\Reserve  $reserve
      * @return \Illuminate\Http\Response
      */
-    public function show(Reserve $reserve)
+    public function show($id)
     {
+        $reserve = Reserve::findOrFail($id);
         return $reserve;
     }
 
@@ -96,7 +97,7 @@ class ReserveController extends Controller
         $reserve->reserveBalance = $request->get('reserveBalance');
         $reserve->insurance = $request->get('insurance');
         $reserve->save();
-        return $reserve;
+        return "Se ha actualizado satisfactoriamente la reserva";
     }
 
     /**
@@ -110,5 +111,6 @@ class ReserveController extends Controller
         $reserve->delete();
         return "Se ha eliminado correctamente";
         //return response()->(['success']);
+
     }
 }

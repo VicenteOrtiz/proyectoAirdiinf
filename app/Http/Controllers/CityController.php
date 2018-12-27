@@ -22,7 +22,6 @@ class CityController extends Controller
      */
     public function index()
     {
-        return City::all();
         $cities = City::All();
         return $cities;
     }

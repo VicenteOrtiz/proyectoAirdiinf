@@ -67,8 +67,9 @@ class AirportController extends Controller
      * @param  \App\Airport  $airport
      * @return \Illuminate\Http\Response
      */
-    public function show(Airport $airport)
+    public function show($id)
     {
+        $airport = Airport::findOrFail($id);
         return $airport;
     }
 

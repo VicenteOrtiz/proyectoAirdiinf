@@ -58,7 +58,7 @@ class PassengerController extends Controller
         $passenger->age = $request->get('age');
         $passenger->checkIn = $request->get('checkIn');
         $passenger->save();
-        return $passenger;
+        return "Se ha añadido satisfactoriamente el pasajero";
     }
 
     /**
@@ -67,8 +67,9 @@ class PassengerController extends Controller
      * @param  \App\Passenger  $passenger
      * @return \Illuminate\Http\Response
      */
-    public function show(Passenger $passenger)
+    public function show($id)
     {
+        $passenger = Passenger::findOrFail($id);
         return $passenger;
     }
 
@@ -101,7 +102,7 @@ class PassengerController extends Controller
         $passenger->age = $request->get('age');
         $passenger->checkIn = $request->get('checkIn');
         $passenger->save();
-        return $passenger;
+        return "Se ha actualizado satisfactoriamente el pasajero";
     }
 
     /**
@@ -113,6 +114,6 @@ class PassengerController extends Controller
     public function destroy(Passenger $passenger)
     {
         $passenger->delete();
-        return response()->json(['success']);
+        return "Se ha eliminado satisfactoriamente el pasajero";
     }
 }
