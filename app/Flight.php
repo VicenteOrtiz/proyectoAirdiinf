@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flight extends Model
 {
-        protected $fillable = [
+    protected $fillable = [
         'flightNumber',
         'airplaneModel',
 		'airplaneCapacity',
@@ -23,6 +23,10 @@ class Flight extends Model
 
     public function package(){
         return $this->belongsTo('App\Package');
+    }
+
+    public function flightsegments(){
+        return $this->hasMany('App\Flightsegments');
     }
 
 }

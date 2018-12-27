@@ -14,7 +14,9 @@ class CreateFlightsegmentsTable extends Migration
     public function up()
     {
         Schema::create('flightsegments', function (Blueprint $table) {
-
+            $table->increments('id');
+            $table->timestamps();
+            
             $table->integer('flight_id');
             $table->integer('segment_id');
 
