@@ -55,6 +55,15 @@ Route::resource('airplaneseat','AirplaneseatController');
 
 Route::resource('role','RoleController');
 
+Route::resource('insurence','InsurenceController');
+
+Route::resource('passenger','PassengerController');
+
+Route::resource('reserve','ReserveController');
+
+Route::resource('segment','SegmentController');
+
+Route::resource('user','UserController');
 //los links de abajo, se harán solo con fines del CRUD
 
 // Route::post('/hotels/create', 'HotelController@create');
