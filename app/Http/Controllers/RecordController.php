@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 class RecordController extends Controller
 {
     public function rules(){
-        'logDate'=>'required|date',
-        'logDescription'=>'required|string',
+        return[
+            'logDate'=>'required|date',
+            'logDescription'=>'required|string',
+        ];
     }
     /**
      * Display a listing of the resource.

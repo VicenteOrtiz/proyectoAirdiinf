@@ -66,4 +66,6 @@ Route::resource('segment','SegmentController');
 Route::resource('user','UserController');
 //los links de abajo, se harán solo con fines del CRUD
 
+Route::post('/flights/search', 'FlightController@searchOD');
+
 // Route::post('/hotels/create', 'HotelController@create');

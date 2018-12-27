@@ -21,8 +21,8 @@ class CreateHotelsTable extends Migration
             $table->string('phoneNumber');
             $table->string('address');
 
-            //$table->integer('location_id');
-            //$table->foreign('location_id')->references('id')->on('cities');
+            $table->integer('city_id');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
 
             $table->timestamps();
         });

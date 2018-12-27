@@ -20,8 +20,8 @@ class CreateFlightreservesTable extends Migration
             $table->integer('flight_id');
             $table->integer('reserve_id');
 
-            $table->foreign('flight_id')->references('id')->on('flights');
-            $table->foreign('reserve_id')->references('id')->on('reserves');
+            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
+            $table->foreign('reserve_id')->references('id')->on('reserves')->onDelete('cascade');
         });
     }
 

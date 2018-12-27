@@ -30,8 +30,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('rol_id')->references('id')->on('roles');
-            $table->foreign('record_id')->references('id')->on('records');
+            $table->foreign('rol_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
         });
     }
 

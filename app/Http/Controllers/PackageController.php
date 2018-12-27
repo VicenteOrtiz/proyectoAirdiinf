@@ -58,7 +58,12 @@ class PackageController extends Controller
         $package->insurence_id = $request->insurence_id;
         $package->hotel_id = $request->hotel_id;
         $package->car_id = $request->car_id;
-        $package->flight_id = $request->flight_id;
+
+        $package->flight_id = $request->flight_id; //ojito aqui, se compra asiento
+
+        $package->
+
+
         $package->precioPaquete = $request->precioPaquete;
         $package->fechaInicio = $request->fechaInicio;
         $package->fechaTermino = $request->fechaTermino;

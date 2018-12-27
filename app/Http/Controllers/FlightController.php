@@ -77,9 +77,10 @@ class FlightController extends Controller
      * @param  \App\Flight  $flight
      * @return \Illuminate\Http\Response
      */
-    public function show(Flight $flight)
+    public function show($id)
     {
         //
+        $flight = Flight::findOrFail($id);
         return $flight;
     }
 
@@ -131,5 +132,70 @@ class FlightController extends Controller
         //
         $flight->delete();
         return response()->json(['success']);
+    }
+
+    public function searchOD(Request $request)
+    {
+        // $flights = Flight::Where([
+        //     ['departureLocation','=',$request->origin],
+        //     ['arrivalLocation','=',$request->destiny],
+        // ])->get();
+
+        // if($request->origin != null){
+        //     $flights=Flight::Where('departureLocation', $request->origin)->get();
+        // }
+        // if($request->destiny != null){
+        //     $flights=Flight::Where('departureLocation', $request->origin)->get();
+        // }
+
+        // if($request->origin != null && $request->destiny != null && $request->flightDate != null){
+        //     $flights = Flight::Where([
+        //         ['departureLocation','=',$request->origin],
+        //         ['arrivalLocation','=',$request->destiny],
+        //         ['flightDate','=',$request->flightDate],
+        //     ])->get();
+        // }else if($request->origin != null && $request->destiny != null){
+        //     $flights = Flight::Where([
+        //         ['departureLocation','=',$request->origin],
+        //         ['arrivalLocation','=',$request->destiny],
+        //     ])->get();
+        // }else if($request->origin != null && $request->flightDate != null){
+        //     $flights = Flight::Where([
+        //         ['departureLocation','=',$request->origin],
+        //         ['flightDate','=',$request->flightDate],
+        //     ])->get();
+        // }else if($request->destiny != null && $request->flightDate != null){
+        //     $flights = Flight::Where([
+        //         ['arrivalLocation','=',$request->destiny],
+        //         ['flightDate','=',$request->flightDate],
+        //     ])->get();
+        // }else if($request->origin != null){
+        //     $flights=Flight::Where('departureLocation', $request->origin)->get();
+        // }else if($request->destiny != null){
+        //     $flights=Flight::Where('arrivalLocation', $request->destiny)->get();
+        // }else if($request->flightDate != null){
+        //     $flights=Flight::Where('flightDate', $request->flightDate)->get();
+        // }else{
+        //     $flights = Flight::all();
+        // }
+
+        $origen = $request->origin;
+        $destino = $request->destiny;
+        $fecha = $request->flightDate;
+
+        $flights = Flight::when($origen, function ($query, $origen) {
+            return $query->where('departureLocation', $origen);
+        })
+        ->when($destino, function($query, $destino){
+            return $query->where('arrivalLocation', $destino);
+        })
+        ->when($fecha, function($query, $fecha){
+            return $query->where('flightDate');
+        })
+        ->get();
+
+
+
+        return $flights;
     }
 }

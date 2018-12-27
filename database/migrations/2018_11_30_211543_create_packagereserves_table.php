@@ -20,8 +20,8 @@ class CreatePackagereservesTable extends Migration
             $table->integer('reserve_id');
             $table->integer('package_id');
 
-            $table->foreign('reserve_id')->references('id')->on('reserves');
-            $table->foreign('package_id')->references('id')->on('packages');
+            $table->foreign('reserve_id')->references('id')->on('reserves')->onDelete('cascade');
+            $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
         });
     }
 

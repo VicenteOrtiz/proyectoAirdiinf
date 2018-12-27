@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class CountryController extends Controller
 {
     public function rules(){
-        'countryName'=>'required|string',
+        return[
+            'countryName' => 'required|string',
+        ];
     }
     /**
      * Display a listing of the resource.

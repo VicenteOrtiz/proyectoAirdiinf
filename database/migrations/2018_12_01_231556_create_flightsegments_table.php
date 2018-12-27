@@ -20,8 +20,8 @@ class CreateFlightsegmentsTable extends Migration
             $table->integer('flight_id');
             $table->integer('segment_id');
 
-            $table->foreign('flight_id')->references('id')->on('flights');
-            $table->foreign('segment_id')->references('id')->on('segments');
+            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
+            $table->foreign('segment_id')->references('id')->on('segments')->onDelete('cascade');
         });
     }
 

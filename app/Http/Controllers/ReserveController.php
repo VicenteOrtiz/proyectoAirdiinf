@@ -45,7 +45,7 @@ class ReserveController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = new Validator::make($request->all(),$this->rules());
+        $validator = Validator::make($request->all(),$this->rules());
         if($validator->fails()){
             return $validator->messages();
         }
@@ -88,7 +88,7 @@ class ReserveController extends Controller
      */
     public function update(Request $request, Reserve $reserve)
     {
-                $validator = new Validator::make($request->all(),$this->rules());
+        $validator = Validator::make($request->all(),$this->rules());
         if($validator->fails()){
             return $validator->messages();
         }
@@ -108,6 +108,7 @@ class ReserveController extends Controller
     public function destroy(Reserve $reserve)
     {
         $reserve->delete();
-        return response()->(['success']);
+        return "Se ha eliminado correctamente";
+        //return response()->(['success']);
     }
 }

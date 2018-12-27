@@ -18,8 +18,8 @@ class CreateHotelreservesTable extends Migration
             $table->integer('hotel_id');
             $table->integer('reserve_id');
 
-            $table->foreign('reserve_id')->references('id')->on('reserves');
-            $table->foreign('hotel_id')->references('id')->on('hotels');
+            $table->foreign('reserve_id')->references('id')->on('reserves')->onDelete('cascade');
+            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade');
             $table->timestamps();
         });
     }

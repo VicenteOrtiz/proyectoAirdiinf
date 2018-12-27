@@ -19,9 +19,9 @@ class CreatePurchasesTable extends Migration
             $table->dateTime('date');
             $table->timestamps();
             $table->integer('payment_id');
-            $table->foreign('payment_id')->references('id')->on('payments');
+            $table->foreign('payment_id')->references('id')->on('payments')->onDelete('cascade');
             $table->integer('reserve_id');
-            $table->foreign('reserve_id')->references('id')->on('reserves');
+            $table->foreign('reserve_id')->references('id')->on('reserves')->onDelete('cascade');
 
         });
     }
