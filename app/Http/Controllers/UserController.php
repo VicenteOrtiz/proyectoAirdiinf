@@ -67,7 +67,7 @@ class UserController extends Controller
         $user->phoneNumber=$request->get('phoneNumber');
         $user->disability=$request->get('disability');
         $user->save();
-        return $user;
+        return "Se ha añadido satisfactoriamente el usuraio";
     }
 
     /**
@@ -76,9 +76,9 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
         return $user;
     }
 
@@ -116,7 +116,7 @@ class UserController extends Controller
         $user->phoneNumber=$request->get('phoneNumber');
         $user->disability=$request->get('disability');
         $user->save();
-        return $user;
+        return "Se ha actualizado satisfactoriamente el usuario";
     }
 
     /**
@@ -129,6 +129,6 @@ class UserController extends Controller
     {
         //
         $user->delete();
-        return response()->json(['success']);
+        return "Se ha eliminado satisfactoriamente el usuario";
     }
 }

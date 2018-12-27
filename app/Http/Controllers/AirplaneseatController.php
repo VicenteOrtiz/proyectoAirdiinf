@@ -1,4 +1,5 @@
 <?php
+<?php
 
 namespace App\Http\Controllers;
 
@@ -57,7 +58,7 @@ class AirplaneseatController extends Controller
         $airplaneseat->seat_letter = $request->seat_letter;
         $airplaneseat->available = $request->available == 1;
         $airplaneseat->save();
-        return $airplaneseat;
+        return "Se ha agregado correctamente";
     }
 
     /**
@@ -66,8 +67,9 @@ class AirplaneseatController extends Controller
      * @param  \App\Airplaneseat  $airplaneseat
      * @return \Illuminate\Http\Response
      */
-    public function show(Airplaneseat $airplaneseat)
+    public function show($id)
     { 
+        $airplaneseat = Airplaneseat::findOrFail($id);
         return $airplaneseat;
     }
 
@@ -89,18 +91,19 @@ class AirplaneseatController extends Controller
      * @param  \App\Airplaneseat  $airplaneseat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Airplaneseat $airplaneseat)
+    public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(),$this->rules());
         if($validator->fails()){
             return $validator->messages();
         }
+        $airplaneseat = Airplaneseat::findOrFail($id);
         $airplaneseat->seat_type = $request->seat_type; 
         $airplaneseat->row = $request->row;
         $airplaneseat->seat_letter = $request->seat_letter;
         $airplaneseat->available = $request->available == 1;
         $airplaneseat->save();
-        return $airplaneseat;
+        return "Se ha editado correctamente";
     }
 
     /**
@@ -109,8 +112,9 @@ class AirplaneseatController extends Controller
      * @param  \App\Airplaneseat  $airplaneseat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Airplaneseat $airplaneseat)
+    public function destroy($id)
     {
+        $airplaneseat = Airplaneseat::findOrFail($id);
         $airplaneseat->delete();
         return "Eliminado con exito";
     }

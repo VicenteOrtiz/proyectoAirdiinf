@@ -49,7 +49,7 @@ class RoleController extends Controller
         $role = new \App\Role;
         $role->type = $request->type;
         $role->save();
-        return $role;
+        return "Se ha añadido satisfactoriamente el rol";
     }
 
     /**
@@ -58,8 +58,9 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show($id)
     {
+        $role = Role::findOrFail($id);
         return $role;
     }
 
@@ -89,7 +90,7 @@ class RoleController extends Controller
         }
         $role->type = $request->type;
         $role->save();
-        return $role;
+        return "Se ha actualizado satisfactoriamente el rol";
     }
 
     /**
@@ -101,6 +102,6 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         $role->delete();
-        return "Se ha eliminado correctamente";
+        return "Se ha eliminado satisfactoriamente el rol";
     }
 }
