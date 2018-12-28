@@ -22,8 +22,6 @@ class InsurenceController extends Controller
      */
     public function index()
     {
-        //'amount',
-        //'description',
         return Insurence::all();
     }
 
@@ -45,7 +43,6 @@ class InsurenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $validator = Validator::make($request->all(), $this->rules());
         if($validator->fails()){
             return $validator->messages();
@@ -63,9 +60,9 @@ class InsurenceController extends Controller
      * @param  \App\Insurence  $insurence
      * @return \Illuminate\Http\Response
      */
-    public function show(Insurence $insurence)
+    public function show($id)
     {
-        //
+        $insurence = Insurence::findOrFail($id);
         return $insurence;
     }
 
@@ -106,9 +103,9 @@ class InsurenceController extends Controller
      * @param  \App\Insurence  $insurence
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Insurence $insurence)
+    public function destroy($id)
     {
-        //
+        $insurence = Insurence::findOrFail($id);
         $insurence->delete();
         return response()->json(['success']);
     }

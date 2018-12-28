@@ -106,11 +106,10 @@ class ReserveController extends Controller
      * @param  \App\Reserve  $reserve
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reserve $reserve)
+    public function destroy($id)
     {
+        $reserve = Reserve::findOrFail($id);
         $reserve->delete();
         return "Se ha eliminado correctamente";
-        //return response()->(['success']);
-
     }
 }

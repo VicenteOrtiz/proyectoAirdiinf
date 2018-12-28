@@ -71,9 +71,9 @@ class HotelroomController extends Controller
      * @param  \App\Hotelroom  $hotelroom
      * @return \Illuminate\Http\Response
      */
-    public function show(Hotelroom $hotelroom)
+    public function show($id)
     {
-        //
+        $hotelroom = Hotelroom::findOrFail();
         return $hotelroom;
     }
 
@@ -121,7 +121,7 @@ class HotelroomController extends Controller
      * @param  \App\Hotelroom  $hotelroom
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) //Hotelroom $hotelroom
+    public function destroy($id)
     {
         $hotelroom = Hotelroom::findOrFail($id);
 
