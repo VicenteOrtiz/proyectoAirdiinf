@@ -16,6 +16,6 @@ class City extends Model
     }
 
     public function hotels(){
-    	return $this->hasMany('App\Hotel', 'location_id');
+    	return $this->hasMany('App\Hotel');
     }
 }
