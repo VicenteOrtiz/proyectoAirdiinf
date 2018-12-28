@@ -8,7 +8,6 @@ $factory->define(App\Flightreserve::class, function (Faker $faker) {
     $airplaneseat_id = DB::table('airplaneseats')->select('id')->get();
     return [
         'reserve_id' => $reserve_id->random()->id,
-        //'flight_id' => $flight_id->random()->id,
         'airplaneseat_id'=>$airplaneseat_id->random()->id,
     ];
 });
