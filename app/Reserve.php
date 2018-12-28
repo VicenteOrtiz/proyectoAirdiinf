@@ -35,4 +35,8 @@ class Reserve extends Model
     public function flightreserve(){
         return $this->hasMany('App\Flightreserve');
     }
+
+    public function user(){
+        return $this->hasOne('App\User');
+    }
 }
