@@ -11,7 +11,7 @@ class HotelsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Hotel::class, 10) -> create();
+        factory(App\Hotel::class, 50) -> create();
 
         DB::table('hotels')->insert([
         	'hotelName'=>'Best hotel',
