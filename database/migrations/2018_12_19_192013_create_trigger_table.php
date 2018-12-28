@@ -17,16 +17,11 @@ class CreateTriggerTable extends Migration
             CREATE OR REPLACE FUNCTION darRol()
             RETURNS trigger AS
             $$
-                /*DECLARE
-                i INTEGER := 25;
-                j INTEGER := 0;
-                valor INTEGER := NEW.id;*/
-                BEGIN           
-                /*LOOP*/ 
+                BEGIN            
                  UPDATE users
                  SET rol_id = 1
                  WHERE users.id = NEW.id   
-                /*END LOOP*/ ;
+                ;
                 RETURN NEW;
             END
             $$ LANGUAGE plpgsql;

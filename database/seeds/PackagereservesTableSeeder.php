@@ -11,6 +11,6 @@ class PackagereservesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Packagereserve::class, 50) -> create();
+        factory(App\Packagereserve::class, 5) -> create();
     }
 }

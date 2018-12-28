@@ -12,6 +12,6 @@ class RecordsTableSeeder extends Seeder
     public function run()
     {
         //
-        factory(App\Record::class, 50) -> create();
+        factory(App\Record::class, 5) -> create();
     }
 }

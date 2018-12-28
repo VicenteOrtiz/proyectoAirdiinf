@@ -11,6 +11,6 @@ class FlightsegmentsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Flightsegment::class, 50) -> create();
+        factory(App\Flightsegment::class, 5) -> create();
     }
 }

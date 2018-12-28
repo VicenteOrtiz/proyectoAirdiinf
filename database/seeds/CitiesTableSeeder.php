@@ -27,6 +27,6 @@ class CitiesTableSeeder extends Seeder
         	'country_id' => 1,
         ]);
 
-        factory(App\City::class, 50) -> create();
+        factory(App\City::class, 5) -> create();
     }
 }

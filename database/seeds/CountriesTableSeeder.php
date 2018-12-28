@@ -18,7 +18,7 @@ class CountriesTableSeeder extends Seeder
  
         ]);
 
-        factory(App\Country::class, 50) -> create();
+        factory(App\Country::class, 5) -> create();
 
 
     }
