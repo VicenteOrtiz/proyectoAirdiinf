@@ -12,7 +12,7 @@ class CitiesTableSeeder extends Seeder
     public function run()
     {
 
-    	DB::table('cities')->insert([
+    	/*DB::table('cities')->insert([
         	'cityName'=>'Santiago',
         	'country_id' => 1,
         ]);
@@ -25,7 +25,7 @@ class CitiesTableSeeder extends Seeder
         DB::table('cities')->insert([
         	'cityName'=>'Punta Arenas',
         	'country_id' => 1,
-        ]);
+        ]);*/
 
         factory(App\City::class, 10) -> create();
     }

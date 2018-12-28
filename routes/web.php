@@ -64,6 +64,10 @@ Route::resource('reserve','ReserveController');
 Route::resource('segment','SegmentController');
 
 Route::resource('user','UserController');
+
+Route::resource('user.flights','FlightController');
+
+Route::resource('countries.cities','CityController');
 //los links de abajo, se harán solo con fines del CRUD
 
 Route::post('/flights/search', 'FlightController@searchOD');

@@ -22,8 +22,9 @@ class CityController extends Controller
      */
     public function index()
     {
-        $cities = City::All();
-        return $cities;
+        //$cities = City::All();
+        //return $cities;
+        return City::all();
     }
 
     /**
@@ -110,4 +111,5 @@ class CityController extends Controller
         $city->delete();
         return "Se ha eliminado satisfactoriamente la ciudad";
     }
+
 }
