@@ -11,11 +11,11 @@ class HotelroomController extends Controller
     public function rules(){
         return
         [
-            'numberOfBeds'=>'required|numeric',
-            'roomType'=>'required|numeric',
-            'roomNumber'=>'required|numeric',
-            'roomPricePerDay'=>'required|numeric',
-            'floorNumber'=>'required|numeric',
+            'number_of_beds'=>'required|numeric',
+            'room_type'=>'required|numeric',
+            'room_number'=>'required|numeric',
+            'room_price_per_day'=>'required|numeric',
+            'floor_number'=>'required|numeric',
             'available'=>'required|numeric',
             'hotel_id'=>'exists:hotels,id',
         ];
@@ -27,7 +27,7 @@ class HotelroomController extends Controller
      */
     public function index()
     {
-        $hotels = Country::All();
+        $hotels = Hotelroom::All();
         return $hotels;
     }
 
@@ -54,11 +54,11 @@ class HotelroomController extends Controller
             return $validator->messages();
         }
         $hotelroom = new Hotelroom();
-        $hotelroom->numberOfBeds = $request->numberOfBeds;
-        $hotelroom->roomType = $request->roomType;
-        $hotelroom->roomNumber = $request->roomNumber;
-        $hotelroom->roomPricePerDay = $request->roomPricePerDay;
-        $hotelroom->floorNumber = $request->floorNumber;
+        $hotelroom->number_of_beds = $request->number_of_beds;
+        $hotelroom->room_type = $request->room_type;
+        $hotelroom->room_number = $request->room_number;
+        $hotelroom->room_price_per_day = $request->room_price_per_day;
+        $hotelroom->floor_number = $request->floor_number;
         $hotelroom->available = $request->available;
         $hotelroom->hotel_id = $request->hotel_id;
         $hotelroom->save();
@@ -102,11 +102,11 @@ class HotelroomController extends Controller
             return $validator->messages();
         }
         $hotelroom = Hotelroom::findOrFail($id);
-        $hotelroom->numberOfBeds = $request->numberOfBeds;
-        $hotelroom->roomType = $request->roomType;
-        $hotelroom->roomNumber = $request->roomNumber;
-        $hotelroom->roomPricePerDay = $request->roomPricePerDay;
-        $hotelroom->floorNumber = $request->floorNumber;
+        $hotelroom->number_of_beds = $request->number_of_beds;
+        $hotelroom->room_type = $request->room_type;
+        $hotelroom->room_number = $request->room_number;
+        $hotelroom->room_price_per_day = $request->room_price_per_day;
+        $hotelroom->floor_number = $request->floor_number;
         $hotelroom->available = $request->available;
         $hotelroom->hotel_id = $request->hotel_id;
 

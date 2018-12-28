@@ -14,8 +14,6 @@ class FlightController extends Controller
             'flightNumber' => 'required|string',
             'airplaneModel' => 'required|string',
             'airplaneCapacity' => 'required|numeric',
-            'departureLocation' => 'required|string',
-            'arrivalLocation' => 'required|string',
             'confirmed' => 'required|numeric',
             'flightDate' => 'required|string',
             'departureTime' => 'required|string',
@@ -59,8 +57,6 @@ class FlightController extends Controller
         $flight->flightNumber=$request->get('flightNumber');
         $flight->airplaneModel=$request->get('airplaneModel');
         $flight->airplaneCapacity=$request->get('airplaneCapacity');
-        $flight->departureLocation=$request->get('departureLocation');
-        $flight->arrivalLocation=$request->get('arrivalLocation');
         $flight->confirmed=$request->get('confirmed') == 1;
         $flight->flightDate=$request->get('flightDate');
         $flight->departureTime=$request->get('departureTime');
@@ -109,8 +105,6 @@ class FlightController extends Controller
         $flight->flightNumber=$request->get('flightNumber');
         $flight->airplaneModel=$request->get('airplaneModel');
         $flight->airplaneCapacity=$request->get('airplaneCapacity');
-        $flight->departureLocation=$request->get('departureLocation');
-        $flight->arrivalLocation=$request->get('arrivalLocation');
         $flight->confirmed=$request->get('confirmed') == 1;
         $flight->flightDate=$request->get('flightDate');
         $flight->departureTime=$request->get('departureTime');

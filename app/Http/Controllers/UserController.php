@@ -60,7 +60,7 @@ class UserController extends Controller
         $user = new \App\User;
         $user->name=$request->get('name');
         $user->email=$request->get('email');
-        $user->email=$request->get('password');
+        $user->password=$request->get('password');
         $user->surname=$request->get('surname');
         $user->age=$request->get('age');
         $user->passportNumber=$request->get('passportNumber');
@@ -109,7 +109,7 @@ class UserController extends Controller
         }
         $user->name=$request->get('name');
         $user->email=$request->get('email');
-        $user->email=$request->get('password');
+        $user->password=$request->get('password');
         $user->surname=$request->get('surname');
         $user->age=$request->get('age');
         $user->passportNumber=$request->get('passportNumber');
