@@ -26,11 +26,6 @@ class CreateReservesTable extends Migration
             $table->integer('car_id');
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
 
-            // $table->dropForeign('answers_user_id_foreign');
-            // $table->foreign('user_id')
-            // ->references('id')->on('users')
-            // ->onDelete('cascade');
-
         });
     }
 
