@@ -10,25 +10,25 @@ class Package extends Model
     	'precioPaquete',
     	'fechaInicio',
     	'fechaTermino',
-        'hotel_id',
+        'hotelroom_id',
         'car_id',
-        'flight_id',
+        'airplaneseat_id',
     ]; 
 
     public function insurence(){
         return $this->hasMany('App\Insurence');
     }
 
-    public function hotel(){
-    	return $this->hasMany('App\Hotel');
+    public function hotelroom(){
+    	return $this->hasMany('App\Hotelroom');
     }
 
     public function car(){
     	return $this->hasMany('App\Car');
     }
     
-    public function flight(){
-    	return $this->hasMany('App\Flight');
+    public function airplaneseat(){
+    	return $this->hasMany('App\Airplaneseat');
     }
 
     public function packagereserve(){
