@@ -17,10 +17,12 @@ class CreateFlightreservesTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-            $table->integer('flight_id');
+            //$table->integer('flight_id');
+            $table->integer('airplaneseat_id');
             $table->integer('reserve_id');
 
-            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
+            $table->foreign('airplaneseat_id')->references('id')->on('airplaneseats')->onDelete('cascade');
+            //$table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
             $table->foreign('reserve_id')->references('id')->on('reserves')->onDelete('cascade');
         });
     }

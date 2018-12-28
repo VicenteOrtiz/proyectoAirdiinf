@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Flightreserve extends Model
 {
     protected $fillable = [
-        'flight_id',
+        'airplaneseat_id',
         'reserve_id',
     ];
 
-    public function flight(){
-    	return $this->belongsTo('App\Flight');
+    public function airplaneseat(){
+    	return $this->belongsTo('App\Airplaneseat');
     }
 
     public function reserve(){
