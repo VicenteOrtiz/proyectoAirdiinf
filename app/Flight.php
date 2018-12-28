@@ -21,15 +21,15 @@ class Flight extends Model
     	return $this->hasMany('App\Airplaneseat');
     }
 
-    public function package(){
-        return $this->belongsTo('App\Package');
-    }
+    // public function package(){
+    //     return $this->belongsTo('App\Package');
+    // }
 
     public function flightsegments(){
         return $this->hasMany('App\Flightsegments');
     }
 
-    public function flightreserve(){
-        return $this->hasMany('App\Flightreserve');
-    }
+    // public function flightreserve(){
+    //     return $this->hasMany('App\Flightreserve');
+    // }
 }

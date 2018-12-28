@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Hotelreserve extends Model
 {
     protected $fillable = [
-    	'hotel_id',
+    	'hotelroom_id',
     	'reserve_id',
     ];
 
-    public function hotel(){
-        return $this->belongsTo('App\Hotel');
+    public function hotelroom(){
+        return $this->belongsTo('App\Hotelroom');
     }
 
     public function reserve(){

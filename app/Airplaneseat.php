@@ -21,4 +21,12 @@ class Airplaneseat extends Model
     	return $this->hasOne('App\Passenger');
     }
 
+    public function flightreserve(){
+        return $this->hasMany('App\Flightreserve');
+    }
+
+    public function package(){
+        return $this->belongsTo('App\Package');
+    }
+
 }
