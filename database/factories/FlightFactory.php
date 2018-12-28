@@ -25,7 +25,7 @@ $factory->define(App\Flight::class, function (Faker $faker) {
 		'arrival_id' => $city_id->random()->id,
 
 		'confirmed' => $faker->numberBetween(0,1),
-		'flightDate' => $faker->dateTimeBetween($startDate = 'now',$endDate = '+1 years'),
+		'flightDate' => $faker->dateTimeBetween($startDate = 'now',$endDate = '+1 months'),
 		'departureTime' => $faker->time($format = 'H:i'),
     ];
 });

@@ -13,6 +13,9 @@ class RolesTableSeeder extends Seeder
     {
         DB::table('roles')->insert([
         	'type' => 1,
+            'description' => 'Usuario comun: Puede recorrer la pagina, comprar y editar su perfil.',
+            'created_at' => now(),
+            'updated_at' => now(), 
         ]);
     }
 }
