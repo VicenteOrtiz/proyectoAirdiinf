@@ -11,6 +11,6 @@ class FlightreservesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Flightreserve::class, 10) -> create();
+        factory(App\Flightreserve::class, 50) -> create();
     }
 }

@@ -10,8 +10,8 @@ class Flight extends Model
         'flightNumber',
         'airplaneModel',
 		'airplaneCapacity',
-		'departureLocation',
-		'arrivalLocation',
+		'departure_id',
+		'arrival_id',
 		'confirmed',
 		'flightDate',
 		'departureTime',
@@ -27,6 +27,14 @@ class Flight extends Model
 
     public function flightsegments(){
         return $this->hasMany('App\Flightsegments');
+    }
+
+    public function arrival(){
+        return $this->belongsTo('App\City', 'arrival_id');
+    }
+
+    public function departure(){
+        return $this->belongsTo('App\City', 'departure_id');
     }
 
     // public function flightreserve(){

@@ -17,7 +17,7 @@ $factory->define(App\User::class, function (Faker $faker) {
     $record_id = DB::table('records')->select('id')->get();
     return [
         'name'=>$faker->name, 
-        'email'=>$faker->safeEmail, 
+        'email'=>$faker->unique()->safeEmail, 
         'password'=>$faker->realText,
         'surname'=>$faker->lastname,
         'age'=>$faker->numberBetween(1,100),
