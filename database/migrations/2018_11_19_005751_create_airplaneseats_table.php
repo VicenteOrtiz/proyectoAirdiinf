@@ -23,7 +23,8 @@ class CreateAirplaneseatsTable extends Migration
             $table->string('seat_letter');
             $table->boolean('available');
 
-            //$table->integer('passenger_id');
+            $table->integer('passenger_id')->nullable();
+            $table->foreign('passenger_id')->references('id')->on('passengers')->onDelete('cascade');
 
             $table->timestamps();
         });

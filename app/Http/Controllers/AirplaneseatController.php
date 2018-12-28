@@ -57,6 +57,7 @@ class AirplaneseatController extends Controller
         $airplaneseat->row = $request->row;
         $airplaneseat->seat_letter = $request->seat_letter;
         $airplaneseat->available = $request->available == 1;
+        $airplaneseat->passenger_id = $request->passsenger_id;
         $airplaneseat->save();
         return "Se ha agregado correctamente";
     }
@@ -102,6 +103,7 @@ class AirplaneseatController extends Controller
         $airplaneseat->row = $request->row;
         $airplaneseat->seat_letter = $request->seat_letter;
         $airplaneseat->available = $request->available == 1;
+        $airplaneseat->passenger_id = $request->passsenger_id;
         $airplaneseat->save();
         return "Se ha editado correctamente";
     }
