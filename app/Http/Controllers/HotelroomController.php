@@ -138,6 +138,11 @@ class HotelroomController extends Controller
 
         $roomPurchase = new Hotelreserve();
 
+        $room = Hotelroom::where('id', $request->id)->get()->last();
+
+        if($room->available == false){
+            return "Esta habitacion ya está ocupada";
+        }
 
         if($validador == false){
             $reserva = new Reserve();
@@ -154,12 +159,15 @@ class HotelroomController extends Controller
             $reserva = Reserve::all()->last();
         }
 
+        $room->available = false;
+
         $roomPurchase->hotelroom_id = $request->id;
         $roomPurchase->reserve_id = $reserva->id;
 
+        $room->save();
         $reserva->save();
         $roomPurchase->save();
 
-        return "compra de pasaje hecha";
+        return "reserva de habitacion hecha";
     }
 }

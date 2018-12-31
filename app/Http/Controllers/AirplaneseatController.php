@@ -7,6 +7,7 @@ use App\Airplaneseat;
 use Illuminate\Http\Request;
 use App\Reserve;
 use App\Flightreserve;
+use App\Passenger;
 
 class AirplaneseatController extends Controller
 {
@@ -126,8 +127,13 @@ class AirplaneseatController extends Controller
     public function compra(Request $request)
     {
         $validador = Reserve::all()->last()->inUse;
-
         $seatPurchase = new Flightreserve();
+        $flightSeat = Airplaneseat::where('id',$request->id)->get()->first();
+        $passenger = new Passenger();
+
+        if($flightSeat->available == false){
+            return "Este asiento está ocupado";
+        }
 
 
         if($validador == false){
@@ -145,9 +151,20 @@ class AirplaneseatController extends Controller
             $reserva = Reserve::all()->last();
         }
 
+        $passenger->name = $request->name;
+        $passenger->surname = $request->surname;
+        $passenger->age = $request->age;
+        $passenger->checkIn = false;
+
+        $passenger->save();
+
         $seatPurchase->airplaneseat_id = $request->id;
         $seatPurchase->reserve_id = $reserva->id;
 
+        $flightSeat->passenger_id = $passenger->id;
+        $flightSeat->available = "false";
+
+        $flightSeat->save();
         $reserva->save();
         $seatPurchase->save();
 
