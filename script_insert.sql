@@ -1181,6 +1181,157 @@ ALTER TABLE ONLY public.segments ALTER COLUMN id SET DEFAULT nextval('public.seg
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
+--
+-- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.roles VALUES (1, 1, 'Usuario comun: Puede recorrer la pagina, comprar y editar su perfil.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: records; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.records VALUES (1, '2018-12-29', 'Alice, and she went on in the grass, merely remarking that a red-hot poker will burn you if you were or might have been a holiday?'' ''Of course not,'' Alice cautiously replied, not feeling at all a.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.records VALUES (2, '2018-12-30', 'Alice had been all the jurors had a wink of sleep these three little sisters--they were learning to draw,'' the Dormouse went on, taking first one side and up I goes like a candle. I wonder what CAN.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.records VALUES (3, '2019-01-03', 'DON''T know,'' said the Gryphon, ''she wants for to know what a Gryphon is, look at them--''I wish they''d get the trial one way up as the door and found quite a chorus of voices asked. ''Why, SHE, of.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.records VALUES (4, '2018-12-30', 'Lobster; I heard him declare, "You have baked me too brown, I must go back and see how he did it,) he did with the bread-and-butter getting so far off). ''Oh, my poor hands, how is it directed to?''.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.records VALUES (5, '2018-12-29', 'I''m doubtful about the crumbs,'' said the Hatter, and here the Mock Turtle. ''Seals, turtles, salmon, and so on.'' ''What a funny watch!'' she remarked. ''It tells the day of the e--e--evening, Beautiful.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.users VALUES (1, 1, 4, 'Dr. Jarod Rutherford', 'Skiles', 86, 'powlowski.roxane@example.net', NULL, '76', '64', false, 'I don''t know,'' he went on eagerly: ''There is such a thing before, but she did not look at the Caterpillar''s making such a nice little histories about children who had spoken first. ''That''s none of.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (2, 1, 4, 'Miss Ivy Bednar Sr.', 'Quigley', 40, 'wolf.mariela@example.net', NULL, '23', '97', true, 'Just at this corner--No, tie ''em together first--they don''t reach half high enough yet--Oh! they''ll do well enough; don''t be nervous, or I''ll have you executed on the bank, and of having nothing to.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (3, 1, 5, 'Ansley Schulist', 'Pfeffer', 14, 'gbogan@example.org', NULL, '33', '51', true, 'The Queen''s argument was, that her flamingo was gone across to the game. CHAPTER IX. The Mock Turtle at last, and managed to put down yet, before the end of every line: ''Speak roughly to your little.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (4, 1, 1, 'Gwen Bosco', 'Bergstrom', 16, 'edwina.miller@example.com', NULL, '32', '91', false, 'He unfolded the paper as he said to the dance. ''"What matters it how far we go?" his scaly friend replied. "There is another shore, you know, this sort of mixed flavour of cherry-tart, custard.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (5, 1, 3, 'Trever Stehr', 'Weimann', 6, 'qbuckridge@example.net', NULL, '86', '56', true, 'This time Alice waited patiently until it chose to speak first, ''why your cat grins like that?'' ''It''s a mineral, I THINK,'' said Alice. ''Of course you don''t!'' the Hatter went on, ''"--found it.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (6, 1, 5, 'Prof. Wallace Reynolds', 'Rice', 47, 'alexzander90@example.net', NULL, '9', '54', true, 'Gryphon. ''Do you know I''m mad?'' said Alice. ''I''ve tried the effect of lying down with her arms round it as well go in ringlets at all; and I''m sure _I_ shan''t be beheaded!'' ''What for?'' said the Mock.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (7, 1, 3, 'Mrs. Sarah Olson Jr.', 'Lang', 62, 'trace89@example.net', NULL, '95', '22', true, 'Some of the mushroom, and crawled away in the last few minutes, and began by producing from under his arm a great hurry. ''You did!'' said the Dormouse into the air off all its feet at the top of her.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (8, 1, 2, 'Janice Farrell V', 'Towne', 15, 'lily.stracke@example.org', NULL, '27', '15', false, 'Queen ordering off her head!'' Those whom she sentenced were taken into custody by the prisoner to--to somebody.'' ''It must be removed,'' said the Cat. ''I''d nearly forgotten to ask.'' ''It turned into a.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (9, 1, 3, 'German Franecki', 'Von', 56, 'elliott.vonrueden@example.net', NULL, '32', '15', false, 'I am, sir,'' said Alice; ''but when you throw them, and all the time it vanished quite slowly, beginning with the dream of Wonderland of long ago: and how she would keep, through all her wonderful.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (10, 1, 2, 'Leilani Rau', 'Prohaska', 78, 'antonio13@example.com', NULL, '57', '26', true, 'Caterpillar contemptuously. ''Who are YOU?'' Which brought them back again to the confused clamour of the ground.'' So she swallowed one of the guinea-pigs cheered, and was just in time to be lost, as.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: countries; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.countries VALUES (1, 'Chile', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.countries VALUES (2, 'New Caledonia', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.countries VALUES (3, 'Honduras', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.countries VALUES (4, 'Iraq', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.countries VALUES (5, 'Tajikistan', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.countries VALUES (6, 'Bouvet Island (Bouvetoya)', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: cities; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.cities VALUES (1, 'Santiago', 1, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cities VALUES (2, 'Concepcion', 1, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cities VALUES (3, 'Punta Arenas', 1, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cities VALUES (4, 'East Vincenttown', 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cities VALUES (5, 'New Agustin', 6, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cities VALUES (6, 'Joanychester', 4, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cities VALUES (7, 'East Zackfort', 4, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cities VALUES (8, 'Wolfborough', 2, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: flights; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.flights VALUES (1, 'FF8509', 'AJG-757', 143, 6, 6, '2019-01-09', '07:07', false, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.flights VALUES (2, 'SD4547', 'FTH-919', 102, 4, 4, '2019-01-20', '06:04', false, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.flights VALUES (3, 'LH4005', 'SHR-178', 92, 5, 6, '2019-01-21', '12:10', false, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.flights VALUES (4, 'WG0984', 'QYW-392', 121, 8, 5, '2018-12-31', '13:41', false, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.flights VALUES (5, 'DS6391', 'YZD-732', 97, 5, 2, '2019-01-16', '04:49', true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: hotels; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.hotels VALUES (1, 'Satterfield PLC', 5, 182, '+4665367840255', '937 Macy Cape Suite 729
+Aricborough, IL 81471-1471', 1, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.hotels VALUES (2, 'Jaskolski, Homenick and Jerde', 1, 185, '+3487223343803', '8448 Borer Parkways Suite 537
+North Mitchel, WA 32497', 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.hotels VALUES (3, 'Denesik-Corwin', 3, 195, '+9742603841857', '773 Borer Parkway
+West Chelsiefort, NY 70235-0766', 4, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.hotels VALUES (4, 'Walter, Effertz and Kuhic', 5, 177, '+5561916363186', '522 Nienow Plain Suite 543
+Jenamouth, MN 65124-7943', 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.hotels VALUES (5, 'Mante and Sons', 4, 150, '+2665400808104', '97974 Griffin Throughway Apt. 323
+New Ayana, SC 85302-6986', 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: cars; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.cars VALUES (1, 'Geo Tracker', 'JKJ-871', true, 6, 69, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cars VALUES (2, 'Alpine A110', 'DPI-937', true, 5, 195, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cars VALUES (3, 'Packard One Twenty', 'DPH-079', true, 5, 13, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cars VALUES (4, 'Alpine A610', 'SQK-832', false, 5, 48, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.cars VALUES (5, 'Pinzgauer 710', 'EXJ-031', false, 4, 193, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: airports; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.airports VALUES (1, 'Baumbach-Schuppe', '326 Hansen Burgs
+South Edythe, MT 26104-3035', 'North Una', '+4741093422794', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.airports VALUES (2, 'Mueller Inc', '512 Lynch Square
+Port Erica, WY 77529', 'Johnstonberg', '+9481990513664', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.airports VALUES (3, 'Mante-Reilly', '3448 Hilpert Wells
+Madalinefort, CT 53569-3825', 'Destineyborough', '+9115743207157', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.airports VALUES (4, 'Medhurst, Lubowitz and Mitchell', '73876 Brown Divide Suite 979
+New Hilton, WV 98641-7768', 'Eloisechester', '+4144415192646', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.airports VALUES (5, 'Bosco, Hodkiewicz and Dickinson', '879 Koch Fields
+Vaughnton, CA 12688-8804', 'Schuppestad', '+6451039286636', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: passengers; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.passengers VALUES (1, 'Alfredo', 'Rice', 46, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.passengers VALUES (2, 'America', 'Kub', 9, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.passengers VALUES (3, 'Ed', 'Pouros', 10, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.passengers VALUES (4, 'Patience', 'Hoeger', 58, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.passengers VALUES (5, 'Jaeden', 'Bosco', 89, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.users VALUES (1, 1, 4, 'Dr. Jarod Rutherford', 'Skiles', 86, 'powlowski.roxane@example.net', NULL, '76', '64', false, 'I don''t know,'' he went on eagerly: ''There is such a thing before, but she did not look at the Caterpillar''s making such a nice little histories about children who had spoken first. ''That''s none of.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (2, 1, 4, 'Miss Ivy Bednar Sr.', 'Quigley', 40, 'wolf.mariela@example.net', NULL, '23', '97', true, 'Just at this corner--No, tie ''em together first--they don''t reach half high enough yet--Oh! they''ll do well enough; don''t be nervous, or I''ll have you executed on the bank, and of having nothing to.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (3, 1, 5, 'Ansley Schulist', 'Pfeffer', 14, 'gbogan@example.org', NULL, '33', '51', true, 'The Queen''s argument was, that her flamingo was gone across to the game. CHAPTER IX. The Mock Turtle at last, and managed to put down yet, before the end of every line: ''Speak roughly to your little.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (4, 1, 1, 'Gwen Bosco', 'Bergstrom', 16, 'edwina.miller@example.com', NULL, '32', '91', false, 'He unfolded the paper as he said to the dance. ''"What matters it how far we go?" his scaly friend replied. "There is another shore, you know, this sort of mixed flavour of cherry-tart, custard.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (5, 1, 3, 'Trever Stehr', 'Weimann', 6, 'qbuckridge@example.net', NULL, '86', '56', true, 'This time Alice waited patiently until it chose to speak first, ''why your cat grins like that?'' ''It''s a mineral, I THINK,'' said Alice. ''Of course you don''t!'' the Hatter went on, ''"--found it.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (6, 1, 5, 'Prof. Wallace Reynolds', 'Rice', 47, 'alexzander90@example.net', NULL, '9', '54', true, 'Gryphon. ''Do you know I''m mad?'' said Alice. ''I''ve tried the effect of lying down with her arms round it as well go in ringlets at all; and I''m sure _I_ shan''t be beheaded!'' ''What for?'' said the Mock.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (7, 1, 3, 'Mrs. Sarah Olson Jr.', 'Lang', 62, 'trace89@example.net', NULL, '95', '22', true, 'Some of the mushroom, and crawled away in the last few minutes, and began by producing from under his arm a great hurry. ''You did!'' said the Dormouse into the air off all its feet at the top of her.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (8, 1, 2, 'Janice Farrell V', 'Towne', 15, 'lily.stracke@example.org', NULL, '27', '15', false, 'Queen ordering off her head!'' Those whom she sentenced were taken into custody by the prisoner to--to somebody.'' ''It must be removed,'' said the Cat. ''I''d nearly forgotten to ask.'' ''It turned into a.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (9, 1, 3, 'German Franecki', 'Von', 56, 'elliott.vonrueden@example.net', NULL, '32', '15', false, 'I am, sir,'' said Alice; ''but when you throw them, and all the time it vanished quite slowly, beginning with the dream of Wonderland of long ago: and how she would keep, through all her wonderful.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.users VALUES (10, 1, 2, 'Leilani Rau', 'Prohaska', 78, 'antonio13@example.com', NULL, '57', '26', true, 'Caterpillar contemptuously. ''Who are YOU?'' Which brought them back again to the confused clamour of the ground.'' So she swallowed one of the guinea-pigs cheered, and was just in time to be lost, as.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
+
+--
+-- Data for Name: payments; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.payments VALUES (1, 'Discover Card', 'Hudson, Sanford and Bogan', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.payments VALUES (2, 'MasterCard', 'Daugherty Ltd', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.payments VALUES (3, 'Visa', 'Larson, Runolfsson and Pollich', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.payments VALUES (4, 'Visa', 'Larkin, Walker and Mertz', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.payments VALUES (5, 'Visa', 'Fay, Reinger and Brakus', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+
 
 --
 -- Data for Name: airplaneseats; Type: TABLE DATA; Schema: public; Owner: homestead
@@ -1316,103 +1467,6 @@ INSERT INTO public.airplaneseats VALUES (127, NULL, 2, 5, 'd', false, 4, '2018-1
 INSERT INTO public.airplaneseats VALUES (128, NULL, 2, 5, 'g', true, 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
 INSERT INTO public.airplaneseats VALUES (129, NULL, 3, 12, 'n', false, 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
 INSERT INTO public.airplaneseats VALUES (130, NULL, 2, 17, 'a', false, 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: airports; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.airports VALUES (1, 'Baumbach-Schuppe', '326 Hansen Burgs
-South Edythe, MT 26104-3035', 'North Una', '+4741093422794', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.airports VALUES (2, 'Mueller Inc', '512 Lynch Square
-Port Erica, WY 77529', 'Johnstonberg', '+9481990513664', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.airports VALUES (3, 'Mante-Reilly', '3448 Hilpert Wells
-Madalinefort, CT 53569-3825', 'Destineyborough', '+9115743207157', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.airports VALUES (4, 'Medhurst, Lubowitz and Mitchell', '73876 Brown Divide Suite 979
-New Hilton, WV 98641-7768', 'Eloisechester', '+4144415192646', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.airports VALUES (5, 'Bosco, Hodkiewicz and Dickinson', '879 Koch Fields
-Vaughnton, CA 12688-8804', 'Schuppestad', '+6451039286636', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: cars; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.cars VALUES (1, 'Geo Tracker', 'JKJ-871', true, 6, 69, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cars VALUES (2, 'Alpine A110', 'DPI-937', true, 5, 195, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cars VALUES (3, 'Packard One Twenty', 'DPH-079', true, 5, 13, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cars VALUES (4, 'Alpine A610', 'SQK-832', false, 5, 48, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cars VALUES (5, 'Pinzgauer 710', 'EXJ-031', false, 4, 193, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: cities; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.cities VALUES (1, 'Santiago', 1, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cities VALUES (2, 'Concepcion', 1, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cities VALUES (3, 'Punta Arenas', 1, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cities VALUES (4, 'East Vincenttown', 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cities VALUES (5, 'New Agustin', 6, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cities VALUES (6, 'Joanychester', 4, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cities VALUES (7, 'East Zackfort', 4, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.cities VALUES (8, 'Wolfborough', 2, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: countries; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.countries VALUES (1, 'Chile', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.countries VALUES (2, 'New Caledonia', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.countries VALUES (3, 'Honduras', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.countries VALUES (4, 'Iraq', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.countries VALUES (5, 'Tajikistan', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.countries VALUES (6, 'Bouvet Island (Bouvetoya)', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: flightreserves; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.flightreserves VALUES (1, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 42, 15);
-INSERT INTO public.flightreserves VALUES (2, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 27, 12);
-INSERT INTO public.flightreserves VALUES (3, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 32, 31);
-INSERT INTO public.flightreserves VALUES (4, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 31, 8);
-INSERT INTO public.flightreserves VALUES (5, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 84, 31);
-
-
---
--- Data for Name: flights; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.flights VALUES (1, 'FF8509', 'AJG-757', 143, 6, 6, '2019-01-09', '07:07', false, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.flights VALUES (2, 'SD4547', 'FTH-919', 102, 4, 4, '2019-01-20', '06:04', false, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.flights VALUES (3, 'LH4005', 'SHR-178', 92, 5, 6, '2019-01-21', '12:10', false, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.flights VALUES (4, 'WG0984', 'QYW-392', 121, 8, 5, '2018-12-31', '13:41', false, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.flights VALUES (5, 'DS6391', 'YZD-732', 97, 5, 2, '2019-01-16', '04:49', true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: flightsegments; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.flightsegments VALUES (1, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 5, 2);
-INSERT INTO public.flightsegments VALUES (2, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 4, 4);
-INSERT INTO public.flightsegments VALUES (3, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 1, 4);
-INSERT INTO public.flightsegments VALUES (4, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 3, 1);
-INSERT INTO public.flightsegments VALUES (5, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 2, 3);
-
-
---
--- Data for Name: hotelreserves; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.hotelreserves VALUES (1, 71, 10, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
-INSERT INTO public.hotelreserves VALUES (2, 46, 24, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
-INSERT INTO public.hotelreserves VALUES (3, 77, 44, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
-INSERT INTO public.hotelreserves VALUES (4, 36, 34, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
-INSERT INTO public.hotelreserves VALUES (5, 71, 6, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
 
 
 --
@@ -1552,76 +1606,6 @@ INSERT INTO public.hotelrooms VALUES (130, 3, 2, 1, 58, 32695, 4, false, '2018-1
 
 
 --
--- Data for Name: hotels; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.hotels VALUES (1, 'Satterfield PLC', 5, 182, '+4665367840255', '937 Macy Cape Suite 729
-Aricborough, IL 81471-1471', 1, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.hotels VALUES (2, 'Jaskolski, Homenick and Jerde', 1, 185, '+3487223343803', '8448 Borer Parkways Suite 537
-North Mitchel, WA 32497', 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.hotels VALUES (3, 'Denesik-Corwin', 3, 195, '+9742603841857', '773 Borer Parkway
-West Chelsiefort, NY 70235-0766', 4, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.hotels VALUES (4, 'Walter, Effertz and Kuhic', 5, 177, '+5561916363186', '522 Nienow Plain Suite 543
-Jenamouth, MN 65124-7943', 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.hotels VALUES (5, 'Mante and Sons', 4, 150, '+2665400808104', '97974 Griffin Throughway Apt. 323
-New Ayana, SC 85302-6986', 3, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: insurences; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.insurences VALUES (1, 408, 'Just at this corner--No, tie ''em together first--they don''t reach half high enough yet--Oh! they''ll do well enough; don''t be nervous, or I''ll have you executed, whether you''re a little different.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.insurences VALUES (2, 330, 'So you see, so many different sizes in a hurry: a large crowd collected round it: there was a different person then.'' ''Explain all that,'' he said to Alice, and she sat down at her with large round.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.insurences VALUES (3, 382, 'When the sands are all dry, he is gay as a cushion, resting their elbows on it, for she had been to the shore. CHAPTER III. A Caucus-Race and a fan! Quick, now!'' And Alice was beginning very.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.insurences VALUES (4, 269, 'Dormouse. ''Don''t talk nonsense,'' said Alice to herself. Imagine her surprise, when the Rabbit noticed Alice, as she could see, as they lay on the shingle--will you come and join the dance? Will you.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.insurences VALUES (5, 149, 'I must be growing small again.'' She got up this morning? I almost think I should have liked teaching it tricks very much, if--if I''d only been the right words,'' said poor Alice, that she looked down.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.migrations VALUES (1, '2014_10_12_100000_create_password_resets_table', 1);
-INSERT INTO public.migrations VALUES (2, '2017_11_29_142907_create_roles_table', 1);
-INSERT INTO public.migrations VALUES (3, '2017_11_29_144428_create_records_table', 1);
-INSERT INTO public.migrations VALUES (4, '2017_12_19_191916_create_users_table', 1);
-INSERT INTO public.migrations VALUES (5, '2018_10_17_225008_create_countries_table', 1);
-INSERT INTO public.migrations VALUES (6, '2018_10_17_225040_create_cities_table', 1);
-INSERT INTO public.migrations VALUES (7, '2018_11_12_145426_create_insurences_table', 1);
-INSERT INTO public.migrations VALUES (8, '2018_11_12_215047_create_cars_table', 1);
-INSERT INTO public.migrations VALUES (9, '2018_11_12_215105_create_flights_table', 1);
-INSERT INTO public.migrations VALUES (10, '2018_11_12_215124_create_hotels_table', 1);
-INSERT INTO public.migrations VALUES (11, '2018_11_15_145701_create_payments_table', 1);
-INSERT INTO public.migrations VALUES (12, '2018_11_16_140118_create_reserves_table', 1);
-INSERT INTO public.migrations VALUES (13, '2018_11_16_140259_create_purchases_table', 1);
-INSERT INTO public.migrations VALUES (14, '2018_11_16_140412_create_airports_table', 1);
-INSERT INTO public.migrations VALUES (15, '2018_11_19_005556_create_hotelrooms_table', 1);
-INSERT INTO public.migrations VALUES (16, '2018_11_19_005630_create_passengers_table', 1);
-INSERT INTO public.migrations VALUES (17, '2018_11_19_005711_create_segments_table', 1);
-INSERT INTO public.migrations VALUES (18, '2018_11_19_005751_create_airplaneseats_table', 1);
-INSERT INTO public.migrations VALUES (19, '2018_11_20_172401_create_packages_table', 1);
-INSERT INTO public.migrations VALUES (20, '2018_11_30_205124_create_hotelreserves_table', 1);
-INSERT INTO public.migrations VALUES (21, '2018_11_30_211543_create_packagereserves_table', 1);
-INSERT INTO public.migrations VALUES (22, '2018_12_01_231556_create_flightsegments_table', 1);
-INSERT INTO public.migrations VALUES (23, '2018_12_19_192013_create_trigger_table', 1);
-INSERT INTO public.migrations VALUES (24, '2018_12_20_132142_create_seats_trigger_table', 1);
-INSERT INTO public.migrations VALUES (25, '2018_12_26_234845_create_flightreserves_table', 1);
-INSERT INTO public.migrations VALUES (26, '2018_12_28_025031_create_hotelrooms_trigger_table', 1);
-
-
---
--- Data for Name: packagereserves; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.packagereserves VALUES (1, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 1, 1);
-INSERT INTO public.packagereserves VALUES (2, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 1, 4);
-INSERT INTO public.packagereserves VALUES (3, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 7, 5);
-INSERT INTO public.packagereserves VALUES (4, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 28, 1);
-INSERT INTO public.packagereserves VALUES (5, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 26, 2);
-
-
---
 -- Data for Name: packages; Type: TABLE DATA; Schema: public; Owner: homestead
 --
 
@@ -1633,53 +1617,14 @@ INSERT INTO public.packages VALUES (5, 112, 2, 38, 471, '2018-12-29', '2019-01-0
 
 
 --
--- Data for Name: passengers; Type: TABLE DATA; Schema: public; Owner: homestead
+-- Data for Name: insurences; Type: TABLE DATA; Schema: public; Owner: homestead
 --
 
-INSERT INTO public.passengers VALUES (1, 'Alfredo', 'Rice', 46, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.passengers VALUES (2, 'America', 'Kub', 9, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.passengers VALUES (3, 'Ed', 'Pouros', 10, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.passengers VALUES (4, 'Patience', 'Hoeger', 58, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.passengers VALUES (5, 'Jaeden', 'Bosco', 89, true, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: password_resets; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-
-
---
--- Data for Name: payments; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.payments VALUES (1, 'Discover Card', 'Hudson, Sanford and Bogan', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.payments VALUES (2, 'MasterCard', 'Daugherty Ltd', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.payments VALUES (3, 'Visa', 'Larson, Runolfsson and Pollich', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.payments VALUES (4, 'Visa', 'Larkin, Walker and Mertz', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.payments VALUES (5, 'Visa', 'Fay, Reinger and Brakus', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-
-
---
--- Data for Name: purchases; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.purchases VALUES (1, 12936, '2018-12-30 05:49:00', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 4, 23);
-INSERT INTO public.purchases VALUES (2, 19777, '2019-01-01 11:44:31', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 2, 10);
-INSERT INTO public.purchases VALUES (3, 12152, '2019-01-02 10:11:12', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 1, 36);
-INSERT INTO public.purchases VALUES (4, 14901, '2018-12-30 09:32:51', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 4, 4);
-INSERT INTO public.purchases VALUES (5, 2656, '2019-01-04 02:47:32', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 3, 26);
-
-
---
--- Data for Name: records; Type: TABLE DATA; Schema: public; Owner: homestead
---
-
-INSERT INTO public.records VALUES (1, '2018-12-29', 'Alice, and she went on in the grass, merely remarking that a red-hot poker will burn you if you were or might have been a holiday?'' ''Of course not,'' Alice cautiously replied, not feeling at all a.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.records VALUES (2, '2018-12-30', 'Alice had been all the jurors had a wink of sleep these three little sisters--they were learning to draw,'' the Dormouse went on, taking first one side and up I goes like a candle. I wonder what CAN.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.records VALUES (3, '2019-01-03', 'DON''T know,'' said the Gryphon, ''she wants for to know what a Gryphon is, look at them--''I wish they''d get the trial one way up as the door and found quite a chorus of voices asked. ''Why, SHE, of.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.records VALUES (4, '2018-12-30', 'Lobster; I heard him declare, "You have baked me too brown, I must go back and see how he did it,) he did with the bread-and-butter getting so far off). ''Oh, my poor hands, how is it directed to?''.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.records VALUES (5, '2018-12-29', 'I''m doubtful about the crumbs,'' said the Hatter, and here the Mock Turtle. ''Seals, turtles, salmon, and so on.'' ''What a funny watch!'' she remarked. ''It tells the day of the e--e--evening, Beautiful.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.insurences VALUES (1, 408, 'Just at this corner--No, tie ''em together first--they don''t reach half high enough yet--Oh! they''ll do well enough; don''t be nervous, or I''ll have you executed, whether you''re a little different.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.insurences VALUES (2, 330, 'So you see, so many different sizes in a hurry: a large crowd collected round it: there was a different person then.'' ''Explain all that,'' he said to Alice, and she sat down at her with large round.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.insurences VALUES (3, 382, 'When the sands are all dry, he is gay as a cushion, resting their elbows on it, for she had been to the shore. CHAPTER III. A Caucus-Race and a fan! Quick, now!'' And Alice was beginning very.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.insurences VALUES (4, 269, 'Dormouse. ''Don''t talk nonsense,'' said Alice to herself. Imagine her surprise, when the Rabbit noticed Alice, as she could see, as they lay on the shingle--will you come and join the dance? Will you.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.insurences VALUES (5, 149, 'I must be growing small again.'' She got up this morning? I almost think I should have liked teaching it tricks very much, if--if I''d only been the right words,'' said poor Alice, that she looked down.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
 
 
 --
@@ -1739,10 +1684,14 @@ INSERT INTO public.reserves VALUES (50, '2019-01-03', 1394, false, 10, 2, 4, '20
 
 
 --
--- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: homestead
+-- Data for Name: purchases; Type: TABLE DATA; Schema: public; Owner: homestead
 --
 
-INSERT INTO public.roles VALUES (1, 1, 'Usuario comun: Puede recorrer la pagina, comprar y editar su perfil.', '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.purchases VALUES (1, 12936, '2018-12-30 05:49:00', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 4, 23);
+INSERT INTO public.purchases VALUES (2, 19777, '2019-01-01 11:44:31', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 2, 10);
+INSERT INTO public.purchases VALUES (3, 12152, '2019-01-02 10:11:12', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 1, 36);
+INSERT INTO public.purchases VALUES (4, 14901, '2018-12-30 09:32:51', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 4, 4);
+INSERT INTO public.purchases VALUES (5, 2656, '2019-01-04 02:47:32', '2018-12-28 19:54:31', '2018-12-28 19:54:31', 3, 26);
 
 
 --
@@ -1757,19 +1706,62 @@ INSERT INTO public.segments VALUES (5, 'New Anitatown', 91, '2018-12-28 19:54:31
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: homestead
+-- Data for Name: hotelreserves; Type: TABLE DATA; Schema: public; Owner: homestead
 --
 
-INSERT INTO public.users VALUES (1, 1, 4, 'Dr. Jarod Rutherford', 'Skiles', 86, 'powlowski.roxane@example.net', NULL, '76', '64', false, 'I don''t know,'' he went on eagerly: ''There is such a thing before, but she did not look at the Caterpillar''s making such a nice little histories about children who had spoken first. ''That''s none of.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (2, 1, 4, 'Miss Ivy Bednar Sr.', 'Quigley', 40, 'wolf.mariela@example.net', NULL, '23', '97', true, 'Just at this corner--No, tie ''em together first--they don''t reach half high enough yet--Oh! they''ll do well enough; don''t be nervous, or I''ll have you executed on the bank, and of having nothing to.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (3, 1, 5, 'Ansley Schulist', 'Pfeffer', 14, 'gbogan@example.org', NULL, '33', '51', true, 'The Queen''s argument was, that her flamingo was gone across to the game. CHAPTER IX. The Mock Turtle at last, and managed to put down yet, before the end of every line: ''Speak roughly to your little.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (4, 1, 1, 'Gwen Bosco', 'Bergstrom', 16, 'edwina.miller@example.com', NULL, '32', '91', false, 'He unfolded the paper as he said to the dance. ''"What matters it how far we go?" his scaly friend replied. "There is another shore, you know, this sort of mixed flavour of cherry-tart, custard.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (5, 1, 3, 'Trever Stehr', 'Weimann', 6, 'qbuckridge@example.net', NULL, '86', '56', true, 'This time Alice waited patiently until it chose to speak first, ''why your cat grins like that?'' ''It''s a mineral, I THINK,'' said Alice. ''Of course you don''t!'' the Hatter went on, ''"--found it.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (6, 1, 5, 'Prof. Wallace Reynolds', 'Rice', 47, 'alexzander90@example.net', NULL, '9', '54', true, 'Gryphon. ''Do you know I''m mad?'' said Alice. ''I''ve tried the effect of lying down with her arms round it as well go in ringlets at all; and I''m sure _I_ shan''t be beheaded!'' ''What for?'' said the Mock.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (7, 1, 3, 'Mrs. Sarah Olson Jr.', 'Lang', 62, 'trace89@example.net', NULL, '95', '22', true, 'Some of the mushroom, and crawled away in the last few minutes, and began by producing from under his arm a great hurry. ''You did!'' said the Dormouse into the air off all its feet at the top of her.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (8, 1, 2, 'Janice Farrell V', 'Towne', 15, 'lily.stracke@example.org', NULL, '27', '15', false, 'Queen ordering off her head!'' Those whom she sentenced were taken into custody by the prisoner to--to somebody.'' ''It must be removed,'' said the Cat. ''I''d nearly forgotten to ask.'' ''It turned into a.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (9, 1, 3, 'German Franecki', 'Von', 56, 'elliott.vonrueden@example.net', NULL, '32', '15', false, 'I am, sir,'' said Alice; ''but when you throw them, and all the time it vanished quite slowly, beginning with the dream of Wonderland of long ago: and how she would keep, through all her wonderful.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
-INSERT INTO public.users VALUES (10, 1, 2, 'Leilani Rau', 'Prohaska', 78, 'antonio13@example.com', NULL, '57', '26', true, 'Caterpillar contemptuously. ''Who are YOU?'' Which brought them back again to the confused clamour of the ground.'' So she swallowed one of the guinea-pigs cheered, and was just in time to be lost, as.', NULL, '2018-12-28 19:54:30', '2018-12-28 19:54:30');
+INSERT INTO public.hotelreserves VALUES (1, 71, 10, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
+INSERT INTO public.hotelreserves VALUES (2, 46, 24, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
+INSERT INTO public.hotelreserves VALUES (3, 77, 44, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
+INSERT INTO public.hotelreserves VALUES (4, 36, 34, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
+INSERT INTO public.hotelreserves VALUES (5, 71, 6, '2018-12-28 19:54:31', '2018-12-28 19:54:31');
+
+
+--
+-- Data for Name: packagereserves; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.packagereserves VALUES (1, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 1, 1);
+INSERT INTO public.packagereserves VALUES (2, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 1, 4);
+INSERT INTO public.packagereserves VALUES (3, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 7, 5);
+INSERT INTO public.packagereserves VALUES (4, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 28, 1);
+INSERT INTO public.packagereserves VALUES (5, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 26, 2);
+
+
+--
+-- Data for Name: flightsegments; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.flightsegments VALUES (1, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 5, 2);
+INSERT INTO public.flightsegments VALUES (2, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 4, 4);
+INSERT INTO public.flightsegments VALUES (3, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 1, 4);
+INSERT INTO public.flightsegments VALUES (4, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 3, 1);
+INSERT INTO public.flightsegments VALUES (5, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 2, 3);
+
+
+--
+-- Data for Name: flightreserves; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+INSERT INTO public.flightreserves VALUES (1, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 42, 15);
+INSERT INTO public.flightreserves VALUES (2, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 27, 12);
+INSERT INTO public.flightreserves VALUES (3, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 32, 31);
+INSERT INTO public.flightreserves VALUES (4, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 31, 8);
+INSERT INTO public.flightreserves VALUES (5, '2018-12-28 19:54:31', '2018-12-28 19:54:31', 84, 31);
+
+
+--
+-- Data for Name: password_resets; Type: TABLE DATA; Schema: public; Owner: homestead
+--
+
+
+
+
+
+
+
+
+
+
 
 
 --
