@@ -53,6 +53,15 @@ Route::resource('record', 'RecordController');
 
 Route::resource('airplaneseat','AirplaneseatController');
 
+
+
+
+Route::post('prueba', 'AirplaneseatController@compra');
+Route::post('pruebahotel', 'HotelroomController@compra');
+
+
+
+
 Route::resource('role','RoleController');
 
 Route::resource('insurence','InsurenceController');

@@ -15,5 +15,6 @@ $factory->define(App\Reserve::class, function (Faker $faker) {
     	'insurence_id'=>$insurence_id->random()->id,
     	'car_id'=>$car_id->random()->id,
     	'user_id'=>$user_id->random()->id,
+        'inUse'=>0,
     ];
 });

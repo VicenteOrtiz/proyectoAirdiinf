@@ -53,6 +53,7 @@ class ReserveController extends Controller
         $reserve->reserveDate = $request->get('reserveDate');
         $reserve->reserveBalance = $request->get('reserveBalance');
         $reserve->insurance = $request->get('insurance');
+        $reserve->inUse = $request->get('inUse');
         $reserve->save();
         return "Se ha añadido satisfactoriamente la reserva";
     }
@@ -96,6 +97,7 @@ class ReserveController extends Controller
         $reserve->reserveDate = $request->get('reserveDate');
         $reserve->reserveBalance = $request->get('reserveBalance');
         $reserve->insurance = $request->get('insurance');
+        $reserve->inUse = $request->get('inUse');
         $reserve->save();
         return "Se ha actualizado satisfactoriamente la reserva";
     }

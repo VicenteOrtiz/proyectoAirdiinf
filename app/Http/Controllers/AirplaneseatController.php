@@ -1,11 +1,12 @@
 <?php
-<?php
 
 namespace App\Http\Controllers;
 
 use Validator;
 use App\Airplaneseat;
 use Illuminate\Http\Request;
+use App\Reserve;
+use App\Flightreserve;
 
 class AirplaneseatController extends Controller
 {
@@ -106,6 +107,7 @@ class AirplaneseatController extends Controller
         $airplaneseat->passenger_id = $request->passsenger_id;
         $airplaneseat->save();
         return "Se ha editado correctamente";
+
     }
 
     /**
@@ -119,5 +121,38 @@ class AirplaneseatController extends Controller
         $airplaneseat = Airplaneseat::findOrFail($id);
         $airplaneseat->delete();
         return "Eliminado con exito";
+    }
+
+    public function compra(Request $request)
+    {
+        $validador = Reserve::all()->last()->inUse;
+
+        $seatPurchase = new Flightreserve();
+
+
+        if($validador == false){
+            $reserva = new Reserve();
+            $reserva->reserveDate = NOW();
+            $reserva->reserveBalance = 0;
+            $reserva->insurance = false;
+            $reserva->user_id = 1; //aqui dps va el usuario que este validado;
+            //$reserva->insurance_id = 1;
+            //$reserva->car_id = 0;
+            $reserva->inUse = true;
+            $reserva->save();
+
+        }else{
+            $reserva = Reserve::all()->last();
+        }
+
+        $seatPurchase->airplaneseat_id = $request->id;
+        $seatPurchase->reserve_id = $reserva->id;
+
+        $reserva->save();
+        $seatPurchase->save();
+
+        return "compra de pasaje hecha";
+        
+
     }
 }

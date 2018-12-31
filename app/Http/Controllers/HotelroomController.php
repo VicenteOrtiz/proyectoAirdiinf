@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Hotelroom;
 use Illuminate\Http\Request;
+use App\Reserve;
+use App\Hotelreserve;
 
 class HotelroomController extends Controller
 {
@@ -128,5 +130,36 @@ class HotelroomController extends Controller
         $hotelroom->delete();
 
         return "se ha eliminado la habitacion satisfactoriamente";
+    }
+
+    public function compra(Request $request)
+    {
+        $validador = Reserve::all()->last()->inUse;
+
+        $roomPurchase = new Hotelreserve();
+
+
+        if($validador == false){
+            $reserva = new Reserve();
+            $reserva->reserveDate = NOW();
+            $reserva->reserveBalance = 0;
+            $reserva->insurance = false;
+            $reserva->user_id = 1; //aqui dps va el usuario que este validado;
+            //$reserva->insurance_id = 1;
+            //$reserva->car_id = 0;
+            $reserva->inUse = true;
+            $reserva->save();
+
+        }else{
+            $reserva = Reserve::all()->last();
+        }
+
+        $roomPurchase->hotelroom_id = $request->id;
+        $roomPurchase->reserve_id = $reserva->id;
+
+        $reserva->save();
+        $roomPurchase->save();
+
+        return "compra de pasaje hecha";
     }
 }
