@@ -34,7 +34,7 @@ class AirplaneseatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() 
     {
         //
     }
@@ -163,6 +163,8 @@ class AirplaneseatController extends Controller
 
         $flightSeat->passenger_id = $passenger->id;
         $flightSeat->available = "false";
+
+        $reserva->reserveBalance = $reserva->reserveBalance + $flightSeat->priceperseat_id;
 
         $flightSeat->save();
         $reserva->save();

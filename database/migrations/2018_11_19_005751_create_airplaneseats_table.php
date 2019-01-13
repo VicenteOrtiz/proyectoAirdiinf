@@ -26,6 +26,8 @@ class CreateAirplaneseatsTable extends Migration
             $table->integer('passenger_id')->nullable();
             $table->foreign('passenger_id')->references('id')->on('passengers')->onDelete('cascade');
 
+            $table->integer('priceperseat_id');
+
             $table->timestamps();
         });
     }

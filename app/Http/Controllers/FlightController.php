@@ -3,6 +3,7 @@
 namespace App\Http\Controllers; 
 
 use App\Flight;
+use App\City;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -26,6 +27,8 @@ class FlightController extends Controller
      */
     public function index()
     {        
+        $flights = Flight::all();
+        return view('flights.index', compact("flights"));
         return Flight::all();
 
     }
@@ -123,6 +126,12 @@ class FlightController extends Controller
         $flight = Flight::findOrFail($id);
         $flight->delete();
         return "Se ha borrado correctamente";
+    }
+
+    public function search(){
+        $cities = City::All();
+
+        return view('flights.search', compact('cities'));
     }
 
     public function searchOD(Request $request)

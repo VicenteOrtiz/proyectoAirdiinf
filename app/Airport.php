@@ -12,4 +12,12 @@ class Airport extends Model
     	'city',
     	'phoneNumber',
     ];
+
+    public function city(){
+    	return $this->belongsTo('App\City');
+    }
+
+    public function airports(){
+    	return $this->hasMany('App\Flight');
+    }
 }

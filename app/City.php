@@ -18,4 +18,8 @@ class City extends Model
     public function hotels(){
     	return $this->hasMany('App\Hotel');
     }
+
+    public function airports(){
+        return $this->hasMany('App\Airport');
+    }
 }

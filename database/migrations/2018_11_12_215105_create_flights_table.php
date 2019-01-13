@@ -21,15 +21,17 @@ class CreateFlightsTable extends Migration
 
             //$table->string('departureLocation');
             $table->integer('departure_id');
-            $table->foreign('departure_id')->references('id')->on('cities')->onDelete('cascade');
+            $table->foreign('departure_id')->references('id')->on('airports')->onDelete('cascade');
 
             //$table->string('arrivalLocation');
             $table->integer('arrival_id');
-            $table->foreign('arrival_id')->references('id')->on('cities')->onDelete('cascade');
+            $table->foreign('arrival_id')->references('id')->on('airports')->onDelete('cascade');
 
             $table->date('flightDate');
             $table->string('departureTime');
             $table->boolean('confirmed');
+
+            $table->integer('pricePerSeat');
             $table->timestamps();
         });
     }

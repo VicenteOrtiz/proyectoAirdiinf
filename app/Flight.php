@@ -30,14 +30,14 @@ class Flight extends Model
     }
 
     public function arrival(){
-        return $this->belongsTo('App\City', 'arrival_id');
+        return $this->belongsTo('App\Airport', 'arrival_id');
     }
 
     public function departure(){
-        return $this->belongsTo('App\City', 'departure_id');
+        return $this->belongsTo('App\Airport', 'departure_id');
     }
 
     // public function flightreserve(){
     //     return $this->hasMany('App\Flightreserve');
     // }
-}
+} 

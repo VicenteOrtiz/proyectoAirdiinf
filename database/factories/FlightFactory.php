@@ -6,7 +6,7 @@ $factory->define(App\Flight::class, function (Faker $faker) {
 
 	$faker->addProvider(new \Faker\Provider\Fakecar($faker));
 
-	$city_id = DB::table('cities')->select('id')->get();
+	$airports_id = DB::table('airports')->select('id')->get();
 
     return [
 
@@ -16,16 +16,18 @@ $factory->define(App\Flight::class, function (Faker $faker) {
 
 		//'departureLocation' => $faker->country,
 		//'departureLocation' => $cityName->random()->cityName,
-		'departure_id' => $city_id->random()->id,
+		'departure_id' => $airports_id->random()->id,
 
 
 
 		//'arrivalLocation' => $faker->country,
 		//'arrivalLocation' => $cityName->random()->cityName,
-		'arrival_id' => $city_id->random()->id,
+		'arrival_id' => $airports_id->random()->id,
 
 		'confirmed' => $faker->numberBetween(0,1),
 		'flightDate' => $faker->dateTimeBetween($startDate = 'now',$endDate = '+1 months'),
 		'departureTime' => $faker->time($format = 'H:i'),
+
+		'pricePerSeat' => $faker->numberBetween(50,1000),
     ];
 });

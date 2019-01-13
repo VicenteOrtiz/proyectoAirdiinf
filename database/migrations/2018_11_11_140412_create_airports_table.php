@@ -17,8 +17,10 @@ class CreateAirportsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
-            $table->string('city');
+            $table->integer('city_id');
             $table->string('phoneNumber');
+
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->timestamps();
         });
     }

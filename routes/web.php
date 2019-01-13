@@ -53,15 +53,6 @@ Route::resource('record', 'RecordController');
 
 Route::resource('airplaneseat','AirplaneseatController');
 
-
-
-
-Route::post('prueba', 'AirplaneseatController@compra');
-Route::post('pruebahotel', 'HotelroomController@compra');
-
-
-
-
 Route::resource('role','RoleController');
 
 Route::resource('insurence','InsurenceController');
@@ -73,8 +64,39 @@ Route::resource('reserve','ReserveController');
 Route::resource('segment','SegmentController');
 
 Route::resource('user','UserController');
+
+
+// Route::resource('/purch', function() {
+// 	return view('flights.form');
+// });
+
+Route::get('/vuelo', 'FlightController@search');
+
+Route::get('/ejemplo', function() {
+	return view('flights.ejemplo');
+});
+
+
+
 //los links de abajo, se harán solo con fines del CRUD
 
 Route::post('/flights/search', 'FlightController@searchOD');
 
 // Route::post('/hotels/create', 'HotelController@create');
+
+
+/* Las siguientes rutas son solo de prueba, se comenta debajo los "input" que necesitan.*/
+
+
+/* Para reservar un asiento de avión, se necesita:
+	- name: Nombre pasajero
+	- surname: Apellido pasajero
+	- age: Edad pasajero
+	- id: id de asiento
+*/
+Route::post('prueba', 'AirplaneseatController@compra');
+
+/* Para reservar una habitación de hotel, se necesita:
+	-id: id de la habitación solamente
+*/
+Route::post('pruebahotel', 'HotelroomController@compra');

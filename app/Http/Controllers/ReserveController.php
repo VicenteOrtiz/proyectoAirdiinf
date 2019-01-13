@@ -13,7 +13,7 @@ class ReserveController extends Controller
         [
             'reserveDate' => 'required|string',
             'reserveBalance' => 'required|numeric',
-            'insurance' => 'required|numeric',
+            'insurance' => 'required|numeric', 
         ];
     }
     /**
