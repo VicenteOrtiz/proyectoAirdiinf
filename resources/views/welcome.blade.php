@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/flight">Vuelos</a>
+                    <a href="/vuelo">Vuelos</a>
                     <a href="/hotel">Hoteles</a>
                     <a href="/car">Autos</a>
                 </div>

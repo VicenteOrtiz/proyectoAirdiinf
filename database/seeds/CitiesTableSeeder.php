@@ -33,6 +33,6 @@ class CitiesTableSeeder extends Seeder
             'updated_at' => now(), 
         ]);
 
-        factory(App\City::class, 5) -> create();
+        factory(App\City::class, 20) -> create();
     }
 }

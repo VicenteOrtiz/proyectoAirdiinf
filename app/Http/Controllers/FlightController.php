@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Flight;
 use App\City;
+use App\Airport;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -128,10 +129,40 @@ class FlightController extends Controller
         return "Se ha borrado correctamente";
     }
 
-    public function search(){
+    public function form(){
         $cities = City::All();
 
         return view('flights.search', compact('cities'));
+    }
+
+    public function search(Request $request){
+
+
+        //return "hola";
+        list($departureCity, $departureCountry) = explode(',', $request->origen_id);
+        list($arrivalCity, $arrivalCountry) = explode(',', $request->destino_id);
+
+        $departureCityId = City::where('cityName', $departureCity)->get()->last()->id;
+        $arrivalCityId = City::where('cityName', $arrivalCity)->get()->last()->id;
+
+        $departureAirports = Airport::where('city_id', $departureCityId)->get();
+        $arrivalAirports = Airport::where('city_id', $arrivalCityId)->get();
+
+        $departureAirportsId = $departureAirports->map(function($c) {return $c->id;});
+        $arrivalAirportsId = $arrivalAirports->map(function($c) {return $c->id;});
+
+        $flights = Flight::whereIn('departure_id', $departureAirportsId)->whereIn('arrival_id', $arrivalAirportsId)->get();
+
+        // $departure = $request->get('origen_id');
+        // $arrival = $request->get('destino_id');
+
+        // $flight = Flight::where('departure_id',$departure)->where('arrival_id', $arrival)->get();
+
+        //return "hola";
+
+        return view('flights.searchresult', compact('flights'));
+        return $flights;
+
     }
 
     public function searchOD(Request $request)

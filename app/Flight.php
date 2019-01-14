@@ -29,6 +29,10 @@ class Flight extends Model
         return $this->hasMany('App\Flightsegments');
     }
 
+    // public function airport(){
+    //     return $this->belongsTo('App\Airport');
+    // }
+
     public function arrival(){
         return $this->belongsTo('App\Airport', 'arrival_id');
     }

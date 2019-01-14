@@ -70,7 +70,11 @@ Route::resource('user','UserController');
 // 	return view('flights.form');
 // });
 
-Route::get('/vuelo', 'FlightController@search');
+Route::get('/vuelo', 'FlightController@form');
+Route::post('/vuelo/busqueda', 'FlightController@search');
+
+Route::post('/asiento/seleccionar', 'AirplaneseatController@select');
+Route::post('/asiento/comprar', 'AirplaneseatController@purchase');
 
 Route::get('/ejemplo', function() {
 	return view('flights.ejemplo');

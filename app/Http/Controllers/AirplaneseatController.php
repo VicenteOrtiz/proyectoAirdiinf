@@ -174,4 +174,21 @@ class AirplaneseatController extends Controller
         
 
     }
+
+    public function select(Request $request)
+    {
+        $seats = Airplaneseat::where('flight_id', $request->flight_id)->get();
+
+        return view('flights.seats.index', compact('seats'));
+        return $seats;
+    }
+
+    public function purchase(Request $request)
+    {
+
+        list($seatLetter, $row, $seat_id) = explode('-', $request->seat_id);
+        $seat = Airplaneseat::find($seat_id);
+
+        return view('flights.seats.purchase', compact('seat'));
+    }
 }
