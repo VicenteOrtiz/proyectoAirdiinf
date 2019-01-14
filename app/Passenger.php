@@ -11,6 +11,7 @@ class Passenger extends Model
     	'surname',
     	'age',
     	'checkIn',
+    	'idNumber',
     ];
 
     public function airplaneseats(){

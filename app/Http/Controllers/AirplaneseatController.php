@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Reserve;
 use App\Flightreserve;
 use App\Passenger;
+use Auth;
 
 class AirplaneseatController extends Controller
 {
@@ -17,7 +18,7 @@ class AirplaneseatController extends Controller
             'row'=>'required|numeric',
             'seat_letter'=>'required|string',
             'available'=>'required|numeric',
-        ];
+        ]; 
     }
     /**
      * Display a listing of the resource.
@@ -126,9 +127,12 @@ class AirplaneseatController extends Controller
 
     public function compra(Request $request)
     {
+
+        $user = Auth::user(); //aqui el usuario ya esta logeado
+
         $validador = Reserve::all()->last()->inUse;
         $seatPurchase = new Flightreserve();
-        $flightSeat = Airplaneseat::where('id',$request->id)->get()->first();
+        $flightSeat = Airplaneseat::where('id',$request->seatId)->get()->first();
         $passenger = new Passenger();
 
         if($flightSeat->available == false){
@@ -141,7 +145,7 @@ class AirplaneseatController extends Controller
             $reserva->reserveDate = NOW();
             $reserva->reserveBalance = 0;
             $reserva->insurance = false;
-            $reserva->user_id = 1; //aqui dps va el usuario que este validado;
+            $reserva->user_id = $user->id; //aqui dps va el usuario que este validado;
             //$reserva->insurance_id = 1;
             //$reserva->car_id = 0;
             $reserva->inUse = true;
@@ -151,18 +155,19 @@ class AirplaneseatController extends Controller
             $reserva = Reserve::all()->last();
         }
 
-        $passenger->name = $request->name;
-        $passenger->surname = $request->surname;
-        $passenger->age = $request->age;
+        $passenger->name = $request->passengerName;
+        $passenger->surname = $request->passengerSurname;
+        $passenger->age = $request->passengerAge;
+        $passenger->idNumber = $request->idNumber;
         $passenger->checkIn = false;
 
         $passenger->save();
 
-        $seatPurchase->airplaneseat_id = $request->id;
+        $seatPurchase->airplaneseat_id = $request->seatId;
         $seatPurchase->reserve_id = $reserva->id;
 
         $flightSeat->passenger_id = $passenger->id;
-        $flightSeat->available = "false";
+        $flightSeat->available = "true";
 
         $reserva->reserveBalance = $reserva->reserveBalance + $flightSeat->priceperseat_id;
 
@@ -170,16 +175,25 @@ class AirplaneseatController extends Controller
         $reserva->save();
         $seatPurchase->save();
 
-        return "compra de pasaje hecha";
+        return "reserva de pasaje hecha";
         
 
     }
 
     public function select(Request $request)
     {
+
         $seats = Airplaneseat::where('flight_id', $request->flight_id)->get();
 
-        return view('flights.seats.index', compact('seats'));
+        $user = Auth::user();
+
+        if(is_object($user)){
+            return view('flights.seats.index', compact('seats'));
+        }else{
+            return redirect('/home');
+        }
+
+        
         return $seats;
     }
 
@@ -190,5 +204,10 @@ class AirplaneseatController extends Controller
         $seat = Airplaneseat::find($seat_id);
 
         return view('flights.seats.purchase', compact('seat'));
+    }
+
+    public function confirm(Request $request)
+    {
+
     }
 }

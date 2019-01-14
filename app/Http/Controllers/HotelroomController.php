@@ -7,6 +7,7 @@ use App\Hotelroom;
 use Illuminate\Http\Request;
 use App\Reserve;
 use App\Hotelreserve;
+use Auth;
 
 class HotelroomController extends Controller
 {
@@ -134,11 +135,12 @@ class HotelroomController extends Controller
 
     public function compra(Request $request)
     {
+
         $validador = Reserve::all()->last()->inUse;
 
         $roomPurchase = new Hotelreserve();
 
-        $room = Hotelroom::where('id', $request->id)->get()->last();
+        $room = Hotelroom::where('id', $request->roomId)->get()->last();
 
         if($room->available == false){
             return "Esta habitacion ya está ocupada";
@@ -159,15 +161,47 @@ class HotelroomController extends Controller
             $reserva = Reserve::all()->last();
         }
 
-        $room->available = false;
 
-        $roomPurchase->hotelroom_id = $request->id;
+
+        //$room->available = false;
+
+        $roomPurchase->hotelroom_id = $request->roomId;
         $roomPurchase->reserve_id = $reserva->id;
 
+        $reserva->reserveBalance = $reserva->reserveBalance + $room->room_price_per_day;
+
         $room->save();
+
         $reserva->save();
+        //return $request->roomId/* $roomPurchase->reserve_id*/;
         $roomPurchase->save();
 
         return "reserva de habitacion hecha";
+    }
+
+    public function select(Request $request)
+    {
+        $rooms = Hotelroom::where('hotel_id', $request->hotel_id)->get();
+
+        $user = Auth::user();
+
+        if(is_object($user)){
+            return view('hotels.rooms.index', compact('rooms'));
+        }else{
+            return redirect('/home');
+        }
+
+        
+        return $seats;
+    }
+
+    public function purchase(Request $request)
+    {
+        list($room_number, $numberofBeds, $roomPrice, $roomId) = explode('-', $request->room_id);
+
+
+        $room = Hotelroom::find($roomId);
+
+        return view('hotels.rooms.purchase', compact('room'));
     }
 }

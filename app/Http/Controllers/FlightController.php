@@ -14,7 +14,7 @@ class FlightController extends Controller
         return
         [
             'flightNumber' => 'required|string',
-            'airplaneModel' => 'required|string',
+            'airplaneModel' => 'required|string', 
             'airplaneCapacity' => 'required|numeric',
             'confirmed' => 'required|numeric',
             'flightDate' => 'required|string',

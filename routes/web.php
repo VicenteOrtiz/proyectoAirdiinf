@@ -76,6 +76,12 @@ Route::post('/vuelo/busqueda', 'FlightController@search');
 Route::post('/asiento/seleccionar', 'AirplaneseatController@select');
 Route::post('/asiento/comprar', 'AirplaneseatController@purchase');
 
+Route::get('/hoteles', 'HotelController@form');
+Route::post('/hoteles/busqueda', 'HotelController@search');
+
+Route::post('/habitacion/seleccionar', 'HotelroomController@select');
+Route::post('/habitacion/comprar', 'HotelroomController@purchase');
+
 Route::get('/ejemplo', function() {
 	return view('flights.ejemplo');
 });
@@ -98,9 +104,9 @@ Route::post('/flights/search', 'FlightController@searchOD');
 	- age: Edad pasajero
 	- id: id de asiento
 */
-Route::post('prueba', 'AirplaneseatController@compra');
+Route::post('reserve/seat', 'AirplaneseatController@compra');
 
 /* Para reservar una habitación de hotel, se necesita:
 	-id: id de la habitación solamente
 */
-Route::post('pruebahotel', 'HotelroomController@compra');
+Route::post('reserve/room', 'HotelroomController@compra');

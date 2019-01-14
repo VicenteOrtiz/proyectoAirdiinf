@@ -6,23 +6,25 @@
 
 
 <div class="col-md-8">
-	<h1 style="color: blue">Datos del pasajero</h1>
+	<h1 style="color: blue">Resumen de reserva</h1>
 
-	Hola
-
-	<form method="POST" action="/reserve/seat">
+	<form method="POST" action="/reserve/room">
 
 		@csrf
 		
-		<p>Asiento: {{$seat->row}}, {{$seat->seat_letter}}</p>
-		<p>Numero de vuelo: {{$seat->flight->flightNumber}}</p>
+		<p>Nombre Hotel: {{$room->Hotel->hotelName}}</p>
+		<p>Estrellas: {{$room->Hotel->stars}}</p>
+		<p>Numero de camas: {{$room->number_of_beds}}</p>
+		<p>Piso: {{$room->floor_number}}</p>
+		<p>Numero de habitacion: {{$room->room_number}}</p>
+		<p>Precio por noche: {{$room->room_price_per_day}}</p>
 
 		<div>
-			<label for="passengerName" style="color: black">Nombre del Pasajero </label>
-			<input class="form-control" type="text" name="passengerName" placeholder="Nombre del Pasajero" id="passengerName">
+			<!-- <label for="roomId" style="color: black">Room id</label> -->
+			<input class="form-control" type="text" name="roomId" placeholder="Room id" id="passengerName" value="{{$room->id}}" style="display: none">
 		</div>
 
-		<div>
+<!-- 		<div>
 			<label for="passengerSurname" style="color: black">Apellido del Pasajero </label>
 			<input class="form-control" type="text" name="passengerSurname" placeholder="Apellido del Pasajero" id="passengerSurname">
 		</div>
@@ -40,9 +42,9 @@
 		<div>
 			<label for="seatId" style="color: black">id Asiento </label>
 			<select name="seatId" class="form-control">
-				<option>{{$seat->id}}</option>
+				<option></option>
 			</select>
-		</div>
+		</div> -->
 		
 
 		<p></p>
