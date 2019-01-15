@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Car;
 use Illuminate\Http\Request;
+use App\City;
+use App\Reserve;
 
 class CarController extends Controller
 {
@@ -124,5 +126,73 @@ class CarController extends Controller
         $car->delete();
 
         return "Se ha eliminado satisfactoriamente el auto";
+    }
+
+    public function compra(Request $request)
+    {
+        $validador = Reserve::all()->last()->inUse;
+
+        $car = Car::where('id', $request->carId)->get()->last();
+
+        if($car->available == false){
+            return "Este auto ya está ocupado";
+        }
+
+        if($validador == false){
+            $reserva = new Reserve();
+            $reserva->reserveDate = NOW();
+            $reserva->reserveBalance = 0;
+            $reserva->insurance = false;
+            $reserva->user_id = 1; //aqui dps va el usuario que este validado;
+            //$reserva->insurance_id = 1;
+            //$reserva->car_id = 0;
+            $reserva->inUse = true;
+            $reserva->save();
+
+        }else{
+            $reserva = Reserve::all()->last();
+        }
+
+        if($reserva->car_id != null){
+            return "la reserva actual ya tiene un auto asignado";
+        }
+
+        $reserva->car_id = $car->id;
+        $reserva->reserveBalance = $reserva->reserveBalance + ($car->pricePerHour)*12; //el *12 se debe modificar en funcion al calculo de horas que se utilizara
+
+        $reserva->save();
+
+        return "reserva de auto hecha exitosamente";
+    }
+
+    public function form()
+    {
+        $cities = City::all();
+
+        return view('cars.search', compact('cities'));
+    }
+
+    public function search(Request $request)
+    {
+
+
+
+        //modelo, capacidad, precio
+        list($carCity, $carCountry) = explode(',', $request->ciudad_id);
+
+        //return $carCity;
+        $carCityId = City::where('cityName', $carCity)->get()->last()->id;
+        //return $carCityId;
+        $cars = Car::where('city_id', $carCityId)->get();
+        //return $cars;
+        return view('cars.searchresult', compact('cars'));
+
+        
+    }
+
+    public function purchase(Request $request)
+    {
+
+        return null;
     }
 }
