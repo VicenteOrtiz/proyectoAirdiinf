@@ -162,6 +162,7 @@ class CarController extends Controller
 
         $reserva->save();
 
+        return redirect('/cart');
         return "reserva de auto hecha exitosamente";
     }
 

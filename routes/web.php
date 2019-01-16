@@ -114,3 +114,6 @@ Route::post('reserve/seat', 'AirplaneseatController@compra');
 	-id: id de la habitación solamente
 */
 Route::post('reserve/room', 'HotelroomController@compra');
+
+// Aux para construir el carrito de compras
+Route::get('/cart', 'PurchaseController@cart');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Purchase;
 use Illuminate\Http\Request;
+use Auth;
 
 class PurchaseController extends Controller
 {
@@ -129,5 +130,28 @@ class PurchaseController extends Controller
         $purchase->delete();
 
         return "Se ha eliminado satisfactoriamente una compra";
+    }
+
+    public function cart(){
+
+        $user = Auth::user();
+
+        if(is_object($user)){
+
+            $reservaActual = $user->reserves->last();
+
+            if($reservaActual->inUse == false){
+                return "el carrito esta vacio";
+            }
+
+            $reservaHabitacion = $reservaActual->hotelreserve;
+            $reservaAsiento = $reservaActual->flightreserve;
+
+            return view('purchase.cart', compact('reservaActual', 'reservaHabitacion', 'reservaAsiento'));
+        }else{
+            return redirect('/home');
+        }
+
+
     }
 }

@@ -175,8 +175,8 @@ class AirplaneseatController extends Controller
         $reserva->save();
         $seatPurchase->save();
 
-        return "reserva de pasaje hecha";
-        
+        return redirect('/cart');
+        return "reserva de avion hecha";
 
     }
 

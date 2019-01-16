@@ -176,6 +176,7 @@ class HotelroomController extends Controller
         //return $request->roomId/* $roomPurchase->reserve_id*/;
         $roomPurchase->save();
 
+        return redirect('/cart');
         return "reserva de habitacion hecha";
     }
 
