@@ -153,8 +153,9 @@ class HotelController extends Controller
     public function form()
     {
         $cities = City::all();
+        $hotels = Hotel::all();
 
-        return view('hotels.search', compact('cities'));
+        return view('hotels.search', compact('cities','hotels'));
 
     }
 
@@ -169,8 +170,9 @@ class HotelController extends Controller
         $destinyCityId = City::where('cityName', $destinyCity)->get()->last()->id;
 
         //return 
-
         $hotels = Hotel::where('city_id', $destinyCityId)->get();
+        $cities = City::all();
+
 
         // $departureAirports = Airport::where('city_id', $destinyCityId)->get();
         // $arrivalAirports = Airport::where('city_id', $arrivalCityId)->get();
@@ -187,7 +189,7 @@ class HotelController extends Controller
 
         //return "hola";
 
-        return view('hotels.searchresult', compact('hotels'));
+        return view('hotels.search', compact('cities','hotels'));
         //return $flights;
     }
 }
