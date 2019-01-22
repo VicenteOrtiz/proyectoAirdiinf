@@ -11,6 +11,6 @@ class HotelreservesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Hotelreserve::class, 10) -> create();
+        factory(App\Hotelreserve::class, 5) -> create();
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Hotel;
 use App\Country;
+use App\City;
 use Illuminate\Http\Request;  
 
 class HotelController extends Controller
@@ -147,5 +148,48 @@ class HotelController extends Controller
         $hotel->delete();
 
         return "eliminacion exitosa";
+    }
+
+    public function form()
+    {
+        $cities = City::all();
+        $hotels = Hotel::all();
+
+        return view('hotels.search', compact('cities','hotels'));
+
+    }
+
+    public function search(Request $request)
+    {
+
+
+        list($destinyCity, $destinyCountry) = explode(',', $request->destino_id);
+
+        //return $destinyCity;
+
+        $destinyCityId = City::where('cityName', $destinyCity)->get()->last()->id;
+
+        //return 
+        $hotels = Hotel::where('city_id', $destinyCityId)->get();
+        $cities = City::all();
+
+
+        // $departureAirports = Airport::where('city_id', $destinyCityId)->get();
+        // $arrivalAirports = Airport::where('city_id', $arrivalCityId)->get();
+
+        // $departureAirportsId = $departureAirports->map(function($c) {return $c->id;});
+        // $arrivalAirportsId = $arrivalAirports->map(function($c) {return $c->id;});
+
+        // $flights = Flight::whereIn('departure_id', $departureAirportsId)->whereIn('arrival_id', $arrivalAirportsId)->get();
+
+        // $departure = $request->get('origen_id');
+        // $arrival = $request->get('destino_id');
+
+        // $flight = Flight::where('departure_id',$departure)->where('arrival_id', $arrival)->get();
+
+        //return "hola";
+
+        return view('hotels.search', compact('cities','hotels'));
+        //return $flights;
     }
 }

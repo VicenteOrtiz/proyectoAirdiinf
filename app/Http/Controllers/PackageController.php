@@ -14,7 +14,7 @@ class PackageController extends Controller
             'precioPaquete'=>'required|numeric',
             'fechaInicio' => 'required|string',
             'fechaTermino' => 'required|string',
-            'hotel_id' => 'exists:hotels,id',
+            'hotelroom_id' => 'exists:hotelrooms,id',
             'car_id' => 'exists:cars,id',
             'flight_id' => 'exists:flights,id',
         ];
@@ -54,15 +54,9 @@ class PackageController extends Controller
             return $validator->messages();
         }
         $package = new Package();
-
-        $package->insurence_id = $request->insurence_id;
-        $package->hotel_id = $request->hotel_id;
+        $package->hotelroom_id = $request->hotelroom_id;
         $package->car_id = $request->car_id;
-
-        $package->flight_id = $request->flight_id; //ojito aqui, se compra asiento
-
-        $package->
-
+        $package->flight_id = $request->flight_id; 
 
         $package->precioPaquete = $request->precioPaquete;
         $package->fechaInicio = $request->fechaInicio;
@@ -112,9 +106,7 @@ class PackageController extends Controller
             return $validator->messages();
         }
         $package = Package::findOrFail($id);
-
-        $package->insurence_id = $request->insurence_id;
-        $package->hotel_id = $request->hotel_id;
+        $package->hotel_id = $request->hotelroom_id;
         $package->car_id = $request->car_id;
         $package->flight_id = $request->flight_id;
         $package->precioPaquete = $request->precioPaquete;

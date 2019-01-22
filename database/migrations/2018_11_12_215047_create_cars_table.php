@@ -20,6 +20,11 @@ class CreateCarsTable extends Migration
             $table->boolean('available');
             $table->integer('passengerCapacity');
             $table->integer('pricePerHour');
+
+
+            $table->integer('city_id');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

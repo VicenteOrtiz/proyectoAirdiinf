@@ -18,13 +18,19 @@ class CreateReservesTable extends Migration
             $table->date('reserveDate');
             $table->integer('reserveBalance');
             $table->boolean('insurance');
-            $table->timestamps();
 
-            $table->integer('insurence_id');
+            $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->integer('insurence_id')->nullable();
             $table->foreign('insurence_id')->references('id')->on('insurences')->onDelete('cascade');
 
-            $table->integer('car_id');
+            $table->integer('car_id')->nullable();
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
+
+            $table->boolean('inUse')->nullable(); //auxiliar para saber si es la reserva que se esta creando actualmente 
+
+            $table->timestamps();
 
         });
     }

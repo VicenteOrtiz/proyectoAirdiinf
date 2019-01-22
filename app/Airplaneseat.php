@@ -13,12 +13,20 @@ class Airplaneseat extends Model
     	'available',
     ];
 
-    public function flights(){
-    	return $this->hasOne('App\Flight');
+    public function flight(){
+    	return $this->belongsTo('App\Flight');
     }
 
-    public function passengers(){
+    public function passenger(){
     	return $this->hasOne('App\Passenger');
+    }
+
+    public function flightreserve(){
+        return $this->hasMany('App\Flightreserve');
+    }
+
+    public function package(){
+        return $this->belongsTo('App\Package');
     }
 
 }

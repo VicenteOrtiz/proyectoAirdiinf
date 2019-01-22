@@ -35,9 +35,7 @@ class PassengerController extends Controller
      */
     public function create()
     {
-        $passenger = new Passenger();
-
-        
+        //
     }
 
     /**
@@ -111,8 +109,9 @@ class PassengerController extends Controller
      * @param  \App\Passenger  $passenger
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Passenger $passenger)
+    public function destroy($id)
     {
+        $passenger = Passenger::findOrFail($id);
         $passenger->delete();
         return "Se ha eliminado satisfactoriamente el pasajero";
     }

@@ -17,9 +17,14 @@ class Reserve extends Model
         return $this->belongsTo('App\Insurence');
     }
 
-       public function car(){
-        return $this->hasMany('App\Car');
+    // public function car(){
+    //     return $this->hasMany('App\Car');
+    // }
+
+    public function car(){
+        return $this->hasOne('App\Car');
     }
+
     public function flights(){
         return $this->hasOne('App\Flight');
     }
@@ -34,5 +39,9 @@ class Reserve extends Model
 
     public function flightreserve(){
         return $this->hasMany('App\Flightreserve');
+    }
+
+    public function user(){
+        return $this->hasOne('App\User');
     }
 }

@@ -12,6 +12,7 @@ class RoleController extends Controller
         return 
         [
             'type' => 'required|numeric',
+            'desription' => 'required|string',
         ];
     }
     /**
@@ -48,6 +49,7 @@ class RoleController extends Controller
         }
         $role = new \App\Role;
         $role->type = $request->type;
+        $role->description = $request->description;
         $role->save();
         return "Se ha añadido satisfactoriamente el rol";
     }
@@ -89,6 +91,7 @@ class RoleController extends Controller
             return $validator->messages();
         }
         $role->type = $request->type;
+        $role->description = $request->description;
         $role->save();
         return "Se ha actualizado satisfactoriamente el rol";
     }
@@ -99,8 +102,9 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
+        $role = Role::findOrFail($id);
         $role->delete();
         return "Se ha eliminado satisfactoriamente el rol";
     }

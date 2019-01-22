@@ -22,4 +22,8 @@ class Car extends Model
         return $this->belongsTo('App\Package');
     }
 
+    public function city(){
+        return $this->belongsTo('App\City');
+    }
+
 }

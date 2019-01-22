@@ -13,7 +13,7 @@ class ReserveController extends Controller
         [
             'reserveDate' => 'required|string',
             'reserveBalance' => 'required|numeric',
-            'insurance' => 'required|numeric',
+            'insurance' => 'required|numeric', 
         ];
     }
     /**
@@ -53,6 +53,7 @@ class ReserveController extends Controller
         $reserve->reserveDate = $request->get('reserveDate');
         $reserve->reserveBalance = $request->get('reserveBalance');
         $reserve->insurance = $request->get('insurance');
+        $reserve->inUse = $request->get('inUse');
         $reserve->save();
         return "Se ha añadido satisfactoriamente la reserva";
     }
@@ -96,6 +97,7 @@ class ReserveController extends Controller
         $reserve->reserveDate = $request->get('reserveDate');
         $reserve->reserveBalance = $request->get('reserveBalance');
         $reserve->insurance = $request->get('insurance');
+        $reserve->inUse = $request->get('inUse');
         $reserve->save();
         return "Se ha actualizado satisfactoriamente la reserva";
     }
@@ -106,11 +108,10 @@ class ReserveController extends Controller
      * @param  \App\Reserve  $reserve
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reserve $reserve)
+    public function destroy($id)
     {
+        $reserve = Reserve::findOrFail($id);
         $reserve->delete();
         return "Se ha eliminado correctamente";
-        //return response()->(['success']);
-
     }
 }

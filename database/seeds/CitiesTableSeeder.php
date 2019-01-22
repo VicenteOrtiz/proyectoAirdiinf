@@ -15,18 +15,28 @@ class CitiesTableSeeder extends Seeder
     	/*DB::table('cities')->insert([
         	'cityName'=>'Santiago',
         	'country_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(), 
         ]);
 
         DB::table('cities')->insert([
         	'cityName'=>'Concepcion',
         	'country_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(), 
         ]);
 
         DB::table('cities')->insert([
         	'cityName'=>'Punta Arenas',
         	'country_id' => 1,
+<<<<<<< HEAD
         ]);*/
+=======
+            'created_at' => now(),
+            'updated_at' => now(), 
+        ]);
+>>>>>>> master
 
-        factory(App\City::class, 10) -> create();
+        factory(App\City::class, 20) -> create();
     }
 }

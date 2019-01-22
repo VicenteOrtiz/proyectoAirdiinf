@@ -23,7 +23,6 @@ class SegmentController extends Controller
      */
     public function index()
     {
-        //
         $segment = Segment::All();
         return $segment;
     }
@@ -46,7 +45,6 @@ class SegmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $validator = Validator::make($request->all(),$this->rules());
         if($validator->fails()){
             return $validator->messages();
@@ -106,8 +104,9 @@ class SegmentController extends Controller
      * @param  \App\Segment  $segment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Segment $segment)
+    public function destroy($id)
     {
+        $segment = Segment::findOrFail($id);
         $segment->delete();
         return "Se ha eliminado satisfactoriamente el tramo";
     }

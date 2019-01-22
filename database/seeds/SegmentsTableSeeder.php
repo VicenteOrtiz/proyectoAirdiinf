@@ -11,6 +11,6 @@ class SegmentsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Segment::class, 15) -> create();
+        factory(App\Segment::class, 5) -> create();
     }
 }

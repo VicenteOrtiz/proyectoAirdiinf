@@ -3,6 +3,8 @@
 namespace App\Http\Controllers; 
 
 use App\Flight;
+use App\City;
+use App\Airport;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -12,10 +14,8 @@ class FlightController extends Controller
         return
         [
             'flightNumber' => 'required|string',
-            'airplaneModel' => 'required|string',
+            'airplaneModel' => 'required|string', 
             'airplaneCapacity' => 'required|numeric',
-            'departureLocation' => 'required|string',
-            'arrivalLocation' => 'required|string',
             'confirmed' => 'required|numeric',
             'flightDate' => 'required|string',
             'departureTime' => 'required|string',
@@ -28,6 +28,8 @@ class FlightController extends Controller
      */
     public function index()
     {        
+        $flights = Flight::all();
+        return view('flights.index', compact("flights"));
         return Flight::all();
 
     }
@@ -59,8 +61,6 @@ class FlightController extends Controller
         $flight->flightNumber=$request->get('flightNumber');
         $flight->airplaneModel=$request->get('airplaneModel');
         $flight->airplaneCapacity=$request->get('airplaneCapacity');
-        $flight->departureLocation=$request->get('departureLocation');
-        $flight->arrivalLocation=$request->get('arrivalLocation');
         $flight->confirmed=$request->get('confirmed') == 1;
         $flight->flightDate=$request->get('flightDate');
         $flight->departureTime=$request->get('departureTime');
@@ -109,8 +109,6 @@ class FlightController extends Controller
         $flight->flightNumber=$request->get('flightNumber');
         $flight->airplaneModel=$request->get('airplaneModel');
         $flight->airplaneCapacity=$request->get('airplaneCapacity');
-        $flight->departureLocation=$request->get('departureLocation');
-        $flight->arrivalLocation=$request->get('arrivalLocation');
         $flight->confirmed=$request->get('confirmed') == 1;
         $flight->flightDate=$request->get('flightDate');
         $flight->departureTime=$request->get('departureTime');
@@ -129,6 +127,44 @@ class FlightController extends Controller
         $flight = Flight::findOrFail($id);
         $flight->delete();
         return "Se ha borrado correctamente";
+    }
+
+    public function form(){
+        $cities = City::All();
+
+        return view('flights.search', compact('cities'));
+    }
+
+    public function search(Request $request){
+
+
+        //return "hola";
+        list($departureCity, $departureCountry) = explode(',', $request->origen_id);
+        list($arrivalCity, $arrivalCountry) = explode(',', $request->destino_id);
+
+        $departureCityId = City::where('cityName', $departureCity)->get()->last()->id;
+        $departureCityId = City::where('cityName', $departureCity)->get()->last()->id;
+        $arrivalCityId = City::where('cityName', $arrivalCity)->get()->last()->id;
+
+        $departureAirports = Airport::where('city_id', $departureCityId)->get();
+        $arrivalAirports = Airport::where('city_id', $arrivalCityId)->get();
+
+        $departureAirportsId = $departureAirports->map(function($c) {return $c->id;});
+        $arrivalAirportsId = $arrivalAirports->map(function($c) {return $c->id;});
+
+        //return $request->fecha_id;
+        $flights = Flight::whereIn('departure_id', $departureAirportsId)->whereIn('arrival_id', $arrivalAirportsId)->where('flightDate', $request->departureDate)->get();
+
+        // $departure = $request->get('origen_id');
+        // $arrival = $request->get('destino_id');
+
+        // $flight = Flight::where('departure_id',$departure)->where('arrival_id', $arrival)->get();
+
+        //return "hola";
+
+        return view('flights.searchresult', compact('flights'));
+        return $flights;
+
     }
 
     public function searchOD(Request $request)
