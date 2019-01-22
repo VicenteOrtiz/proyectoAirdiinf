@@ -60,12 +60,17 @@
             <div class="form-group form-row align-items-end fechas-pareadas">
                 <div class="col">
                     <label for="fecha_ida">Fecha Ida</label>
-                    <div class="input-group">
+
+                    <div>
+                        <input class="form-control" type="text" name="departureDate" placeholder="Fecha de ida" id="departureDate">
+                    </div>
+
+                    <!-- <div class="input-group">
                         <input type="text" id="fecha_ida" name="fecha_ida" class="form-control text-center datepicker fecha-inicio" readonly="readonly">
                         <span class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                         </span>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="col-1 text-center">

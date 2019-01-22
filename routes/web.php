@@ -117,3 +117,5 @@ Route::post('reserve/room', 'HotelroomController@compra');
 
 // Aux para construir el carrito de compras
 Route::get('/cart', 'PurchaseController@cart');
+Route::get('/cart/confirm', 'PurchaseController@confirm');
+Route::get('/cart/ok', 'PurchaseController@ok');

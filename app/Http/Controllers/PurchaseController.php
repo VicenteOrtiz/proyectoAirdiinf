@@ -151,7 +151,17 @@ class PurchaseController extends Controller
         }else{
             return redirect('/home');
         }
-
-
     }
+
+    public function confirm(Request $request){
+
+        $user = Auth::user();
+
+        return view('purchase.confirm', compact('user'));
+    }
+
+    public function ok(){
+        return null;
+    }
+
 }

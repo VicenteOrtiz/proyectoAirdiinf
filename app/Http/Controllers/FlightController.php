@@ -143,6 +143,7 @@ class FlightController extends Controller
         list($arrivalCity, $arrivalCountry) = explode(',', $request->destino_id);
 
         $departureCityId = City::where('cityName', $departureCity)->get()->last()->id;
+        $departureCityId = City::where('cityName', $departureCity)->get()->last()->id;
         $arrivalCityId = City::where('cityName', $arrivalCity)->get()->last()->id;
 
         $departureAirports = Airport::where('city_id', $departureCityId)->get();
@@ -151,7 +152,8 @@ class FlightController extends Controller
         $departureAirportsId = $departureAirports->map(function($c) {return $c->id;});
         $arrivalAirportsId = $arrivalAirports->map(function($c) {return $c->id;});
 
-        $flights = Flight::whereIn('departure_id', $departureAirportsId)->whereIn('arrival_id', $arrivalAirportsId)->get();
+        //return $request->fecha_id;
+        $flights = Flight::whereIn('departure_id', $departureAirportsId)->whereIn('arrival_id', $arrivalAirportsId)->where('flightDate', $request->departureDate)->get();
 
         // $departure = $request->get('origen_id');
         // $arrival = $request->get('destino_id');
