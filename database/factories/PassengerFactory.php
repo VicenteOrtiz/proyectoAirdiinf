@@ -8,5 +8,7 @@ $factory->define(App\Passenger::class, function (Faker $faker) {
         'surname'=>$faker->lastname,
         'age'=>$faker->numberBetween(1,100),
         'checkIn'=>$faker->numberBetween(0,1),
+        'idNumber'=>$faker->numberBetween(6000000,25000000),
+
     ];
 });

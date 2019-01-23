@@ -15,15 +15,18 @@ class CreateHotelroomsTable extends Migration
     {
         Schema::create('hotelrooms', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('numberOfBeds');
-            $table->integer('roomType');
-            $table->integer('roomNumber');
-            $table->integer('roomPricePerDay');
-            $table->integer('floorNumber');
-            $table->boolean('available');
 
             $table->integer('hotel_id'); 
-            $table->foreign('hotel_id')->references('id')->on('hotels');
+            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade');
+
+            $table->integer('number_of_beds');
+            $table->integer('room_type');
+            $table->integer('room_number');
+            $table->integer('room_price_per_day');
+            $table->integer('floor_number');
+            $table->boolean('available');
+
+            
 
             $table->timestamps();
         });

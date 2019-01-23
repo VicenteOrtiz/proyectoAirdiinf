@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecordsTable extends Migration
+class CreateSeatauxesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('records', function (Blueprint $table) {
+        Schema::create('seatauxes', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('purchaseDate');
-            $table->string('purchaseDescription');
-            $table->timestamps(); 
+            $table->integer('seat_id');
+            $table->string('passengerName');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('records');
+        Schema::dropIfExists('seatauxes');
     }
 }

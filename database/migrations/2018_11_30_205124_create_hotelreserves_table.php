@@ -14,11 +14,18 @@ class CreateHotelreservesTable extends Migration
     public function up()
     {
         Schema::create('hotelreserves', function (Blueprint $table) {
-            $table->integer('hotel_id');
+            $table->increments('id');
+            $table->integer('hotelroom_id');
             $table->integer('reserve_id');
 
-            $table->foreign('reserve_id')->references('id')->on('reserves');
-            $table->foreign('hotel_id')->references('id')->on('hotels');
+            $table->date('firstDay')->nullable();
+            $table->date('lastDay')->nullable();
+
+            $table->integer('confirmed')->nullable();
+
+            $table->foreign('reserve_id')->references('id')->on('reserves')->onDelete('cascade');
+            $table->foreign('hotelroom_id')->references('id')->on('hotelrooms')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

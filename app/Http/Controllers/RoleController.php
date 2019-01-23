@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
+    public function rules(){
+        return 
+        [
+            'type' => 'required|numeric',
+            'desription' => 'required|string',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        return Role::all();
     }
 
     /**
@@ -35,7 +43,15 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $role = new \App\Role;
+        $role->type = $request->type;
+        $role->description = $request->description;
+        $role->save();
+        return "Se ha añadido satisfactoriamente el rol";
     }
 
     /**
@@ -44,9 +60,10 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show($id)
     {
-        //
+        $role = Role::findOrFail($id);
+        return $role;
     }
 
     /**
@@ -69,7 +86,14 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $role->type = $request->type;
+        $role->description = $request->description;
+        $role->save();
+        return "Se ha actualizado satisfactoriamente el rol";
     }
 
     /**
@@ -78,8 +102,10 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
-        //
+        $role = Role::findOrFail($id);
+        $role->delete();
+        return "Se ha eliminado satisfactoriamente el rol";
     }
 }

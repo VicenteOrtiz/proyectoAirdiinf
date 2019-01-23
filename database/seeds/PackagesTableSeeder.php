@@ -11,6 +11,6 @@ class PackagesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Package::class, 10) -> create();
+        factory(App\Package::class, 5) -> create();
     }
 }

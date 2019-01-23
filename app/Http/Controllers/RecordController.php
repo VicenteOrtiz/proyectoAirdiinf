@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Record;
 use Illuminate\Http\Request;
 
 class RecordController extends Controller
 {
+    public function rules(){
+        return[
+            'logDate'=>'required|date',
+            'logDescription'=>'required|string',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,9 @@ class RecordController extends Controller
      */
     public function index()
     {
-        //
+        $records = Record::All();
+
+        return $records;
     }
 
     /**
@@ -35,7 +44,18 @@ class RecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $record = new Record();
+
+        $record->logDate = $request->logDate;
+        $record->logDescription = $request->logDescription;
+
+        $record->save();
+
+        return "Se ha creado satisfactoriamente un historial";
     }
 
     /**
@@ -44,9 +64,11 @@ class RecordController extends Controller
      * @param  \App\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function show(Record $record)
+    public function show($id)
     {
-        //
+        $record = Record::findOrFail($id);
+
+        return $record;
     }
 
     /**
@@ -67,9 +89,22 @@ class RecordController extends Controller
      * @param  \App\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Record $record)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $record = Record::findOrFail($id);
+
+        $record->logDate = $request->logDate;
+        $record->logDescription = $request->logDescription;
+
+        $record->save();
+
+        return "Se ha actualizado satisfactoriamente un historial";
+
+
     }
 
     /**
@@ -78,8 +113,12 @@ class RecordController extends Controller
      * @param  \App\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Record $record)
+    public function destroy($id)
     {
-        //
+        $record = Record::findOrFail($id);
+
+        $record->delete();
+
+        return "Se ha eliminado satisfactoriamente un historial";
     }
 }

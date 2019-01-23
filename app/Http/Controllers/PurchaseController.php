@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Purchase;
 use Illuminate\Http\Request;
+use Auth;
 
 class PurchaseController extends Controller
 {
+    public function rules(){
+        return
+        [
+            'totalPrice' => 'required|numeric',
+            'date'=>'required|date',
+            'payment_id'=>'exists:payments,id',
+            'reserve_id'=>'exists:reserves,id',
+
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +26,9 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        //
+        $purchases = Purchase::All();
+
+        return $purchases;
     }
 
     /**
@@ -25,7 +39,7 @@ class PurchaseController extends Controller
     public function create()
     {
         //
-        return view('purchase.create');
+
     }
 
     /**
@@ -36,7 +50,20 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $purchase = new Purchase();
+
+        $purchase->totalPrice = $request->totalPrice;
+        $purchase->date = $request->date;
+        $purchase->payment_id = $request->payment_id;
+        $purchase->reserve_id = $request->reserve_id;
+
+        $purchase->save();
+
+        return "Se ha creado satisfactoriamente una compra";
     }
 
     /**
@@ -45,9 +72,11 @@ class PurchaseController extends Controller
      * @param  \App\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function show(Purchase $purchase)
+    public function show($id)
     {
-        //
+        $purchase = Purchase::findOrFail($id);
+
+        return $purchase;
     }
 
     /**
@@ -68,9 +97,24 @@ class PurchaseController extends Controller
      * @param  \App\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Purchase $purchase)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $purchase = Purchase::findOrFail($id);
+
+        $purchase->totalPrice = $request->totalPrice;
+        $purchase->date = $request->date;
+        $purchase->payment_id = $request->payment_id;
+        $purchase->reserve_id = $request->reserve_id;
+
+        $purchase->save();
+
+        return "Se ha actualizado satisfactoriamente una compra";
+
+
     }
 
     /**
@@ -79,8 +123,76 @@ class PurchaseController extends Controller
      * @param  \App\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Purchase $purchase)
+    public function destroy($id)
     {
-        //
+        $purchase = Purchase::findOrFail($id);
+
+        $purchase->delete();
+
+        return "Se ha eliminado satisfactoriamente una compra";
     }
+
+    public function cart(){
+
+        $user = Auth::user();
+
+        if(is_object($user)){
+
+            $reservaActual = $user->reserves->last();
+
+            if($reservaActual->inUse == false){
+                return "el carrito esta vacio";
+            }
+
+            $reservaHabitacion = $reservaActual->hotelreserve;
+            $reservaAsiento = $reservaActual->flightreserve;
+
+            return view('purchase.cart', compact('reservaActual', 'reservaHabitacion', 'reservaAsiento'));
+        }else{
+            return redirect('/home');
+        }
+    }
+
+    public function confirm(Request $request){
+
+        $user = Auth::user();
+
+        return view('purchase.confirm', compact('user'));
+    }
+
+    public function ok(){
+
+        $user = Auth::user();
+
+        $reservaActual = $user->reserves->last();
+
+        // if($reservaActual->car_id != null){
+        //     $reservaActual->car->available = 0;  esta linea se descomenta cuando car tenga un available
+        // } 
+
+        if($reservaActual->flightreserve){
+            $reservaActual->flightreserve->map(function($c) {
+
+                $c->airplaneseat->available = true;
+                $c->airplaneseat->save();
+
+                return $c;
+            });
+        }
+
+
+        if($reservaActual->hotelreserve){
+            $reservaActual->hotelreserve->map(function($h) {
+                $h->hotelroom->available = false;
+                $h->hotelroom->save();
+                return $h;
+            });
+        }
+
+        $reservaActual->inUse = false;
+        $reservaActual->save();
+
+        return view('home');
+    }
+
 }

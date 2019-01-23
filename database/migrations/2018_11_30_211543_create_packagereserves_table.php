@@ -14,14 +14,14 @@ class CreatePackagereservesTable extends Migration
     public function up()
     {
         Schema::create('packagereserves', function (Blueprint $table) {
-            // $table->increments('id');
-            // $table->timestamps();
+            $table->increments('id');
+            $table->timestamps();
 
             $table->integer('reserve_id');
             $table->integer('package_id');
 
-            $table->foreign('reserve_id')->references('id')->on('reserves');
-            $table->foreign('package_id')->references('id')->on('packages');
+            $table->foreign('reserve_id')->references('id')->on('reserves')->onDelete('cascade');
+            $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
         });
     }
 

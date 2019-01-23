@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Country;
 use Illuminate\Http\Request;
 
 class CountryController extends Controller
 {
+    public function rules(){
+        return[
+            'countryName' => 'required|string',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //
+        $countries = Country::All();
+        return $countries;
     }
 
     /**
@@ -35,7 +42,17 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $country = new Country();
+
+        $country->countryName = $request->countryName;
+
+        $country->save();
+
+        return "Se ha guardado satisfactoriamente el país";
     }
 
     /**
@@ -44,9 +61,11 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function show(Country $country)
+    public function show($id)
     {
-        //
+        $country = Country::findOrFail($id);
+
+        return $country;
     }
 
     /**
@@ -67,9 +86,20 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Country $country)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $country = Country::findOrFail($id);
+
+        $country->countryName = $request->countryName;
+
+        $country->save();
+
+        return "Se ha actualizado satisfactoriamente el país";
+
     }
 
     /**
@@ -78,8 +108,11 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Country $country)
+    public function destroy($id)
     {
-        //
+        $country = Country::findOrFail($id);
+        $country->delete();
+
+        return "Se ha eliminado satisfactoriamente el país";
     }
 }

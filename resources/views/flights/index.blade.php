@@ -14,11 +14,14 @@
 
 			<li>airplaneModel: {{$flight->airplaneModel}} </li>
 			<li>airplaneCapacity: {{$flight->airplaneCapacity}} </li>
-			<li>departureLocation: {{$flight->departureLocation}} </li>
-			<li>arrivalLocation: {{$flight->arrivalLocation}} </li>
+			<li>departureLocation: {{$flight->departure->city->cityName}} </li>
+			<li>arrivalLocation: {{$flight->arrival->city->cityName}} </li>
+			<li>confirmed: {{$flight->confirmed}}</li>
+			<li>flightDate: {{$flight->flightDate}}</li>
+			<li>departureTime: {{$flight->departureTime}}</li>
 		
 
-	@endforeach
+	@endforeach 
 
 	<h3> <a href="/flight/create">Book a flight NOW</a></h3>
 @endsection

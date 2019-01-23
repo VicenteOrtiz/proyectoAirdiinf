@@ -7,16 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class Hotelroom extends Model
 {
     protected $fillable = [
-    	'numberOfBeds',
-    	'roomType',
-    	'roomNumber',
-    	'roomPricePerDay',
-    	'floorNumber',
+    	'number_of_beds',
+    	'room_type',
+    	'room_number',
+    	'room_price_per_day',
+    	'floor_number',
     	'available',
     	'hotel_id',
     ];
 
     public function hotel(){
     	return $this->belongsTo('App\Hotel');
+    }
+
+    public function hotelreserve(){
+        return $this->hasMany('App\Hotelreserve');
     }
 }

@@ -19,4 +19,4 @@ class Purchase extends Model
         return $this->hasMany('App\Reserve');
     }
 }
-}
+

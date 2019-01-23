@@ -7,18 +7,26 @@ use Illuminate\Database\Eloquent\Model;
 class Airplaneseat extends Model
 {
     protected $fillable = [
-    	'seatType',
+    	'seat_type',
     	'row',
-    	'seatLetter',
+    	'seat_letter',
     	'available',
     ];
 
-    public function flights(){
-    	return $this->hasOne('App\Flight');
+    public function flight(){
+    	return $this->belongsTo('App\Flight');
     }
 
-    public function passengers(){
+    public function passenger(){
     	return $this->hasOne('App\Passenger');
+    }
+
+    public function flightreserve(){
+        return $this->hasMany('App\Flightreserve');
+    }
+
+    public function package(){
+        return $this->belongsTo('App\Package');
     }
 
 }

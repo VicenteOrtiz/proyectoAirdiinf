@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\City;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
+    public function rules(){
+        return
+        [ 
+            'cityName' => 'required|string',
+            'country_id' => 'exists:countries,id',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,8 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+        $cities = City::All();
+        return $cities;
     }
 
     /**
@@ -35,7 +44,15 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $city = new City();
+        $city->cityName = $request->cityName;
+        $city->country_id = $request->country_id;
+        $city->save();
+        return "Se ha creado una ciudad satisfactoriamente";
     }
 
     /**
@@ -44,9 +61,10 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function show(City $city)
+    public function show($id)
     {
-        //
+        $city = City::findOrFail($id);
+        return $city;
     }
 
     /**
@@ -67,9 +85,17 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, City $city)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $city = City::findOrFail($id);
+        $city->cityName = $request->cityName;
+        $city->country_id = $request->country_id;
+        $city->save();
+        return "Se ha actualizado satisfactoriamente la ciudad";
     }
 
     /**
@@ -78,8 +104,10 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function destroy(City $city)
+    public function destroy($id)
     {
-        //
+        $city = City::findOrFail($id);
+        $city->delete();
+        return "Se ha eliminado satisfactoriamente la ciudad";
     }
 }

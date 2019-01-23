@@ -12,6 +12,6 @@ $factory->define(App\Hotel::class, function (Faker $faker) {
         'hotelCapacity' => $faker->numberBetween(100,200),
         'phoneNumber' => $faker->e164PhoneNumber,
         'address' => $faker->address,
-        'location_id' => $cities->random()->id,
+        'city_id' => $cities->random()->id,
     ];
 });

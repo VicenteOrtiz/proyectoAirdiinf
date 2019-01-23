@@ -16,14 +16,17 @@ class CreateAirplaneseatsTable extends Migration
         Schema::create('airplaneseats', function (Blueprint $table) {
             $table->increments('id');
 
-           // $table->integer('flight_id');
-
-            $table->integer('seatType');
+            $table->integer('flight_id')->nullable();
+            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
+            $table->smallInteger('seat_type');
             $table->integer('row');
-            $table->string('seatLetter');
+            $table->string('seat_letter');
             $table->boolean('available');
 
-            //$table->integer('passenger_id');
+            $table->integer('passenger_id')->nullable();
+            $table->foreign('passenger_id')->references('id')->on('passengers')->onDelete('cascade');
+
+            $table->integer('priceperseat_id');
 
             $table->timestamps();
         });

@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Hotel;
 use App\Country;
+use App\City;
 use Illuminate\Http\Request;  
 
 class HotelController extends Controller
 {
+    public function rules(){
+        return
+        [
+        'hotelName'=> 'required|string',
+        'hotelCapacity'=> 'required|numeric',
+        'stars'=> 'required|numeric|max: 5',
+        'phoneNumber'=> 'required|string',
+        'address'=> 'address|string',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +28,7 @@ class HotelController extends Controller
     public function index()
     {
         $countries = Country::All();
+        return Hotel::all();
 
         return view('hotels.index', compact('countries'));
     }
@@ -25,9 +38,12 @@ class HotelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request) //Esto despues va en Store, pero se pone aca solo para efectos del crud
     {
         //
+        
+
+
     }
 
     /**
@@ -36,9 +52,23 @@ class HotelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //Todo lo que está acá, debe ir en create para efectos CRUD
     {
-        //
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $hotel = new Hotel();
+
+        $hotel->hotelName = $request ->hotelName;
+        $hotel->stars = $request ->stars;
+        $hotel->hotelCapacity = $request ->hotelCapacity;
+        $hotel->phoneNumber = $request->phoneNumber;
+        $hotel->address = $request ->address;
+
+        $hotel->save();
+
+        return "se ha creado correctamente";
     }
 
     /**
@@ -86,9 +116,24 @@ class HotelController extends Controller
      * @param  \App\Hotel  $hotel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hotel $hotel)
-    {
-        //
+    public function update(Request $request, $id) //original en vez de id, es "Hotel $hotel"
+    { 
+        $validator = Validator::make($request->all(),$this->rules());
+        if($validator->fails()){
+            return $validator->messages();
+        }
+        $hotel = Hotel::findOrFail($id);
+
+        $hotel->hotelName = $request ->hotelName;
+        $hotel->stars = $request ->stars;
+        $hotel->hotelCapacity = $request ->hotelCapacity;
+        $hotel->phoneNumber = $request ->phoneNumber;
+        $hotel->address = $request ->address;
+
+        $hotel->save();
+
+        return "se ha editado correctamente";
+
     }
 
     /**
@@ -97,8 +142,52 @@ class HotelController extends Controller
      * @param  \App\Hotel  $hotel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hotel $hotel)
+    public function destroy($id) //este es el delete, $id -> "Hotel $hotel"
     {
-        //
+        $hotel = Hotel::findOrFail($id);
+        $hotel->delete();
+
+        return "eliminacion exitosa";
+    }
+
+    public function form()
+    {
+        $cities = City::all();
+
+        return view('hotels.search', compact('cities'));
+
+    }
+
+    public function search(Request $request)
+    {
+
+
+        list($destinyCity, $destinyCountry) = explode(',', $request->destino_id);
+
+        //return $destinyCity;
+
+        $destinyCityId = City::where('cityName', $destinyCity)->get()->last()->id;
+
+        //return 
+
+        $hotels = Hotel::where('city_id', $destinyCityId)->get();
+
+        // $departureAirports = Airport::where('city_id', $destinyCityId)->get();
+        // $arrivalAirports = Airport::where('city_id', $arrivalCityId)->get();
+
+        // $departureAirportsId = $departureAirports->map(function($c) {return $c->id;});
+        // $arrivalAirportsId = $arrivalAirports->map(function($c) {return $c->id;});
+
+        // $flights = Flight::whereIn('departure_id', $departureAirportsId)->whereIn('arrival_id', $arrivalAirportsId)->get();
+
+        // $departure = $request->get('origen_id');
+        // $arrival = $request->get('destino_id');
+
+        // $flight = Flight::where('departure_id',$departure)->where('arrival_id', $arrival)->get();
+
+        //return "hola";
+
+        return view('hotels.searchresult', compact('hotels'));
+        //return $flights;
     }
 }

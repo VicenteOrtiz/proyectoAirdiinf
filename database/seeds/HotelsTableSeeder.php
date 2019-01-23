@@ -11,24 +11,32 @@ class HotelsTableSeeder extends Seeder
      */
     public function run()
     {
-        //factory(App\Hotel::class, 10) -> create();
 
-        DB::table('hotels')->insert([
-        	'hotelName'=>'Best hotel',
-        	'stars'=>5,
-        	'hotelCapacity'=>123,
-        	'phoneNumber'=>'+56972512245',
-        	'address'=>'Alameda 123',
-            //'location_id' => 1,
+    	DB::table('hotels')->insert([
+        	'hotelName'=>'Hotel W',
+        	'stars' => 5,
+            'hotelCapacity' => 150,
+            'phoneNumber' => '+56982457543',
+            'address' => 'Isidora Goyenechea 3000, Las Condes, Región Metropolitana',
+            'city_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(), 
+
         ]);
 
         DB::table('hotels')->insert([
-        	'hotelName'=>'worst hotel',
-        	'stars'=>1,
-        	'hotelCapacity'=>100,
-        	'phoneNumber'=>'+56972512245',
-        	'address'=>'Alameda 000',
-            //'location_id' => 1,
+        	'hotelName'=>'Radisson Petra Concepcion',
+        	'stars' => 5,
+            'hotelCapacity' => 200,
+            'phoneNumber' => '+56982457123',
+            'address' => 'Autopista Concepcion Talcahuano 8676, Concepción, Región del Bío Bío',
+            'city_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(), 
+
         ]);
+
+
+        factory(App\Hotel::class, 5) -> create();
     }
 }

@@ -19,12 +19,16 @@ class Hotel extends Model
     	return $this->belongsTo('App\Package');
     }
 
-    public function hotelroom(){
+    public function hotelrooms(){
         return $this->hasMany('App\Hotelroom');
     }
 
     public function city(){
         return $this->belongsTo('App\City');
     }
+
+    // public function hotelreserve(){
+    //     return $this->hasMany('App\Hotelreserve');
+    // }
 
 }

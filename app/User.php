@@ -36,10 +36,14 @@ class User extends Authenticatable
     ];
 
     public function record(){
-        return $this->belongsTo('App\Record');
+        return $this->belongsTo('App\Record'); 
     }
 
     public function role(){
         return $this->belongsTo('App\Role');
+    }
+
+    public function reserves(){
+        return $this->hasMany('App\Reserve');
     }
 }
