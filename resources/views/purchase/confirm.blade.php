@@ -61,7 +61,7 @@
                 </li>
             </ul>
             <br/>
-            <a href="/reserve/ok" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+            <a href="/cart/ok" class="btn btn-success btn-lg btn-block" role="button">Pay</a> 
         </div>
     </div>
 </div>

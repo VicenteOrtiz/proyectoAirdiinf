@@ -15,6 +15,6 @@ class Passenger extends Model
     ];
 
     public function airplaneseats(){
-    	return $this->hasOne('App\airplaneseats');
+    	return $this->hasOne('App\Airplaneseat');
     }
 }

@@ -28,7 +28,7 @@
 				
 			<div class="form-group form-row align-items-end">
 				<div class="col">
-					<label for="fecha_entrada">Fecha Entrada</label>
+					<label for="fecha_entrada">Fecha Entrada</label> 
 					<div class="input-group">
 						<input type="text" id="fecha_entrada" name="fecha_entrada" value="" required class="form-control text-center datepicker" readonly="readonly" >
 						<span class="input-group-append">

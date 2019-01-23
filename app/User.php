@@ -36,7 +36,7 @@ class User extends Authenticatable
     ];
 
     public function record(){
-        return $this->belongsTo('App\Record');
+        return $this->belongsTo('App\Record'); 
     }
 
     public function role(){

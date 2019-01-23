@@ -18,6 +18,11 @@ class CreateHotelreservesTable extends Migration
             $table->integer('hotelroom_id');
             $table->integer('reserve_id');
 
+            $table->date('firstDay')->nullable();
+            $table->date('lastDay')->nullable();
+
+            $table->integer('confirmed')->nullable();
+
             $table->foreign('reserve_id')->references('id')->on('reserves')->onDelete('cascade');
             $table->foreign('hotelroom_id')->references('id')->on('hotelrooms')->onDelete('cascade');
             $table->timestamps();
