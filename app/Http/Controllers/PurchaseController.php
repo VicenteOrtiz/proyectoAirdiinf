@@ -140,9 +140,9 @@ class PurchaseController extends Controller
 
             $reservaActual = $user->reserves->last();
 
-            if($reservaActual->inUse == false){
+            /*if($reservaActual->inUse == false){
                 return "el carrito esta vacio";
-            }
+            }*/
 
             $reservaHabitacion = $reservaActual->hotelreserve;
             $reservaAsiento = $reservaActual->flightreserve;

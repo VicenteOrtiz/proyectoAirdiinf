@@ -131,8 +131,9 @@ class FlightController extends Controller
 
     public function form(){
         $cities = City::All();
+        $flights = Flight::All();
 
-        return view('flights.search', compact('cities'));
+        return view('flights.search', compact('cities','flights'));
     }
 
     public function search(Request $request){
@@ -154,7 +155,7 @@ class FlightController extends Controller
 
         //return $request->fecha_id;
         $flights = Flight::whereIn('departure_id', $departureAirportsId)->whereIn('arrival_id', $arrivalAirportsId)->where('flightDate', $request->departureDate)->get();
-
+        $cities = City::All();
         // $departure = $request->get('origen_id');
         // $arrival = $request->get('destino_id');
 
@@ -162,8 +163,8 @@ class FlightController extends Controller
 
         //return "hola";
 
-        return view('flights.searchresult', compact('flights'));
-        return $flights;
+        return view('flights.search', compact('flights','cities'));
+        //return $flights;
 
     }
 

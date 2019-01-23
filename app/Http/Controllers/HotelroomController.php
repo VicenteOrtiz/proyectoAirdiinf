@@ -198,6 +198,7 @@ class HotelroomController extends Controller
 
     public function purchase(Request $request)
     {
+        //$roomId = Hotelroom::where('room_id', $request->room_id)->get();
         list($room_number, $numberofBeds, $roomPrice, $roomId) = explode('-', $request->room_id);
 
 

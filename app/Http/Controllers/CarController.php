@@ -28,10 +28,6 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::all();
-<<<<<<< HEAD
-
-=======
->>>>>>> master
         return $cars; 
     }
 
@@ -173,8 +169,9 @@ class CarController extends Controller
     public function form()
     {
         $cities = City::all();
+        $cars = Car::all();
 
-        return view('cars.search', compact('cities'));
+        return view('cars.search', compact('cities','cars'));
     }
 
     public function search(Request $request)
@@ -189,8 +186,9 @@ class CarController extends Controller
         $carCityId = City::where('cityName', $carCity)->get()->last()->id;
         //return $carCityId;
         $cars = Car::where('city_id', $carCityId)->get();
+        $cities = City::all();
         //return $cars;
-        return view('cars.searchresult', compact('cars'));
+        return view('cars.search', compact('cars','cities'));
 
         
     }

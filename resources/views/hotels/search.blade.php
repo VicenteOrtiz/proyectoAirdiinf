@@ -8,7 +8,7 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Hotel</span></p>
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>Hotel</span></p>
             <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hotels</h1>
           </div>
         </div>
@@ -124,8 +124,16 @@
 		    						<hr>
 		    						<p class="bottom-area d-flex">
 		    							<span>{{$hotel->phoneNumber}}</span> 
-		    							<span class="ml-auto"><a href="#">Book Now</a></span>
+		    							<!--<span class="ml-auto"><a href="#">Book Now</a></span>-->
 		    						</p>
+		    						<form action="/habitacion/seleccionar" method="post"> 
+										{{ csrf_field() }}
+										<input name="hotel_id" type="hidden" value={{$hotel->id}}>
+										<!--<select name="hotel_id" class="form-control">
+											<option>{{$hotel->id}}</option>
+										</select>-->
+										<button type="submit" class="btn btn-primary">Reservar habitación</button>
+									</form>
 		    					</div>
 		    				</div>
 		    			</div>

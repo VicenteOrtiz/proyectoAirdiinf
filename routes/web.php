@@ -65,11 +65,10 @@ Route::resource('segment','SegmentController');
 
 Route::resource('user','UserController');
 
-<<<<<<< HEAD
+
 Route::resource('user.flights','FlightController');
 
 Route::resource('countries.cities','CityController');
-=======
 
 // Route::resource('/purch', function() {
 // 	return view('flights.form');
@@ -97,7 +96,6 @@ Route::get('/ejemplo', function() {
 
 
 
->>>>>>> master
 //los links de abajo, se harán solo con fines del CRUD
 
 Route::post('/flights/search', 'FlightController@searchOD');
