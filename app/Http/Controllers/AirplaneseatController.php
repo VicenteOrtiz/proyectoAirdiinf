@@ -130,8 +130,10 @@ class AirplaneseatController extends Controller
 
         $user = Auth::user(); //aqui el usuario ya esta logeado
 
-        $validador = Reserve::all()->last()->inUse;
+        //$validador = $user->reserves->last()->inUse;
         $vacio = $user->reserves->last();
+
+
         $seatPurchase = new Flightreserve();
         $flightSeat = Airplaneseat::where('id',$request->seatId)->get()->first();
         $passenger = new Passenger();
@@ -140,8 +142,12 @@ class AirplaneseatController extends Controller
             return "Este asiento está ocupado";
         }
 
+        // dd($vacio);
 
-        if($vacio == null or $validador == false){
+        // if($vacio==null){
+        //     return 1;
+        // }
+        if($vacio == null){
             $reserva = new Reserve();
             $reserva->reserveDate = NOW();
             $reserva->reserveBalance = 0;
@@ -151,10 +157,38 @@ class AirplaneseatController extends Controller
             //$reserva->car_id = 0;
             $reserva->inUse = true;
             $reserva->save();
-
         }else{
-            $reserva = Reserve::all()->last();
+            $validador = $user->reserves->last()->inUse;
+            if($validador == false){
+                $reserva = new Reserve();
+                $reserva->reserveDate = NOW();
+                $reserva->reserveBalance = 0;
+                $reserva->insurance = false;
+                $reserva->user_id = $user->id; //aqui dps va el usuario que este validado;
+                //$reserva->insurance_id = 1;
+                //$reserva->car_id = 0;
+                $reserva->inUse = true;
+                $reserva->save();
+
+            }else{
+                $reserva = Reserve::all()->last();
+            }
         }
+
+        // if($validador == false){
+        //     $reserva = new Reserve();
+        //     $reserva->reserveDate = NOW();
+        //     $reserva->reserveBalance = 0;
+        //     $reserva->insurance = false;
+        //     $reserva->user_id = $user->id; //aqui dps va el usuario que este validado;
+        //     //$reserva->insurance_id = 1;
+        //     //$reserva->car_id = 0;
+        //     $reserva->inUse = true;
+        //     $reserva->save();
+
+        // }else{
+        //     $reserva = Reserve::all()->last();
+        // }
 
         $passenger->name = $request->passengerName;
         $passenger->surname = $request->passengerSurname;
