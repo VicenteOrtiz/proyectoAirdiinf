@@ -33,6 +33,15 @@ class HotelController extends Controller
         return view('hotels.index', compact('countries'));
     }
 
+    public function index2()
+    {
+        $countries = Country::All();
+        $hotels = Hotel::all();
+        return Hotel::all();
+
+        return view('hotels.index', compact('hotels'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

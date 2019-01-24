@@ -86,6 +86,8 @@ Route::get('/autos', 'CarController@form');
 Route::post('/autos/seleccionar', 'CarController@search');
 Route::post('/autos/comprar', 'CarController@compra');
 
+
+
 Route::get('/ejemplo', function() {
 	return view('flights.ejemplo'); 
 });
@@ -95,6 +97,11 @@ Route::get('/ejemplo', function() {
 //los links de abajo, se harán solo con fines del CRUD
 
 Route::post('/flights/search', 'FlightController@searchOD');
+Route::get('/Admin/vuelos', 'FlightController@index2');
+Route::get('/Admin/hoteles', 'HotelController@index2');
+Route::get('/Admin/autos', 'CarController@adminIndex');
+Route::get('/Admin/usuarios', 'UserController@adminIndex');
+
 
 // Route::post('/hotels/create', 'HotelController@create');
 

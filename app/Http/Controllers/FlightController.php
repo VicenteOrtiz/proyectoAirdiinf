@@ -34,6 +34,13 @@ class FlightController extends Controller
 
     }
 
+    public function index2()
+    {
+        $flights = Flight::all();
+        return view('flights.flightsEdit', compact("flights"));
+        return Flight::all();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

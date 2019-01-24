@@ -34,6 +34,15 @@ class UserController extends Controller
         return User::all();
     }
 
+    public function adminIndex()
+    {
+        //'amount',
+        //'description',
+        $users = User::all();
+        return view('admin.users', compact("users"));
+        return User::all();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

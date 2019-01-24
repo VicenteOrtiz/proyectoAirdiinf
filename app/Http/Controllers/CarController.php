@@ -7,8 +7,6 @@ use App\Car;
 use Illuminate\Http\Request;
 use App\City;
 use App\Reserve;
-use App\User;
-use Auth;
 
 class CarController extends Controller
 {
@@ -31,6 +29,13 @@ class CarController extends Controller
     {
         $cars = Car::all();
         return $cars; 
+    }
+
+    public function adminIndex()
+    {
+        $cars = Car::all();
+        return view('admin.cars', compact("cars"));
+        return Car::all(); 
     }
 
     /**
@@ -132,10 +137,7 @@ class CarController extends Controller
 
     public function compra(Request $request)
     {
-
-        $user = Auth::user();
-
-        $vacio = $user->reserves->last();
+        $validador = Reserve::all()->last()->inUse;
 
         $car = Car::where('id', $request->carId)->get()->last();
 
@@ -143,31 +145,19 @@ class CarController extends Controller
             return "Este auto ya está ocupado";
         }
 
-        if($vacio == null){
+        if($validador == false){
             $reserva = new Reserve();
             $reserva->reserveDate = NOW();
             $reserva->reserveBalance = 0;
             $reserva->insurance = false;
-            $reserva->user_id = $user->id; //aqui dps va el usuario que este validado;
+            $reserva->user_id = 1; //aqui dps va el usuario que este validado;
             //$reserva->insurance_id = 1;
             //$reserva->car_id = 0;
             $reserva->inUse = true;
             $reserva->save();
+
         }else{
-            $validador = Reserve::all()->last()->inUse;
-            if($validador == false){
-                $reserva = new Reserve();
-                $reserva->reserveDate = NOW();
-                $reserva->reserveBalance = 0;
-                $reserva->insurance = false;
-                $reserva->user_id = $user->id; //aqui dps va el usuario que este validado;
-                //$reserva->insurance_id = 1;
-                //$reserva->car_id = 0;
-                $reserva->inUse = true;
-                $reserva->save();
-            }else{
-                $reserva = Reserve::all()->last();
-            }
+            $reserva = Reserve::all()->last();
         }
 
         if($reserva->car_id != null){

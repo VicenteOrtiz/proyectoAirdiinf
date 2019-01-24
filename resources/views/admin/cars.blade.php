@@ -11,7 +11,7 @@
 				</th>
 				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Patente</th>
 				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Disponible</th>
-				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Capacidad de pasajeros</th>
+				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Capacidad</th>
 				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Precio por hora</th>
 			</thead>
 			<tbody>
@@ -21,10 +21,14 @@
 						<tr>
 							<td>{{ $car->carModel }}</td>
 							<td>{{ $car->vehicleRegistration }}</td>
-							<td>{{ $car->avaible }}</td>
-							<td>{{ $car->passengerCapacity }}</td>
-							<td>{{ $car->pricePerHour }}</td>
-							<td><a href="{{url('cars/'.$car->id')}}" class="btn btn-primary">Ver detalles</a></td>
+							@if($car->avaible == 1)
+								<td>Disponible</td>
+							@elseif($car->avaible != 1)
+								<td>No disponible</td>
+							@endif
+							<td>{{ $car->passengerCapacity }} personas</td>
+							<td> $ {{ $car->pricePerHour }}</td>
+							<td><a href="{{url('autos/'.$car->id.'/')}}" class="btn">Ver más</a></td>
 						</tr>
 						@endif
 					@endif
