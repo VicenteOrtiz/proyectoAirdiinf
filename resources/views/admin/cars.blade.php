@@ -7,7 +7,7 @@
 	<div class="container" style="background-color: white; margin: 0 8em">
 		<table class="table table-striped">
 			<thead>
-				<th style="font-family: 'Raleway', sans-serif; color: #3f4b89; font-weight: bold;">Modelo auto
+				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Modelo auto
 				</th>
 				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Patente</th>
 				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Disponible</th>
@@ -28,10 +28,43 @@
 							@endif
 							<td>{{ $car->passengerCapacity }} personas</td>
 							<td> $ {{ $car->pricePerHour }}</td>
-							<td><a href="{{url('autos/'.$car->id.'/')}}" class="btn">Ver más</a></td>
+							<td><a href="{{url('autos/'.$car->id.'/')}}" class="btn">Editar</a></td>
+							<td><button class="btn" data-value={{$car}} data-toggle="modal" data-target="#modalForm">
+    Eliminar
+</button></td>
 						</tr>
 						@endif
 					@endif
+					<!-- Modal -->
+					<div class="modal fade" id="modalForm" role="dialog">
+					    <div class="modal-dialog">
+					        <div class="modal-content">
+					            <!-- Modal Header -->
+					            <div class="modal-header">
+					                <button type="button" class="close" data-dismiss="modal">
+					                    <span aria-hidden="true">×</span>
+					                    <span class="sr-only">Close</span>
+					                </button>
+					                <h4 class="modal-title" id="myModalLabel">¿Esta seguro?</h4>
+					            </div>
+					            
+					            <!-- Modal Body -->
+					            <div class="modal-body">
+					                <p class="statusMsg"></p>
+					                <form role="form">
+					                    <div class="form-group">
+					                        <label for="inputName">{{$car->carModel}}</label>
+					                    </div>
+					                </form>
+					            </div>
+					            <!-- Modal Footer -->
+					            <div class="modal-footer">
+					                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					                <form action="/Admin/autos/{{$car->id}}" method="post">{{method_field('delete')}}<button class="btn" type="submit">Eliminar</button></form>
+					            </div>
+					        </div>
+					    </div>
+					</div>
 				@endforeach
 			</tbody>
 		</table>
