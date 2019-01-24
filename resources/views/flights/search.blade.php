@@ -112,7 +112,7 @@
                 @foreach($flights as $flight)
                 <div class="col-md-4 ftco-animate">
                             <div class="destination">
-                                <a href="hot-el-single.html" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/auto2.jpg);">
+                                <a href="hot-el-single.html" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/avion2.jpg);">
                                     <div class="icon d-flex justify-content-center align-items-center">
                                 <span class="icon-search2"></span>
                             </div>

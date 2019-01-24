@@ -9,5 +9,8 @@ $factory->define(App\Hotelreserve::class, function (Faker $faker) {
     return [
         'reserve_id' => $reserve_id->random()->id,
         'hotelroom_id' => $hotelroom_id->random()->id,
+        'firstDay' => NOW()->modify('+0 day')->format('Y-m-d'),
+        'lastDay' => NOW()->modify('+7 day')->format('Y-m-d'),
+        'confirmed' => true,
     ];
 });

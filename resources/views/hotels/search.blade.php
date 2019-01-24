@@ -14,8 +14,6 @@
         </div>
       </div>
     </div>
-
-
     <section class="ftco-section ftco-degree-bg">
       <div class="container">
         <div class="row">
@@ -53,6 +51,63 @@
 								<input value="1000" min="0" max="120000" step="500" type="range"/>
 								<input value="50000" min="0" max="120000" step="500" type="range"/>
 								</svg>
+=======
+	</div>
+	<div class="card-body">
+		<form action="/hoteles/busqueda" method="post">
+			{{ csrf_field() }}
+      
+			<div class="form-group form-row align-items-end">
+				<div class="col">
+					<label for="id_destino">Destino</label>
+					<div class="form-group">
+						<select id="destino_id" name="destino_id" class="form-control selectpicker" title="Destino" data-live-search="true">
+
+							@foreach($cities as $city)
+								<option>{{$city->cityName}}, {{$city->country->countryName}}</option>
+							@endforeach
+
+						</select>
+					</div>
+				</div>
+			</div>
+				
+			<div class="form-group form-row align-items-end">
+				<div class="col">
+					<label for="fecha_entrada">Fecha Entrada</label> 
+					<div class="input-group">
+						<input type="text" id="fecha_entrada" name="fecha_entrada" value="" required class="form-control text-center datepicker" readonly="readonly" >
+						<span class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+						</span>
+					</div>
+				</div>
+
+				<div class="col-1 text-center fecha-salida">
+					<i class="fas fa-arrow-right fa-2x"></i>
+				</div>
+				
+				<div class="col">
+					<label for="fecha_salida">Fecha Salida</label>
+					<div class="input-group">
+						<input  type="text" id="fecha_salida" name="fecha_salida" value="" required class="form-control text-center datepicker" readonly="readonly" >
+						<span class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group form-row align-items-end">
+				<div class="col-5 col-sm-5">
+					<label>Habitación</label>
+					<div class="row ">
+						<div class="col input-group">
+							<input type="number" name="capacidad_adultos" class="form-control text-center" value="1">
+							<div class="input-group-append">
+								<span class="input-group-text">Adultos</span>
+							</div>
+>>>>>>> 7c3ee2d3ca3d70871e8303691ae25e01b83de099
 						</div>
 		              </div>-->
 		              <div class="form-group">

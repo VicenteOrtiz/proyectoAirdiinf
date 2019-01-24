@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Reserve;
 use App\Hotelreserve;
 use Auth;
+use App\User;
 
 class HotelroomController extends Controller
 {
@@ -136,7 +137,8 @@ class HotelroomController extends Controller
     public function compra(Request $request)
     {
 
-        $validador = Reserve::all()->last()->inUse;
+        $user = Auth::user();
+        $vacio = $user->reserves->last();
 
         $roomPurchase = new Hotelreserve();
 
@@ -146,20 +148,46 @@ class HotelroomController extends Controller
             return "Esta habitacion ya está ocupada";
         }
 
-        if($validador == false){
+        if($vacio == null){
             $reserva = new Reserve();
             $reserva->reserveDate = NOW();
             $reserva->reserveBalance = 0;
             $reserva->insurance = false;
-            $reserva->user_id = 1; //aqui dps va el usuario que este validado;
+            $reserva->user_id = $user->id; //aqui dps va el usuario que este validado;
             //$reserva->insurance_id = 1;
             //$reserva->car_id = 0;
             $reserva->inUse = true;
             $reserva->save();
-
         }else{
-            $reserva = Reserve::all()->last();
+            $validador = Reserve::all()->last()->inUse;
+            if($validador == false){
+                $reserva = new Reserve();
+                $reserva->reserveDate = NOW();
+                $reserva->reserveBalance = 0;
+                $reserva->insurance = false;
+                $reserva->user_id = $user->id; //aqui dps va el usuario que este validado;
+                //$reserva->insurance_id = 1;
+                //$reserva->car_id = 0;
+                $reserva->inUse = true;
+                $reserva->save();
+            }else{
+                $reserva = Reserve::all()->last();
+            }
         }
+
+        // if($validador == false){
+        //     $reserva = new Reserve();
+        //     $reserva->reserveDate = NOW();
+        //     $reserva->reserveBalance = 0;
+        //     $reserva->insurance = false;
+        //     $reserva->user_id = 1; //aqui dps va el usuario que este validado;
+        //     //$reserva->insurance_id = 1;
+        //     //$reserva->car_id = 0;
+        //     $reserva->inUse = true;
+        //     $reserva->save();
+        // }else{
+        //     $reserva = Reserve::all()->last();
+        // }
 
 
 
@@ -198,9 +226,9 @@ class HotelroomController extends Controller
 
     public function purchase(Request $request)
     {
-        //$roomId = Hotelroom::where('room_id', $request->room_id)->get();
-        list($room_number, $numberofBeds, $roomPrice, $roomId) = explode('-', $request->room_id);
-
+        //$room = Hotelroom::where('id', $request->room_id)->get();
+        //list($room_number, $numberofBeds, $roomPrice, $roomId) = explode('-', $request->room_id);
+        $roomId = $request->room_id;
 
         $room = Hotelroom::find($roomId);
 

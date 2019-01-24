@@ -89,7 +89,7 @@
     </div>
   </nav>
    <main>
-            @yield('content')
+        @yield('content')
    </main>
 </body>
-</html>S
+</html>

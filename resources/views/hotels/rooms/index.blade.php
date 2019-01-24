@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero-wrap js-fullheight" style="background-image: url('/images/bg_5.jpg');">
+    <div class="hero-wrap js-fullheight" style="background-image: url('/images/hotelroom2.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -244,19 +244,42 @@
           		</div>
           		<div class="col-md-12 hotel-single ftco-animate mb-5 mt-4">
           			<h4 class="mb-5">Check Availability &amp; Booking</h4>
-          			<form action="/habitacion/comprar" method="post">
-          				<div class="row">
-          					<select name="room_id" class="form-control">
+          			<div class="sidebar-wrap bg-light ftco-animate">
+          				<form action="/habitacion/comprar" method="post">
+          					{{ csrf_field() }}
+          					<div class="fields">
+          						<div class="form-group">
+          							<div class="select-wrap one-third">
+          								<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+          								<select name="room_id" id="room_id" title="Room" class="form-control selectpicker" placeholder="Keyword search">
+	                      					@foreach($rooms as $room)
+	                      					<option value="{{$room->id}}">{{$room->room_number}} - {{$room->number_of_beds}} - {{$room->room_price_per_day}}</option>
+	                      					@endforeach
+	                    				</select>
+          							</div>
+          						</div>
+          						<div class="form-group">
+		                <input type="submit" value="Search" class="btn btn-primary py-3 px-5">
+		              </div>
+          					</div>
+          				</form>
+          			</div>
+          			<!--<form action="/habitacion/comprar" method="post">-->
+
+          				<!--<div class="row">
+          					<select name="room_id" class="form-control" type="hidden">
           						@foreach($rooms as $room)
-								<option>{{$room->room_number}} - {{$room->number_of_beds}} - {{$room->room_price_per_day}} - {{$room->id}}</option> <!-- Aqui el id es auxiliar, pq no se como mandarlo a la siguiente vista aun -->
-								@endforeach
+								<option>{{$room->room_number}} - {{$room->number_of_beds}} - {{$room->room_price_per_day}} - {{$room->id}}</option> Aqui el id es auxiliar, pq no se como mandarlo a la siguiente vista aun -->
+								<!--@endforeach
 							</select>
+							<p></p>
 							 <div class="col-md-12">
 				              <div class="form-group">
 				                <input type="submit" value="Check Availability" class="btn btn-primary py-3">
 				              </div>
-          				</div>
-          			</form>	
+          					</div>
+          			</div>-->
+          			<!--</form>-->	
           			<!--<div class="fields">
           				<div class="row">
           					<div class="col-md-6">

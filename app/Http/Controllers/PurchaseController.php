@@ -161,7 +161,38 @@ class PurchaseController extends Controller
     }
 
     public function ok(){
-        return null;
+
+        $user = Auth::user();
+
+        $reservaActual = $user->reserves->last();
+
+        // if($reservaActual->car_id != null){
+        //     $reservaActual->car->available = 0;  esta linea se descomenta cuando car tenga un available
+        // } 
+
+        if($reservaActual->flightreserve){
+            $reservaActual->flightreserve->map(function($c) {
+
+                $c->airplaneseat->available = true;
+                $c->airplaneseat->save();
+
+                return $c;
+            });
+        }
+
+
+        if($reservaActual->hotelreserve){
+            $reservaActual->hotelreserve->map(function($h) {
+                $h->hotelroom->available = false;
+                $h->hotelroom->save();
+                return $h;
+            });
+        }
+
+        $reservaActual->inUse = false;
+        $reservaActual->save();
+
+        return view('home');
     }
 
 }
