@@ -98,7 +98,7 @@ Route::get('/ejemplo', function() {
 
 Route::post('/flights/search', 'FlightController@searchOD');
 Route::get('/Admin/vuelos', 'FlightController@index2');
-Route::get('/Admin/hoteles', 'HotelController@index2');
+Route::get('/Admin/hoteles', 'HotelController@adminIndex');
 Route::get('/Admin/autos', 'CarController@adminIndex');
 Route::get('/Admin/usuarios', 'UserController@adminIndex');
 

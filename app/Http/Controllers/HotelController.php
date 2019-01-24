@@ -33,13 +33,12 @@ class HotelController extends Controller
         return view('hotels.index', compact('countries'));
     }
 
-    public function index2()
+    public function adminIndex()
     {
-        $countries = Country::All();
         $hotels = Hotel::all();
         return Hotel::all();
 
-        return view('hotels.index', compact('hotels'));
+        return view('admin.hotels', compact('hotels'));
     }
 
     /**

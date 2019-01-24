@@ -14,7 +14,7 @@
 				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Numero de telefono</th>
 				<th style="font-family: 'Raleway', sans-serif; color:#3f4b89; font-weight: bold;">Direccion</th>
 			</thead>
-			<tbody>
+			<!--<tbody>
 				@foreach($hotels as $hotel)
 					@if(Auth::guest())
 						@if($hotel)
@@ -24,12 +24,12 @@
 							<td>{{ $hotel->hotelCapacity}}
 							<td>{{ $hotel->phoneNumber}}</td>
 							<td>{{ $hotel->address}}</td>
-							<td><a href="{{ url('vuelosEditar/'.$flight->id.'/')}}">Ver más</a></td>
+							<td><a href="{{ url('/Admin/hoteles/'.$flight->id.'/')}}">Ver más</a></td>
 						</tr>
 						@endif
 					@endif
 				@endforeach
-			</tbody>
+			</tbody>-->
 		</table>
 	</div>
 
