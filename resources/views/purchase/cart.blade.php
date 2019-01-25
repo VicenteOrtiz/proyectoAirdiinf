@@ -22,7 +22,7 @@
           	@foreach($reservaHabitacion as $habitacion)
           <div class="col-md-3 d-flex ftco-animate">
           	 <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('/images/hotelroom.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<span class="tag">Hotel</span>
@@ -39,7 +39,7 @@
 			@foreach($reservaAsiento as $asiento)
 			<div class="col-md-3 d-flex ftco-animate">
           	 <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/avion2.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<span class="tag">Vuelo</span>
@@ -57,7 +57,7 @@
 			@foreach($reservaAuto as $auto)
 			<div class="col-md-3 d-flex ftco-animate">
           	 <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/auto2.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<span class="tag">Auto</span>
