@@ -174,6 +174,8 @@ class CarController extends Controller
             return "la reserva actual ya tiene un auto asignado";
         }
 
+        //$car->available = false;
+
         $reserva->car_id = $car->id;
         $reserva->reserveBalance = $reserva->reserveBalance + ($car->pricePerHour)*12; //el *12 se debe modificar en funcion al calculo de horas que se utilizara
 

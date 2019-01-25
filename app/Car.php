@@ -15,7 +15,7 @@ class Car extends Model
     ];
 
     public function reserve(){
-        return $this->belongsTo('App\Reserve');
+        return $this->hasOne('App\Reserve');
     }
 
     public function package(){
