@@ -26,7 +26,6 @@
 							@endif
 							<td>{{ $car->passengerCapacity }} personas</td>
 							<td> $ {{ $car->pricePerHour }}</td>
-							<td><a href="{{url('autos/'.$car->id.'/')}}" class="btn">Editar</a></td>
 							<td><button class="btn" data-value={{$car}} data-toggle="modal" data-target="#modalForm">Eliminar</button></td>
 						</tr>
 						@endif

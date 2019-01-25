@@ -2,20 +2,6 @@
 
 @section('content')
 
-<div class="hero-wrap js-fullheight" style="background-image: url('/images/avion.jpg');">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-      <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Flights</span></p>
-        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Flights</h1>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-	<div class="col-md-9"><h1>Cars</h1></div>
-</div>
 <div class="container" style="background-color: white; margin: 0 8em">
 		<table class="table table-striped">
 			<thead>
@@ -42,7 +28,6 @@
 							@endif
 							<td>{{ $flight->flightDate}}</td>
 							<td>{{ $flight->departureTime}}</td>
-							<td><a href="{{ url('vuelosEditar/'.$flight->id.'/')}}">Ver más</a></td>
 							<td><button class="btn" data-value={{$flight}} data-toggle="modal" data-target="#modalForm">Eliminar</button></td>
 						</tr>
 						@endif
@@ -59,13 +44,13 @@
 					                </button>
 					                <h4 class="modal-title" id="myModalLabel">¿Esta seguro?</h4>
 					            </div>
-					            
 					            <!-- Modal Body -->
 					            <div class="modal-body">
 					                <p class="statusMsg"></p>
 					                <form role="form">
 					                    <div class="form-group">
-					                        <label for="inputName">{{$flight->flight}}</label>
+					                    	<label for="inputName">Desea eliminar el vuelo:</label>
+					                        <label for="inputName">{{$flight->flightNumber}}</label>
 					                    </div>
 					                </form>
 					            </div>

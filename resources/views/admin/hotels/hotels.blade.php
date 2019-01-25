@@ -33,7 +33,6 @@
 							<td>{{ $hotel->hotelCapacity}}
 							<td>{{ $hotel->phoneNumber}}</td>
 							<td>{{ $hotel->address}}</td>
-							<td><a href="{{ url('/Admin/hoteles/'.$hotel->id.'/')}}">Editar</a></td>
 							<td><button type="button" class="btn" data-value={{$hotel}} data-toggle="modal" data-target="#modalForm">Eliminar</button></td>
 						</tr>
 					@endif
