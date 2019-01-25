@@ -30,4 +30,8 @@ class Car extends Model
         return $this->hasMany('App\Carreserve');
     }
 
+    public function car(){
+        return $this->hasOne('App\Car');
+    }
+
 }

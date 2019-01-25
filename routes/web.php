@@ -88,7 +88,8 @@ Route::post('/autos/comprar', 'CarController@compra');
 
 Route::get('/paquetes', 'PackageController@search');
 Route::post('/paquetes/pasajero', 'PackageController@seat');
-Route::post('/paquetes/comprar', 'PackageController@compra')
+Route::post('/paquetes/comprar', 'PackageController@compra');
+Route::post('/paquete/resumen', 'PackageController@resumen');
 
 Route::get('/ejemplo', function() {
 	return view('flights.ejemplo'); 

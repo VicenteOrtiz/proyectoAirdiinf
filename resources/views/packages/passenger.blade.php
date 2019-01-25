@@ -6,19 +6,33 @@
 
 
 <div class="col-md-8">
-	<h1 style="color: blue">Datos del pasajero y elección de asiento</h1>
+	<h1 style="color: blue">Datos del pasajero y elección de asientos</h1>
 
 	Hola
 
-	<form method="POST" action="/reserve/seat">
+	<form method="POST" action="/paquetes/comprar">
 
 		@csrf
+
+		Asiento del vuelo de ida
 		
 		<select name="firstSeat" class="form-control">
 
 			@foreach($firstSeats as $firstSeat)
 
-			<option value="{{$room->id}}">{{$seat->seat_letter}} - {{$seat->row}}</option> <!-- Aqui el id es auxiliar, pq no se como mandarlo a la siguiente vista aun -->
+			<option value="{{$firstSeat->id}}">{{$firstSeat->seat_letter}} - {{$firstSeat->row}}</option> <!-- Aqui el id es auxiliar, pq no se como mandarlo a la siguiente vista aun -->
+
+			@endforeach
+
+		</select>
+
+		Asiento del vuelo de vuelta
+
+		<select name="secondSeat" class="form-control">
+
+			@foreach($secondSeats as $secondSeat)
+
+			<option value="{{$secondSeat->id}}">{{$secondSeat->seat_letter}} - {{$secondSeat->row}}</option> <!-- Aqui el id es auxiliar, pq no se como mandarlo a la siguiente vista aun -->
 
 			@endforeach
 
@@ -45,12 +59,9 @@
 		</div>
 
 		<div>
-			<label for="seatId" style="color: black">id Asiento </label>
-			<select name="seatId" class="form-control">
-				<option>{{$seat->id}}</option>
-			</select>
+			<!-- <label for="roomId" style="color: black">Room id</label> -->
+			<input class="form-control" type="text" name="packageid" placeholder="carId" id="carId" value="{{$paquete->id}}" style="display: none">
 		</div>
-		
 
 		<p></p>
 

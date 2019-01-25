@@ -14,7 +14,7 @@
 								<p class="card-text">
 									<p>Precio: <strong>{{$package->precioPaquete}}</strong></p>
 									
-									<form action="/autos/comprar" method="post"> 
+									<form action="/paquete/resumen" method="post"> 
 										{{ csrf_field() }}
 
 										<div>
