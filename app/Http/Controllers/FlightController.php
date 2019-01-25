@@ -37,7 +37,7 @@ class FlightController extends Controller
     public function index2()
     {
         $flights = Flight::all();
-        return view('flights.flightsEdit', compact("flights"));
+        return view('admin.flights', compact("flights"));
         return Flight::all();
     }
 
@@ -133,7 +133,7 @@ class FlightController extends Controller
     {
         $flight = Flight::findOrFail($id);
         $flight->delete();
-        return "Se ha borrado correctamente";
+        return FlightController::index2();
     }
 
     public function form(){

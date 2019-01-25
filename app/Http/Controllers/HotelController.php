@@ -35,10 +35,9 @@ class HotelController extends Controller
 
     public function adminIndex()
     {
-        $hotels = Hotel::all();
+        $countries = Country::All();
         return Hotel::all();
-
-        return view('admin.hotels', compact('hotels'));
+        return view('admin.hotels', compact('countries'));
     }
 
     /**

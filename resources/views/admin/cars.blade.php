@@ -2,7 +2,11 @@
 
 @section('content')
 
-	<h1>Cars</h1>
+	<dir class="row">
+		<div class="col-md-12 tituloAdminAutos">
+			<h1>Cars</h1>
+		</div>
+	</dir>
 
 	<div class="container" style="background-color: white; margin: 0 8em">
 		<table class="table table-striped">
@@ -29,9 +33,7 @@
 							<td>{{ $car->passengerCapacity }} personas</td>
 							<td> $ {{ $car->pricePerHour }}</td>
 							<td><a href="{{url('autos/'.$car->id.'/')}}" class="btn">Editar</a></td>
-							<td><button class="btn" data-value={{$car}} data-toggle="modal" data-target="#modalForm">
-    Eliminar
-</button></td>
+							<td><button class="btn" data-value={{$car}} data-toggle="modal" data-target="#modalForm">Eliminar</button></td>
 						</tr>
 						@endif
 					@endif

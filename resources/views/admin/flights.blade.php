@@ -2,7 +2,11 @@
 
 @section('content')
 
-<h1>Flights</h1>
+<dir class="row">
+	<div class="col-md-12 tituloAdminAutos">
+		<h1>Flights</h1>
+	</div>
+</dir>
 
 <div class="container" style="background-color: white; margin: 0 8em">
 		<table class="table table-striped">
@@ -31,9 +35,40 @@
 							<td>{{ $flight->flightDate}}</td>
 							<td>{{ $flight->departureTime}}</td>
 							<td><a href="{{ url('vuelosEditar/'.$flight->id.'/')}}">Ver más</a></td>
+							<td><button class="btn" data-value={{$flight}} data-toggle="modal" data-target="#modalForm">Eliminar</button></td>
 						</tr>
 						@endif
 					@endif
+					<!-- Modal -->
+					<div class="modal fade" id="modalForm" role="dialog">
+					    <div class="modal-dialog">
+					        <div class="modal-content">
+					            <!-- Modal Header -->
+					            <div class="modal-header">
+					                <button type="button" class="close" data-dismiss="modal">
+					                    <span aria-hidden="true">×</span>
+					                    <span class="sr-only">Close</span>
+					                </button>
+					                <h4 class="modal-title" id="myModalLabel">¿Esta seguro?</h4>
+					            </div>
+					            
+					            <!-- Modal Body -->
+					            <div class="modal-body">
+					                <p class="statusMsg"></p>
+					                <form role="form">
+					                    <div class="form-group">
+					                        <label for="inputName">{{$flight->flight}}</label>
+					                    </div>
+					                </form>
+					            </div>
+					            <!-- Modal Footer -->
+					            <div class="modal-footer">
+					                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					                <form action="/Admin/vuelos/{{$flight->id}}" method="post">{{method_field('delete')}}<button class="btn" type="submit">Eliminar</button></form>
+					            </div>
+					        </div>
+					    </div>
+					</div>
 				@endforeach
 			</tbody>
 		</table>
