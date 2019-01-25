@@ -65,14 +65,10 @@
 		    						<hr>
 		    						<p class="bottom-area d-flex">
 		    							<span>{{$hotel->phoneNumber}}</span> 
-		    							<!--<span class="ml-auto"><a href="#">Book Now</a></span>-->
 		    						</p>
 		    						<form action="/habitacion/seleccionar" method="post"> 
 										{{ csrf_field() }}
 										<input name="hotel_id" type="hidden" value="{{$hotel->id}}">
-										<!--<select name="hotel_id" class="form-control">
-											<option>{{$hotel->id}}</option>
-										</select>-->
 										<button type="submit" class="btn btn-primary">Reservar habitación</button>
 									</form>
 		    					</div>

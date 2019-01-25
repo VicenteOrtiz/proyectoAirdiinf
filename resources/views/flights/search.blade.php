@@ -47,6 +47,7 @@
                         </select>
                       </div>
                       </div>
+                      <p>Fecha de partida</p>
                       <div class="form-group">
                         <input type="date" name="departureDate" class="form-control" placeholder="Date from">
                       </div>
@@ -82,6 +83,7 @@
                                     </div>
                                     <i class="icon-map-o"></i><p>Origen: {{$flight->departure->name}}, {{$flight->departure->city->cityName}}</p>
                                     <i class="icon-map-o"></i><p>Destino: {{$flight->arrival->name}}, {{$flight->arrival->city->cityName}}</p>
+                                    <p>{{$flight->flightDate}}</p>
                                     <hr>
                                 <form action="/asiento/seleccionar" method="post"> 
                                   {{ csrf_field() }}
