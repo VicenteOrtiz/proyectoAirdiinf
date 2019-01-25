@@ -13,7 +13,7 @@ $factory->define(App\Reserve::class, function (Faker $faker) {
     	'reserveBalance' => $faker->numberBetween(0,20000),
     	'insurance' => $faker->numberBetween(0,1),
     	'insurence_id'=>$insurence_id->random()->id,
-    	'car_id'=>$car_id->random()->id,
+    	//'car_id'=>$car_id->random()->id,
     	'user_id'=>$user_id->random()->id,
         'inUse'=>0,
     ];

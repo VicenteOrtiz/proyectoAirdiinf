@@ -9,6 +9,7 @@ use App\Reserve;
 use App\Hotelreserve;
 use Auth;
 use App\User;
+use Carbon\Carbon;
 
 class HotelroomController extends Controller
 {
@@ -143,6 +144,11 @@ class HotelroomController extends Controller
         $roomPurchase = new Hotelreserve();
 
         $room = Hotelroom::where('id', $request->roomId)->get()->last();
+
+
+
+
+
 
         if($room->available == false){
             return "Esta habitacion ya está ocupada";

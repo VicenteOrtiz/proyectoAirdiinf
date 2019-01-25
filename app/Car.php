@@ -26,4 +26,8 @@ class Car extends Model
         return $this->belongsTo('App\City');
     }
 
+    public function carreserves(){
+        return $this->hasMany('App\Carreserve');
+    }
+
 }

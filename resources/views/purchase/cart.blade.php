@@ -72,27 +72,30 @@
 
 						@endforeach
 
+						@foreach($reservaAuto as $auto)
 						<tr>
 							<td data-th="Product">
 								<div class="row">
 									<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
-										<h4 class="nomargin">Auto:: {{$reservaActual->car->carModel}}</h4>
-										<p>Patente: {{$reservaActual->car->vehicleRegistration}}
-											Ubicación: {{$reservaActual->car->city->cityName}}
+										<h4 class="nomargin">Auto: {{$auto->car->carModel}}</h4>
+										<p>Patente: {{$auto->car->vehicleRegistration}}
+											Ubicación: {{$auto->car->city->cityName}}
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">{{$reservaActual->car->pricePerHour}}</td>
+							<td data-th="Price">{{$auto->car->pricePerHour}}</td>
 							<td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="1">
 							</td>
-							<td data-th="Subtotal" class="text-center">{{$reservaActual->car->pricePerHour}}</td>
+							<td data-th="Subtotal" class="text-center">{{$auto->car->pricePerHour}}</td>
 							<td class="actions" data-th="">
 								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
 								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
 							</td>
 						</tr>
+
+						@endforeach
 
 
 

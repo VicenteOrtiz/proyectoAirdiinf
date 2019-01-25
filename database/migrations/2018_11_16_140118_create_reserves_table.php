@@ -25,8 +25,8 @@ class CreateReservesTable extends Migration
             $table->integer('insurence_id')->nullable();
             $table->foreign('insurence_id')->references('id')->on('insurences')->onDelete('cascade');
 
-            $table->integer('car_id')->nullable();
-            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
+            // $table->integer('car_id')->nullable();
+            // $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
 
             $table->boolean('inUse')->nullable(); //auxiliar para saber si es la reserva que se esta creando actualmente 
 
