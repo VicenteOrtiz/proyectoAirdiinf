@@ -188,7 +188,7 @@ class CarController extends Controller
     public function form()
     {
         $cities = City::all();
-        $cars = Car::all();
+        $cars = Car::all()->where('available', 1);
 
         return view('cars.search', compact('cities','cars'));
     }

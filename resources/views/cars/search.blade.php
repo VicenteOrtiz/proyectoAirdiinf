@@ -8,8 +8,8 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Car</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Cars</h1>
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Principal</a></span> <span>Autos</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Autos</h1>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-3 sidebar">
                 <div class="sidebar-wrap bg-light ftco-animate">
-                    <h3 class="heading mb-4">Find City</h3>
+                    <h3 class="heading mb-4">Buscar por Ciudad</h3>
                     <form action="/autos/seleccionar" method="post">
                         {{ csrf_field() }}
                         <div class="fields">
@@ -29,6 +29,7 @@
                         <input type="text" class="form-control" placeholder="Destination, City">
                       </div>-->
                       <div class="form-group">
+                        <p>Ciudad de Origen</p>
                         <div class="select-wrap one-third">
                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                         <select name="ciudad_id" id="ciudad_id" title="Ciudad" class="form-control selectpicker" placeholder="Keyword search">
@@ -61,7 +62,7 @@
                     </div>
                 </form>
                 </div>
-                <div class="sidebar-wrap bg-light ftco-animate">
+               <!-- <div class="sidebar-wrap bg-light ftco-animate">
                     <h3 class="heading mb-4">Star Rating</h3>
                     <form method="post" class="star-rating">
                               <div class="form-check">
@@ -95,7 +96,7 @@
                                 </label>
                               </div>
                             </form>
-                </div>
+                </div>-->
           </div>
           <div class="col-lg-9">
             <div class="row">
@@ -113,40 +114,26 @@
                                             <h3><a href="hotel-single.html">{{$car->carModel}}</a></h3>
                                             <p class="rate">
                                                 <span>{{$car->passengerCapacity}} Personas</span>
-                                                <i class="icon-star"></i>
+                                                <i class="icon-person"></i>
                                             </p>
                                         </div>
                                         <div class="two">
-                                            <span class="price per-price">$40<br><small>/night</small></span>
+                                            <span class="price per-price">{{$car->pricePerHour}}<br><small>/hour</small></span>
                                         </div>
                                     </div>
-                                    <i class="icon-map-o"></i><p>Chile</p>
+                                    <i class="icon-map-o"></i><p>{{$car->city->cityName}}, {{$car->city->country->countryName}}</p>
                                     <hr>
-                                    <p class="bottom-area d-flex">
-                                        <span>123</span> 
-                                        <span class="ml-auto"><a href="#">Book Now</a></span>
-                                    </p>
+                                    <form action="/autos/comprar" method="post"> 
+                                      {{ csrf_field() }}
+                                      <input name="carId" id="carId" type="hidden" value="{{$car->id}}">
+                                    <button type="submit" class="btn btn-primary">Reservar auto</button>
+                                </form>
                                 </div>
                             </div>
                         </div>
                 @endforeach
                         
             </div>
-            <div class="row mt-5">
-                  <div class="col text-center">
-                    <div class="block-27">
-                      <ul>
-                        <li><a href="#">&lt;</a></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&gt;</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
           </div> <!-- .col-md-8 -->
         </div>
       </div>

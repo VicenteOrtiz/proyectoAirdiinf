@@ -234,8 +234,8 @@ class AirplaneseatController extends Controller
 
     public function purchase(Request $request)
     {
-
-        list($seatLetter, $row, $seat_id) = explode('-', $request->seat_id);
+        $seat_id=$request->seat_id;
+        //list($seatLetter, $row, $seat_id) = explode('-', $request->seat_id);
         $seat = Airplaneseat::find($seat_id);
 
         return view('flights.seats.purchase', compact('seat'));

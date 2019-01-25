@@ -8,8 +8,8 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Flights</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Flights</h1>
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Principal</a></span> <span>Vuelos</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Vuelos</h1>
           </div>
         </div>
       </div>
@@ -29,9 +29,11 @@
                         <input type="text" class="form-control" placeholder="Destination, City">
                       </div>-->
                       <div class="form-group">
+                         <p>Origen</p>
                         <div class="select-wrap one-third">
                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="origen_id" id="origen_id" title="Origen" class="form-control selectpicker" placeholder="Keyword search">
+                        <!--<label for="Origen" style="color: black">Origen</label>-->
+                        <select name="origen_id" id="origen_id" title="Origen" class="form-control selectpicker" placeholder="Origen">
                           @foreach($cities as $city)
                           <option>{{$city->cityName}}, {{$city->country->countryName}}</option>
                           @endforeach
@@ -39,6 +41,7 @@
                       </div>
                       </div>
                       <div class="form-group">
+                         <p>Destino</p>
                         <div class="select-wrap one-third">
                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                         <select name="destino_id" id="destino_id" title="Destino" class="form-control selectpicker" placeholder="Keyword search">
@@ -71,7 +74,7 @@
                     </div>
                 </form>
                 </div>
-                <div class="sidebar-wrap bg-light ftco-animate">
+                <!--<div class="sidebar-wrap bg-light ftco-animate">
                     <h3 class="heading mb-4">Star Rating</h3>
                     <form method="post" class="star-rating">
                               <div class="form-check">
@@ -105,7 +108,7 @@
                                 </label>
                               </div>
                             </form>
-                </div>
+                </div>-->
           </div>
           <div class="col-lg-9">
             <div class="row">
@@ -127,15 +130,17 @@
                                             </p>
                                         </div>
                                         <div class="two">
-                                            <span class="price per-price">$40<br><small>/night</small></span>
+                                            <span class="price per-price">{{$flight->departureTime}}<br></span>
                                         </div>
                                     </div>
-                                    <i class="icon-map-o"></i><p>Chile</p>
+                                    <i class="icon-map-o"></i><p>Origen: {{$flight->departure->name}}, {{$flight->departure->city->cityName}}</p>
+                                    <i class="icon-map-o"></i><p>Destino: {{$flight->arrival->name}}, {{$flight->arrival->city->cityName}}</p>
                                     <hr>
-                                    <p class="bottom-area d-flex">
-                                        <span>123</span> 
-                                        <span class="ml-auto"><a href="#">Book Now</a></span>
-                                    </p>
+                                <form action="/asiento/seleccionar" method="post"> 
+                                  {{ csrf_field() }}
+                                  <input name="flight_id" type="hidden" value="{{$flight->id}}">
+                                  <button type="submit" class="btn btn-primary">Reservar tu asiento</button>
+                                  </form>
                                 </div>
                             </div>
                         </div>

@@ -30,12 +30,11 @@ class CitiesTableSeeder extends Seeder
         	'cityName'=>'Punta Arenas',
         	'country_id' => 1,
 <<<<<<< HEAD
-        ]);*/
-=======
+        ]);
+
             'created_at' => now(),
             'updated_at' => now(), 
-        ]);
->>>>>>> master
+        ]);*/
 
         factory(App\City::class, 20) -> create();
     }
