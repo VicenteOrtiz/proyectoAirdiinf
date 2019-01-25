@@ -33,37 +33,18 @@
           			</div>
           		</div>
           		<div class="col-md-12 hotel-single mt-4 mb-5 ftco-animate">
-          			<span>Our Best hotels &amp; Rooms</span>
-          			<h2>Luxury Hotel in Paris</h2>
+          			<span>Hotel</span>
+          			<h2>{{$rooms[1]->hotel->hotelName}}</h2>
           			<p class="rate mb-5">
-          				<span class="loc"><a href="#"><i class="icon-map"></i> 291 South 21th Street, Suite 721 New York NY 10016</a></span>
+          				<span class="loc"><a href="#"><i class="icon-map"></i>{{$rooms[1]->hotel->address}}</a></span>
           				<span class="star">
     							<i class="icon-star"></i>
-    							<i class="icon-star"></i>
-    							<i class="icon-star"></i>
-    							<i class="icon-star"></i>
-    							<i class="icon-star-o"></i>
-    							8 Rating</span>
+    							{{$rooms[1]->hotel->stars}} Estrellas</span>
     						</p>
-    						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-    						<div class="d-md-flex mt-5 mb-5">
-    							<ul>
-	    							<li>The Big Oxmox advised her not to do so</li>
-	    							<li>When she reached the first hills of the Italic Mountains</li>
-	    							<li>She had a last view back on the skyline of her hometown </li>
-	    							<li>Bookmarksgrove, the headline of Alphabet </li>
-	    						</ul>
-	    						<ul class="ml-md-5">
-	    							<li>Question ran over her cheek, then she continued</li>
-	    							<li>Pityful a rethoric question ran</li>
-	    							<li>Mountains, she had a last view back on the skyline</li>
-	    							<li>Headline of Alphabet Village and the subline</li>
-	    						</ul>
-    						</div>
-    						<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+    						<p>Con una capacidad de {{$rooms[1]->hotel->hotelCapacity}} personas y ubicado en la ciudad de {{$rooms[1]->hotel->city->cityName}}, le ofrecemos los mejores servicios que podria encontrar. Asegurando que sus vacaciones seran innolvidables. </p>
           		</div>
           		<div class="col-md-12 hotel-single ftco-animate mb-5 mt-4">
-          			<h4 class="mb-5">Check Availability &amp; Booking</h4>
+          			<h4 class="mb-5">Verifica la disponibilidad de habitaciones</h4>
           			<div class="sidebar-wrap bg-light ftco-animate">
           				<form action="/habitacion/comprar" method="post">
           					{{ csrf_field() }}
