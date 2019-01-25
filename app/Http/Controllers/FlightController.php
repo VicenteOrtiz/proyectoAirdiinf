@@ -140,11 +140,12 @@ class FlightController extends Controller
 
 
         //return "hola";
+       // return $request->departureDate;
         list($departureCity, $departureCountry) = explode(',', $request->origen_id);
         list($arrivalCity, $arrivalCountry) = explode(',', $request->destino_id);
 
         $departureCityId = City::where('cityName', $departureCity)->get()->last()->id;
-        $departureCityId = City::where('cityName', $departureCity)->get()->last()->id;
+        //$departureCityId = City::where('cityName', $departureCity)->get()->last()->id;
         $arrivalCityId = City::where('cityName', $arrivalCity)->get()->last()->id;
 
         $departureAirports = Airport::where('city_id', $departureCityId)->get();

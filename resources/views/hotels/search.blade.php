@@ -36,7 +36,7 @@
 	                    </select>
 	                  </div>
 		              </div>
-		              <!--<div class="form-group">
+		             <!-- <div class="form-group">
 		                <input type="text" id="checkin_date" class="form-control" placeholder="Date from">
 		              </div>
 		              <div class="form-group">

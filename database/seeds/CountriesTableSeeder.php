@@ -12,15 +12,11 @@ class CountriesTableSeeder extends Seeder
     public function run()
     {
 
-    	/*DB::table('countries')->insert([
+    	DB::table('countries')->insert([
         	'countryName'=>'Chile',
-        	
- 
-        ]);
-
         	'created_at' => now(),
             'updated_at' => now(), 
-        ]);*/
+        ]);
 
         factory(App\Country::class, 5) -> create();
 

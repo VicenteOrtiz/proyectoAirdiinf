@@ -33,9 +33,9 @@
                         <div class="select-wrap one-third">
                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                         <!--<label for="Origen" style="color: black">Origen</label>-->
-                        <select name="origen_id" id="origen_id" title="Origen" class="form-control selectpicker" placeholder="Origen">
+                        <select name="origen_id" id="origen_id" title="origen" class="form-control selectpicker" placeholder="Origen" data-live-search="true">
                           @foreach($cities as $city)
-                          <option>{{$city->cityName}}, {{$city->country->countryName}}</option>
+                          <option>{{$city->cityName}},{{$city->country->countryName}}</option>
                           @endforeach
                         </select>
                       </div>
@@ -44,17 +44,17 @@
                          <p>Destino</p>
                         <div class="select-wrap one-third">
                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="destino_id" id="destino_id" title="Destino" class="form-control selectpicker" placeholder="Keyword search">
+                        <select name="destino_id" id="destino_id" title="destino" class="form-control selectpicker" placeholder="Keyword search" data-live-search="true">
                           @foreach($cities as $city)
-                          <option>{{$city->cityName}}, {{$city->country->countryName}}</option>
+                          <option>{{$city->cityName}},{{$city->country->countryName}}</option>
                           @endforeach
                         </select>
                       </div>
                       </div>
-                      <!--<div class="form-group">
-                        <input type="text" id="checkin_date" class="form-control" placeholder="Date from">
-                      </div>
                       <div class="form-group">
+                        <input type="date" name="departureDate" class="form-control" placeholder="Date from">
+                      </div>
+                      <!--<div class="form-group">
                         <input type="text" id="checkin_date" class="form-control" placeholder="Date to">
                       </div>
                       <div class="form-group">

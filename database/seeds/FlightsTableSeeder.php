@@ -25,6 +25,7 @@ class FlightsTableSeeder extends Seeder
             'updated_at' => now(), 
 
         ]);
+        
 
 
         factory(App\Flight::class, 100)->create();
