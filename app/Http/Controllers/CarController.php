@@ -7,6 +7,10 @@ use App\Car;
 use Illuminate\Http\Request;
 use App\City;
 use App\Reserve;
+use App\User;
+use Auth;
+use App\Carreserve;
+
 
 class CarController extends Controller
 {
@@ -139,6 +143,12 @@ class CarController extends Controller
     {
         $validador = Reserve::all()->last()->inUse;
 
+        $user = Auth::user(); 
+
+        $vacio = $user->reserves->last();
+
+        $reservaAuto = new Carreserve();
+
         $car = Car::where('id', $request->carId)->get()->last();
 
         if($car->available == false){
@@ -164,7 +174,13 @@ class CarController extends Controller
             return "la reserva actual ya tiene un auto asignado";
         }
 
-        $reserva->car_id = $car->id;
+        //$reservaAuto->car->available = false;
+
+        $reservaAuto->reserve_id = $reserva->id;
+        $reservaAuto->car_id = $car->id;
+        $reservaAuto->save();
+
+        //$reserva->car_id = $car->id;
         $reserva->reserveBalance = $reserva->reserveBalance + ($car->pricePerHour)*12; //el *12 se debe modificar en funcion al calculo de horas que se utilizara
 
         $reserva->save();

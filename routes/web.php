@@ -83,7 +83,7 @@ Route::post('/habitacion/seleccionar', 'HotelroomController@select');
 Route::post('/habitacion/comprar', 'HotelroomController@purchase');
 
 Route::get('/autos', 'CarController@form');
-Route::post('/autos/seleccionar', 'CarController@search');
+Route::post('/autos/seleccionar', 'CarController@search'); 
 Route::post('/autos/comprar', 'CarController@compra');
 
 
