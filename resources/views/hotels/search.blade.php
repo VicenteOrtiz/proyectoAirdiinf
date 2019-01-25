@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- END nav -->
+
     
     <div class="hero-wrap js-fullheight" style="background-image: url('/images/bg_5.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>Hotel</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hotels</h1>
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Principal</a></span> <span>Hotel</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hoteles</h1>
           </div>
         </div>
       </div>
@@ -19,13 +19,10 @@
         <div class="row">
         	<div class="col-lg-3 sidebar">
         		<div class="sidebar-wrap bg-light ftco-animate">
-        			<h3 class="heading mb-4">Find City</h3>
+        			<h3 class="heading mb-4">Busca por ciudad</h3>
         			<form action="/hoteles/busqueda" method="post">
         				{{ csrf_field() }}
         				<div class="fields">
-		             <!--<div class="form-group">
-		                <input type="text" class="form-control" placeholder="Destination, City">
-		              </div>-->
 		              <div class="form-group">
 		                <div class="select-wrap one-third">
 	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
@@ -36,120 +33,12 @@
 	                    </select>
 	                  </div>
 		              </div>
-		             <!-- <div class="form-group">
-		                <input type="text" id="checkin_date" class="form-control" placeholder="Date from">
-		              </div>
-		              <div class="form-group">
-		                <input type="text" id="checkin_date" class="form-control" placeholder="Date to">
-		              </div>
-		              <div class="form-group">
-		              	<div class="range-slider">
-		              		<span>
-								<input type="number" value="25000" min="0" max="120000"/>	-
-								<input type="number" value="50000" min="0" max="120000"/>
-							</span>
-								<input value="1000" min="0" max="120000" step="500" type="range"/>
-								<input value="50000" min="0" max="120000" step="500" type="range"/>
-								</svg>
-=======
-	</div>
-	<div class="card-body">
-		<form action="/hoteles/busqueda" method="post">
-			{{ csrf_field() }}
-      
-			<div class="form-group form-row align-items-end">
-				<div class="col">
-					<label for="id_destino">Destino</label>
-					<div class="form-group">
-						<select id="destino_id" name="destino_id" class="form-control selectpicker" title="Destino" data-live-search="true">
-
-							@foreach($cities as $city)
-								<option>{{$city->cityName}}, {{$city->country->countryName}}</option>
-							@endforeach
-
-						</select>
-					</div>
-				</div>
-			</div>
-				
-			<div class="form-group form-row align-items-end">
-				<div class="col">
-					<label for="fecha_entrada">Fecha Entrada</label> 
-					<div class="input-group">
-						<input type="text" id="fecha_entrada" name="fecha_entrada" value="" required class="form-control text-center datepicker" readonly="readonly" >
-						<span class="input-group-append">
-							<span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-						</span>
-					</div>
-				</div>
-
-				<div class="col-1 text-center fecha-salida">
-					<i class="fas fa-arrow-right fa-2x"></i>
-				</div>
-				
-				<div class="col">
-					<label for="fecha_salida">Fecha Salida</label>
-					<div class="input-group">
-						<input  type="text" id="fecha_salida" name="fecha_salida" value="" required class="form-control text-center datepicker" readonly="readonly" >
-						<span class="input-group-append">
-							<span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-						</span>
-					</div>
-				</div>
-			</div>
-			
-			<div class="form-group form-row align-items-end">
-				<div class="col-5 col-sm-5">
-					<label>Habitación</label>
-					<div class="row ">
-						<div class="col input-group">
-							<input type="number" name="capacidad_adultos" class="form-control text-center" value="1">
-							<div class="input-group-append">
-								<span class="input-group-text">Adultos</span>
-							</div>
->>>>>>> 7c3ee2d3ca3d70871e8303691ae25e01b83de099
-						</div>
-		              </div>-->
+		            
 		              <div class="form-group">
 		                <input type="submit" value="Search" class="btn btn-primary py-3 px-5">
 		              </div>
 		            </div>
 	            </form>
-        		</div>
-        		<div class="sidebar-wrap bg-light ftco-animate">
-        			<h3 class="heading mb-4">Star Rating</h3>
-        			<form method="post" class="star-rating">
-							  <div class="form-check">
-									<input type="checkbox" class="form-check-input" id="exampleCheck1">
-									<label class="form-check-label" for="exampleCheck1">
-										<p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></span></p>
-									</label>
-							  </div>
-							  <div class="form-check">
-						      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						      <label class="form-check-label" for="exampleCheck1">
-						    	   <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i></span></p>
-						      </label>
-							  </div>
-							  <div class="form-check">
-						      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						      <label class="form-check-label" for="exampleCheck1">
-						      	<p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-						     </label>
-							  </div>
-							  <div class="form-check">
-							    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						      <label class="form-check-label" for="exampleCheck1">
-						      	<p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-						      </label>
-							  </div>
-							  <div class="form-check">
-						      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						      <label class="form-check-label" for="exampleCheck1">
-						      	<p class="rate"><span><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-							    </label>
-							  </div>
-							</form>
         		</div>
           </div>
           <div class="col-lg-9">
@@ -171,9 +60,6 @@
 				    							<i class="icon-star"></i>
 				    						</p>
 			    						</div>
-			    						<div class="two">
-			    							<span class="price per-price">$40<br><small>/night</small></span>
-		    							</div>
 		    						</div>
 		    						<i class="icon-map-o"></i><p>{{$hotel->city->cityName}}, {{$hotel->city->country->countryName}}</p>
 		    						<hr>

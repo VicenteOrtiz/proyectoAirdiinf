@@ -36,11 +36,10 @@
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/vuelo" class="nav-link">Flights</a></li>
-          <li class="nav-item"><a href="/autos" class="nav-link">Cars</a></li>
-          <li class="nav-item"><a href="/hoteles" class="nav-link">Hotels</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item active"><a href="/" class="nav-link">Principal</a></li>
+          <li class="nav-item"><a href="/vuelo" class="nav-link">Vuelos</a></li>
+          <li class="nav-item"><a href="/autos" class="nav-link">Autos</a></li>
+          <li class="nav-item"><a href="/hoteles" class="nav-link">Hoteles</a></li>
           
           <li class="nav-item cta">
             <a href="{{ route('register') }}" class="nav-link"><span>{{ __('Register') }}</span></a>

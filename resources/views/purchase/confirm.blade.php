@@ -9,16 +9,16 @@
         <div class="row">
           <div class="col-lg-9">
             <div class="row">
-                <div class="col-md-12 hotel-single mt-4 mb-5 ftco-animate">
+                <div class="col-md-12 hotel-single mt-4 mb-5 ftco-animate" style="margin-left: 105px;">
                         <form role="form">
                         @csrf
                         <div class="sidebar-wrap bg-light ftco-animate">
-                            <h3 class="heading mb-4">Ingreso de datos del Pasajero</h3>
+                            <h3 class="heading mb-4">Ingreso de datos de Pago</h3>
                             <div class="form-group">
                         <label for="cardNumber">
-                            CARD NUMBER</label>
+                            Numero de Tarjeta</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Numero de tarjeta"
                                 required autofocus />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                         </div>
@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-xs-7 col-md-7">
                             <div class="form-group">
-                                <label for="expityMonth">EXPIRY DATE</label>
+                                <label for="expityMonth">Dia de Vencimiento</label>
                                 <div class="col-xs-6 col-lg-6 pl-ziro">
                                     <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
                                 </div>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-xs-5 col-md-5 pull-right">
                             <div class="form-group">
-                                <label for="cvCode">CV CODE</label>
+                                <label for="cvCode">CV Codigo</label>
                                 <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
                             </div>
                         </div>
@@ -44,13 +44,13 @@
 
                 </form>
                  <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>{{$user->reserves->last()->reserveBalance}}</span> Final Payment</a>
+                    <h4 style="color: #f85959">{{$user->reserves->last()->reserveBalance}} Pago Final</h4>
                 </li>
-            </ul>
+                </ul>
                 </div>
             </div>
             <br/>
-            <a href="/cart/ok" class="btn btn-success btn-lg btn-block" role="button" style="background-color: #f85959;">Pay</a> 
+            <a href="/cart/ok" class="btn btn-success btn-lg btn-block" role="button" style="background-color: #f85959;margin-left: 200px;">Pagar</a> 
           </div> <!-- .col-md-8 -->
         </div>
       </div>

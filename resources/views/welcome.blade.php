@@ -7,8 +7,8 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Explore<br></strong>The World</h1>
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Find great places to stay, eat, shop, or visit from local experts</strong></p>
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Descubre<br></strong>Lugares del mundo</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Encuentra los mejores autos, hoteles y vuelos.</strong></p>
             <div class="block-17 my-4">
               <form action="" method="post" class="d-block d-flex">
                 <div class="fields d-block d-flex">
@@ -29,12 +29,11 @@
                 <input type="submit" class="search-submit btn btn-primary" value="Search">  
               </form>
             </div>
-            <p>Or browse the highlights</p>
+            <p>O recorre nuestras secciones.</p>
             <p class="browse d-md-flex">
-              <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-fork"></i>Restaurant</a></span>
-              <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-hotel"></i>Hotel</a></span> 
-              <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>Places</a></span> 
-              <span class="d-flex justify-content-md-center align-items-md- center"><a href="#"><i class="flaticon-shopping-bag"></i>Shopping</a></span>
+              <span class="d-flex justify-content-md-center align-items-md-center"><a href="/"><i class="flaticon-meeting-point"></i>Restaurant</a></span>
+              <span class="d-flex justify-content-md-center align-items-md-center"><a href="/hoteles"><i class="flaticon-hotel"></i>Hotel</a></span> 
+              <span class="d-flex justify-content-md-center align-items-md-center"><a href="/vuelos"><i class="flaticon-support"></i>Vuelos</a></span> 
             </p>
           </div>
         </div>
@@ -48,8 +47,8 @@
             <div class="media block-6 services d-block text-center">
               <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-guarantee"></span></div></div>
               <div class="media-body p-2 mt-2">
-                <h3 class="heading mb-3">Best Price Guarantee</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Los Mejores Precios</h3>
+                <p>La pagina con los precios mas economicos.</p>
               </div>
             </div>      
           </div>
@@ -57,8 +56,8 @@
             <div class="media block-6 services d-block text-center">
               <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-like"></span></div></div>
               <div class="media-body p-2 mt-2">
-                <h3 class="heading mb-3">Travellers Love Us</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Las personas nos aman</h3>
+                <p>Dando posibilidades a cualquier cliente.</p>
               </div>
             </div>    
           </div>
@@ -66,8 +65,8 @@
             <div class="media block-6 services d-block text-center">
               <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-detective"></span></div></div>
               <div class="media-body p-2 mt-2">
-                <h3 class="heading mb-3">Best Travel Agent</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Mejor Agente de Viaje</h3>
+                <p>Recomendando los mejores lugares del mundo.</p>
               </div>
             </div>      
           </div>
@@ -75,8 +74,8 @@
             <div class="media block-6 services d-block text-center">
               <div class="d-flex justify-content-center"><div class="icon"><span class="flaticon-support"></span></div></div>
               <div class="media-body p-2 mt-2">
-                <h3 class="heading mb-3">Our Dedicated Support</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Nuestro Apoyo</h3>
+                <p>Permitiendo a todas las personas a conocer el mundo.</p>
               </div>
             </div>      
           </div>
@@ -97,7 +96,7 @@
             <div class="destination-slider owl-carousel ftco-animate">
               <div class="item">
                 <div class="destination">
-                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-1.jpg);">
+                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-1.jpg);">
                     <div class="icon d-flex justify-content-center align-items-center">
                       <span class="icon-search2"></span>
                     </div>
@@ -110,7 +109,7 @@
               </div>
               <div class="item">
                 <div class="destination">
-                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-2.jpg);">
+                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-2.jpg);">
                     <div class="icon d-flex justify-content-center align-items-center">
                       <span class="icon-search2"></span>
                     </div>
@@ -123,7 +122,7 @@
               </div>
               <div class="item">
                 <div class="destination">
-                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-3.jpg);">
+                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-3.jpg);">
                     <div class="icon d-flex justify-content-center align-items-center">
                       <span class="icon-search2"></span>
                     </div>
@@ -136,7 +135,7 @@
               </div>
               <div class="item">
                 <div class="destination">
-                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-4.jpg);">
+                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-4.jpg);">
                     <div class="icon d-flex justify-content-center align-items-center">
                       <span class="icon-search2"></span>
                     </div>
@@ -149,7 +148,7 @@
               </div>
               <div class="item">
                 <div class="destination">
-                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-5.jpg);">
+                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-5.jpg);">
                     <div class="icon d-flex justify-content-center align-items-center">
                       <span class="icon-search2"></span>
                     </div>
@@ -162,7 +161,7 @@
               </div>
               <div class="item">
                 <div class="destination">
-                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-6.jpg);">
+                  <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-6.jpg);">
                     <div class="icon d-flex justify-content-center align-items-center">
                       <span class="icon-search2"></span>
                     </div>
@@ -192,7 +191,7 @@
         <div class="row">
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-1.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-1.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -226,7 +225,7 @@
           </div>
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-2.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-2.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -260,7 +259,7 @@
           </div>
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-3.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-3.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -294,7 +293,7 @@
           </div>
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-4.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-4.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -328,7 +327,7 @@
           </div>
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-5.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/destination-5.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -364,7 +363,7 @@
       </div>
     </section>
 
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);">
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(/images/bg_1.jpg);">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
@@ -427,7 +426,7 @@
         <div class="row">
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-1.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/hotel-1.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -460,7 +459,7 @@
           </div>
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-2.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/hotel-2.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -493,7 +492,7 @@
           </div>
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-3.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/hotel-3.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -526,7 +525,7 @@
           </div>
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-4.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/hotel-4.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -559,7 +558,7 @@
           </div>
           <div class="col-sm col-md-6 col-lg ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/hotel-5.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/hotel-5.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -613,7 +612,7 @@
                 <div class="carousel-testimony owl-carousel">
                   <div class="item">
                     <div class="testimony-wrap d-flex">
-                      <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                      <div class="user-img mb-5" style="background-image: url(/images/person_1.jpg)">
                         <span class="quote d-flex align-items-center justify-content-center">
                           <i class="icon-quote-left"></i>
                         </span>
@@ -627,7 +626,7 @@
                   </div>
                   <div class="item">
                     <div class="testimony-wrap d-flex">
-                      <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
+                      <div class="user-img mb-5" style="background-image: url(/images/person_2.jpg)">
                         <span class="quote d-flex align-items-center justify-content-center">
                           <i class="icon-quote-left"></i>
                         </span>
@@ -641,7 +640,7 @@
                   </div>
                   <div class="item">
                     <div class="testimony-wrap d-flex">
-                      <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
+                      <div class="user-img mb-5" style="background-image: url(/images/person_3.jpg)">
                         <span class="quote d-flex align-items-center justify-content-center">
                           <i class="icon-quote-left"></i>
                         </span>
@@ -672,7 +671,7 @@
         <div class="row">
           <div class="col-md-6 col-lg-3 ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/restaurant-1.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/restaurant-1.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -698,7 +697,7 @@
           </div>
           <div class="col-md-6 col-lg-3 ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/restaurant-2.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/restaurant-2.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -724,7 +723,7 @@
           </div>
           <div class="col-md-6 col-lg-3 ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/restaurant-3.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/restaurant-3.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -750,7 +749,7 @@
           </div>
           <div class="col-md-6 col-lg-3 ftco-animate">
             <div class="destination">
-              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/restaurant-4.jpg);">
+              <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/restaurant-4.jpg);">
                 <div class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
                 </div>
@@ -778,96 +777,13 @@
       </div>
     </section>
 
-    <section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-start mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate">
-            <span class="subheading">Recent Blog</span>
-            <h2><strong>Tips</strong> &amp; Articles</h2>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-                <span class="tag">Tips, Travel</span>
-                <h3 class="heading mt-3"><a href="#">8 Best homestay in Philippines that you don't miss out</a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text p-4">
-                <span class="tag">Culture</span>
-                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text p-4">
-                <span class="tag">Tips, Travel</span>
-                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
-              </a>
-              <div class="text p-4">
-                <span class="tag">Tips, Travel</span>
-                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
     <section class="ftco-section-parallax">
       <div class="parallax-img d-flex align-items-center">
         <div class="container">
           <div class="row d-flex justify-content-center">
             <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <h2>Subcribe to our Newsletter</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-              <div class="row d-flex justify-content-center mt-5">
-                <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit px-3">
-                    </div>
-                  </form>
-                </div>
-              </div>
+              <h2>Bienvenido a DiinfAirlines</h2>
+              <p>Disfrute de los distintos servicios que le ofrecemos.</p>
             </div>
           </div>
         </div>
@@ -943,21 +859,21 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
+  <script src="/js/jquery.waypoints.min.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/aos.js"></script>
+  <script src="/js/jquery.animateNumber.min.js"></script>
+  <script src="/js/bootstrap-datepicker.js"></script>
+  <script src="/js/jquery.timepicker.min.js"></script>
+  <script src="/js/scrollax.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/js/google-map.js"></script>
+  <script src="/js/main.js"></script>
 @endsection

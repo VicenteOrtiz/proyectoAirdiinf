@@ -207,7 +207,7 @@ class PurchaseController extends Controller
         $reservaActual->inUse = false;
         $reservaActual->save();
 
-        return view('home');
+        return view('welcome');
     }
 
 }
