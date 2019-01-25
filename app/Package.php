@@ -34,4 +34,12 @@ class Package extends Model
     public function packagereserve(){
         return $this->hasMany('App\Packagereserve');
     }
+
+    public function destiny(){
+        return $this->belongsTo('App\Flight', 'destiny_id');
+    }
+
+    public function home(){
+        return $this->belongsTo('App\Flight', 'home_id');
+    }
 }

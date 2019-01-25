@@ -41,6 +41,16 @@ class Flight extends Model
         return $this->belongsTo('App\Airport', 'departure_id');
     }
 
+    public function destiny(){
+        return $this->hasOne('App\Package', 'destiny_id');
+    }
+
+    public function home(){
+        return $this->hasOne('App\Package', 'home_id');
+    }
+
+
+
     // public function flightreserve(){
     //     return $this->hasMany('App\Flightreserve');
     // }

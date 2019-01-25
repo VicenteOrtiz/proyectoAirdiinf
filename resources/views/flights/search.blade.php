@@ -80,7 +80,7 @@
                 <div class="col">
                     <label for="fecha_vuelta" class="vuelo-vuelta">Fecha Vuelta</label>
                     <div class="input-group vuelo-vuelta">
-                        <input type="text" id="fecha_vuelta" name="fecha_vuelta" class="form-control text-center datepicker fecha-termino" readonly="readonly" value="">
+                        <input type="date" id="fecha_vuelta" name="fecha_vuelta">
                         <span class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                         </span>

@@ -137,6 +137,7 @@ class FlightController extends Controller
 
     public function search(Request $request){
 
+        //return $request->fecha_vuelta;
 
         //return "hola";
         list($departureCity, $departureCountry) = explode(',', $request->origen_id);

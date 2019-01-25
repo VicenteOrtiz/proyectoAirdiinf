@@ -132,4 +132,31 @@ class PackageController extends Controller
 
         return "Se ha eliminado satisfactoriamente el paquete";
     }
+
+    public function search(){
+        $packages = Package::all();
+
+        return view('packages.search', compact('packages'));
+    }
+
+    public function seat(Request $request){
+
+        $user = Auth::user();
+
+        $paquetes = Package::findOrFail($request->packageid);
+
+        $firstSeats = Airplaneseat::where('flight_id', $paquete->destiny->id)->get();
+        $secondSeats = Airplaneseat::where('flight_id', $paquete->home->id)->get();
+
+        if(is_object($user)){
+            return view('packages.passenger', compact('paquete', 'firstSeat', 'secondSeat'));
+        }else{
+            return redirect('/home');
+        }
+
+    }
+
+    public function compra(Request $request){
+
+    }
 }
