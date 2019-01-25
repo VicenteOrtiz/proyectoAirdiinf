@@ -147,6 +147,8 @@ class PurchaseController extends Controller
             $reservaHabitacion = $reservaActual->hotelreserve;
             $reservaAsiento = $reservaActual->flightreserve;
 
+            //dd($reservaActual->car);
+
             return view('purchase.cart', compact('reservaActual', 'reservaHabitacion', 'reservaAsiento'));
         }else{
             return redirect('/home');
@@ -173,7 +175,7 @@ class PurchaseController extends Controller
         if($reservaActual->flightreserve){
             $reservaActual->flightreserve->map(function($c) {
 
-                $c->airplaneseat->available = true;
+                $c->airplaneseat->available = false;
                 $c->airplaneseat->save();
 
                 return $c;
@@ -188,6 +190,9 @@ class PurchaseController extends Controller
                 return $h;
             });
         }
+
+        $reservaActual->car->available=false;
+        $reservaActual->car->save();
 
         $reservaActual->inUse = false;
         $reservaActual->save();
