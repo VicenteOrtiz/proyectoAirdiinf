@@ -36,8 +36,8 @@ class HotelController extends Controller
     public function adminIndex()
     {
         $countries = Country::All();
-        return Hotel::all();
-        return view('admin.hotels', compact('countries'));
+        $hotels = Hotel::all();
+        return view('admin.hotels.hotels', compact('countries','hotels'));
     }
 
     /**
@@ -154,7 +154,7 @@ class HotelController extends Controller
         $hotel = Hotel::findOrFail($id);
         $hotel->delete();
 
-        return "eliminacion exitosa";
+        return HotelController::adminIndex();
     }
 
     public function form()

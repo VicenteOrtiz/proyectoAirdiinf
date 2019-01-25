@@ -103,6 +103,7 @@ Route::get('/Admin/autos', 'CarController@adminIndex');
 Route::get('/Admin/usuarios', 'UserController@adminIndex');
 Route::delete('/Admin/autos/{id}', 'CarController@destroy');
 Route::delete('/Admin/vuelos/{id}', 'FlightController@destroy');
+Route::delete('/Admin/hoteles/{id}', 'HotelController@destroy');
 
 
 // Route::post('/hotels/create', 'HotelController@create');

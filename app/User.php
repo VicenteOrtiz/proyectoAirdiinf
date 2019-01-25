@@ -24,6 +24,7 @@ class User extends Authenticatable
         'passportNumber',
         'phoneNumber',
         'disability', 
+        'is_admin',
     ];
 
     /**
@@ -45,5 +46,10 @@ class User extends Authenticatable
 
     public function reserves(){
         return $this->hasMany('App\Reserve');
+    }
+
+    public function isAdmin()
+    {
+        return $this->is_admin;
     }
 }

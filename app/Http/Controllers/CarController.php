@@ -136,7 +136,7 @@ class CarController extends Controller
 
         $car->delete();
 
-        return "Se ha eliminado satisfactoriamente el auto";
+        return CarController::adminIndex();
     }
 
     public function compra(Request $request)
