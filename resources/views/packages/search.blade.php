@@ -3,13 +3,13 @@
 @section('content')
     <!-- END nav -->
     
-    <div class="hero-wrap js-fullheight" style="background-image: url('/images/avion.jpg');">
+    <div class="hero-wrap js-fullheight" style="background-image: url('/images/destination-5.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Principal</a></span> <span>Vuelos</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Vuelos</h1>
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Principal</a></span> <span>Paquetes</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Paquetes</h1>
           </div>
         </div>
       </div>
@@ -19,50 +19,12 @@
     <section class="ftco-section ftco-degree-bg">
       <div class="container">
         <div class="row">
-            <div class="col-lg-3 sidebar">
-                <div class="sidebar-wrap bg-light ftco-animate">
-                    <h3 class="heading mb-4">Find City</h3>
-                    <form action="/vuelo/busqueda" method="post">
-                        {{ csrf_field() }}
-                        <div class="fields">
-                      <div class="form-group">
-                         <p>Origen</p>
-                        <div class="select-wrap one-third">
-                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="origen_id" id="origen_id" title="origen" class="form-control selectpicker" placeholder="Origen" data-live-search="true">
-                          @foreach($cities as $city)
-                          <option>{{$city->cityName}},{{$city->country->countryName}}</option>
-                          @endforeach
-                        </select>
-                      </div>
-                      </div>
-                      <div class="form-group">
-                         <p>Destino</p>
-                        <div class="select-wrap one-third">
-                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="destino_id" id="destino_id" title="destino" class="form-control selectpicker" placeholder="Keyword search" data-live-search="true">
-                          @foreach($cities as $city)
-                          <option>{{$city->cityName}},{{$city->country->countryName}}</option>
-                          @endforeach
-                        </select>
-                      </div>
-                      </div>
-                      <div class="form-group">
-                        <input type="date" name="departureDate" class="form-control" placeholder="Date from">
-                      </div>
-                      <div class="form-group">
-                        <input type="submit" value="Search" class="btn btn-primary py-3 px-5">
-                      </div>
-                    </div>
-                </form>
-                </div>
-          </div>
           <div class="col-lg-9">
             <div class="row">
-                @foreach($flights as $flight)
+                @foreach($packages as $package)
                 <div class="col-md-4 ftco-animate">
                             <div class="destination">
-                                <a href="hot-el-single.html" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/avion2.jpg);">
+                                <a href="hot-el-single.html" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/images/auto2.jpg);">
                                     <div class="icon d-flex justify-content-center align-items-center">
                                 <span class="icon-search2"></span>
                             </div>
@@ -70,24 +32,16 @@
                                 <div class="text p-3">
                                     <div class="d-flex">
                                         <div class="one">
-                                            <h3><a href="hotel-single.html">{{$flight->flightNumber}}</a></h3>
-                                            <p class="rate">
-                                                <span>{{$flight->airplaneCapacity}} Personas</span>
-                                                <i class="icon-star"></i>
-                                            </p>
-                                        </div>
-                                        <div class="two">
-                                            <span class="price per-price">{{$flight->departureTime}}<br></span>
-                                        </div>
-                                    </div>
-                                    <i class="icon-map-o"></i><p>Origen: {{$flight->departure->name}}, {{$flight->departure->city->cityName}}</p>
-                                    <i class="icon-map-o"></i><p>Destino: {{$flight->arrival->name}}, {{$flight->arrival->city->cityName}}</p>
+                                            <h3><a href="hotel-single.html"> Destino: {{$package->destiny->arrival->city->cityName}},{{$package->destiny->arrival->city->country->countryName}}</a></h3>
+                  					</div>
+                  				</div>
+                                    <p>Precio: {{$package->precioPaquete}}</p>
                                     <hr>
-                                <form action="/asiento/seleccionar" method="post"> 
-                                  {{ csrf_field() }}
-                                  <input name="flight_id" type="hidden" value="{{$flight->id}}">
-                                  <button type="submit" class="btn btn-primary">Reservar tu asiento</button>
-                                  </form>
+                                    <form action="/paquete/resumen" method="post"> 
+                                      {{ csrf_field() }}
+                                      <input class="form-control" name="packageid" type="hidden" placeholder="carId" id="carId" value="{{$package->id}}">
+                                    <button type="submit" class="btn btn-primary">Seleccionar Paquete</button>
+                                </form>
                                 </div>
                             </div>
                         </div>

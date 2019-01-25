@@ -90,6 +90,11 @@ Route::get('/autos', 'CarController@form');
 Route::post('/autos/seleccionar', 'CarController@search'); 
 Route::post('/autos/comprar', 'CarController@compra');
 
+Route::get('/paquetes', 'PackageController@search');
+Route::post('/paquetes/pasajero', 'PackageController@seat');
+Route::post('/paquetes/comprar', 'PackageController@compra');
+Route::post('/paquete/resumen', 'PackageController@resumen');
+
 Route::get('/ejemplo', function() {
 	return view('flights.ejemplo'); 
 });
@@ -123,3 +128,5 @@ Route::post('reserve/room', 'HotelroomController@compra');
 Route::get('/cart', 'PurchaseController@cart');
 Route::get('/cart/confirm', 'PurchaseController@confirm');
 Route::get('/cart/ok', 'PurchaseController@ok');
+
+

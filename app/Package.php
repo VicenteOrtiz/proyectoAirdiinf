@@ -16,15 +16,15 @@ class Package extends Model
     ]; 
 
     public function insurence(){
-        return $this->hasMany('App\Insurence');
+        return $this->belongstO('App\Insurence');
     }
 
     public function hotelroom(){
-    	return $this->hasMany('App\Hotelroom');
+    	return $this->belongsTo('App\Hotelroom');
     }
 
     public function car(){
-    	return $this->hasMany('App\Car');
+    	return $this->belongsTo('App\Car');
     }
     
     public function airplaneseat(){
@@ -33,5 +33,13 @@ class Package extends Model
 
     public function packagereserve(){
         return $this->hasMany('App\Packagereserve');
+    }
+
+    public function destiny(){
+        return $this->belongsTo('App\Flight', 'destiny_id');
+    }
+
+    public function home(){
+        return $this->belongsTo('App\Flight', 'home_id');
     }
 }

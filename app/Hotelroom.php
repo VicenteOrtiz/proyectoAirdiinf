@@ -23,4 +23,8 @@ class Hotelroom extends Model
     public function hotelreserve(){
         return $this->hasMany('App\Hotelreserve');
     }
+
+    public function package(){
+        return $this->hasOne('App\Package');
+    }
 }

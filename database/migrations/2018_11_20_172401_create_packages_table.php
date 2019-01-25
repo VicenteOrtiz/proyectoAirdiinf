@@ -14,17 +14,23 @@ class CreatePackagesTable extends Migration
     public function up()
     {
         Schema::create('packages', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id'); 
 
-            $table->integer('hotelroom_id');
+            $table->integer('hotelroom_id')->nullable();
             $table->foreign('hotelroom_id')->references('id')->on('hotelrooms')->onDelete('cascade');
 
 
-            $table->integer('car_id');
+            $table->integer('car_id')->nullable();
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
 
-            $table->integer('airplaneseat_id');
-            $table->foreign('airplaneseat_id')->references('id')->on('airplaneseats')->onDelete('cascade');
+            // $table->integer('airplaneseat_id');
+            // $table->foreign('airplaneseat_id')->references('id')->on('airplaneseats')->onDelete('cascade');
+
+            $table->integer('destiny_id')->nullable();
+            $table->foreign('destiny_id')->references('id')->on('flights')->onDelete('cascade');
+
+            $table->integer('home_id')->nullable();
+            $table->foreign('home_id')->references('id')->on('flights')->onDelete('cascade');
 
 
             $table->integer('precioPaquete');

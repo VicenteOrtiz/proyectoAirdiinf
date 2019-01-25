@@ -40,6 +40,7 @@
           <li class="nav-item"><a href="/vuelo" class="nav-link">Vuelos</a></li>
           <li class="nav-item"><a href="/autos" class="nav-link">Autos</a></li>
           <li class="nav-item"><a href="/hoteles" class="nav-link">Hoteles</a></li>
+          <li class="nav-item"><a href="/paquetes" class="nav-link">Paquetes</a></li>
           @guest
           <li class="nav-item">
             <a href="{{ route('login') }}" class="nav-link">{{ __('Login') }}</a>

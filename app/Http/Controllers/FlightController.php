@@ -138,6 +138,7 @@ class FlightController extends Controller
 
     public function search(Request $request){
 
+        //return $request->fecha_vuelta;
 
         //return "hola";
        // return $request->departureDate;

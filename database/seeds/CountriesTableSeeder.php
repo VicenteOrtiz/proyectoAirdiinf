@@ -18,6 +18,26 @@ class CountriesTableSeeder extends Seeder
             'updated_at' => now(), 
         ]);
 
+        DB::table('countries')->insert([
+            'countryName'=>'Brazil',
+            'created_at' => now(),
+            'updated_at' => now(), 
+        ]);
+
+        DB::table('countries')->insert([
+            'countryName'=>'Estados Unidos',
+            'created_at' => now(),
+            'updated_at' => now(), 
+        ]);
+
+        DB::table('countries')->insert([
+            'countryName'=>'Nueva Zelanda',
+            'created_at' => now(),
+            'updated_at' => now(), 
+        ]);
+
+
+
         factory(App\Country::class, 5) -> create();
 
 

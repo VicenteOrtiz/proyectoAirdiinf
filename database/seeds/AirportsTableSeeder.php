@@ -39,6 +39,33 @@ class AirportsTableSeeder extends Seeder
             'updated_at' => now(), 
         ]);
 
+        DB::table('airports')->insert([
+            'name'=>'Aeropuerto Internacional de Galeão',
+            'address' => 'Av. Vinte de Janeiro, s/nº - Ilha do Governador, Rio de Janeiro - RJ, 21941-900, Brasil',
+            'city_id' => 4,
+            'phoneNumber' => +56922451433,
+            'created_at' => now(),
+            'updated_at' => now(), 
+        ]);
+
+        DB::table('airports')->insert([
+            'name'=>'Aeropuerto Internacional John F. Kennedy',
+            'address' => 'Queens, Nueva York 11430, EE. UU.',
+            'city_id' => 5,
+            'phoneNumber' => '++ 718-244-4444',
+            'created_at' => now(),
+            'updated_at' => now(), 
+        ]);
+
+        DB::table('airports')->insert([
+            'name'=>'Aeropuerto Internacional de Auckland',
+            'address' => 'Ray Emery Dr, Auckland Airport, Auckland 2022, Nueva Zelanda',
+            'city_id' => 6,
+            'phoneNumber' => '+ 718-244-4444',
+            'created_at' => now(),
+            'updated_at' => now(), 
+        ]);
+
         factory(App\Airport::class, 6) -> create();
     }
 }
