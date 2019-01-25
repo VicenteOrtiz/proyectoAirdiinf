@@ -2,12 +2,17 @@
 
 @section('content')
 
-<dir class="row">
-	<div class="col-md-12 tituloAdminAutos">
-		<h1>Flights</h1>
-	</div>
-</dir>
-
+<div class="hero-wrap js-fullheight" style="background-image: url('/images/avion.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Flights</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Flights</h1>
+          </div>
+        </div>
+      </div>
+    </div>
 <div class="container" style="background-color: white; margin: 0 8em">
 		<table class="table table-striped">
 			<thead>
